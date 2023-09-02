@@ -22,17 +22,17 @@ export default async function Home() {
         <div className="terrazzo-main col-span-6 bg-[url('./assets/TerrazzoLess.png')] min-h-[512px]"></div>
         <div className="terrazzo-end col-span-6 bg-[url('./assets/TerrazzoLessEnd.png')] h-[512px]"></div>
       </div>
-      <div className="main-card relative grid auto-cols-fr auto-rows-fr grid-cols-7 grid-rows-3 gap-6 h-full m-auto max-w-full lg:max-w-[920px] xl:max-w-[1080px] 2xl:max-w-[2160px]">
-        <div className="col-start-1 2xl:col-start-5 col-span-full row-start-1 row-span-full">
+      <div className="main-card relative grid auto-cols-fr auto-rows-fr grid-cols-7 grid-rows-3 gap-6 h-full m-auto max-w-full lg:max-w-[920px] xl:max-w-[1080px] xl:max-w-[2160px]">
+        <div className="col-start-1 xl:col-start-5 col-span-full row-start-1 row-span-full">
           <LogoModel />
         </div>
-        <div className="col-start-1 col-span-full 2xl:col-span-4 row-start-1 row-span-1 mx-12 2xl:mx-6 mt-6 text-white text-center rounded-3xl border-2 border-black backdrop-brightness-75 backdrop-blur-2xl shadow-xl">
+        <div className="col-start-1 col-span-full xl:col-span-4 row-start-1 row-span-1 mx-12 xl:mx-6 mt-6 text-white text-center rounded-3xl border-2 border-black backdrop-brightness-75 backdrop-blur-2xl shadow-xl">
           <div className="rounded-3xl shadow-[0_0_0_1px_rgba(255,255,255,0.25)] p-14 h-full w-full">
-            <h1 className={`${monomaniac.className} text-7xl font-bold`}>
+            <h1 className={`${monomaniac.className} text-5xl font-bold`}>
               DO∩ アントニオ
             </h1>
-            <h2 className={`${monomaniac.className} text-5xl`}>interactive</h2>
-            <p className="text-xl pt-6">
+            <h2 className={`${monomaniac.className} text-3xl`}>interactive</h2>
+            <p className="text-md pt-6">
               Welcome to DON interactive, the home of innovative and immersive
               media experiences. We are a team of passionate and creative
               developers, designers, and storytellers who love to create
@@ -43,16 +43,16 @@ export default async function Home() {
         </div>
         <div
           className="
-          col-start-1 col-span-full 2xl:col-span-2
+          col-start-1 col-span-full xl:col-span-2
           row-start-2 md:row-start-2 row-span-1 md:row-span-2
-          ml-12 2xl:ml-6 mr-12 2xl:mr-0 mb-0 2xl:mb-6
+          ml-12 xl:ml-6 mr-12 xl:mr-0 mb-0 xl:mb-6
           text-white text-center
           rounded-3xl border-2 border-black
           backdrop-brightness-75 backdrop-blur-2xl
           shadow-xl"
         >
-          <div className="rounded-3xl shadow-[0_0_0_1px_rgba(255,255,255,0.25)] p-12 w-full h-full">
-            <div className="mx-auto mb-10 w-[132px] h-[132px] md:w-[264px] md:h-[264px] rounded-3xl bg-gradient-to-tr from-teal-500 via-indigo-500 to-rose-500 p-2 shadow-xl">
+          <div className="rounded-3xl shadow-[0_0_0_1px_rgba(255,255,255,0.25)] p-6 w-full h-full">
+            <div className="mx-auto mb-10 w-[128px] h-[128px] lg:w-[256px] lg:h-[256px] rounded-3xl bg-gradient-to-tr from-teal-500 via-indigo-500 to-rose-500 p-2 shadow-xl">
               <Image
                 src={bfos}
                 width={264}
@@ -61,10 +61,10 @@ export default async function Home() {
                 className="rounded-2xl"
               />
             </div>
-            <h1 className="text-3xl font-bold uppercase">
+            <h1 className="text-lg text-left font-bold uppercase">
               Beats form <br /> Outer Space
             </h1>
-            <p className="text-xl py-4">
+            <p className="text-md text-left pt-2 pb-4">
               Hello there, Terrarians! I am your mysterious radio host,
               Midnight, and I have a story to share with you. It is the tale of
               a brave space hero, who pilots the magnificent Vapor Falcon in a
@@ -73,7 +73,7 @@ export default async function Home() {
             <form action="https://github.com/lombardi-antonio/beats-from-outer-space">
               <input
                 className="
-                  text-xl text-white hover:text-black
+                  text-lg text-white hover:text-black
                   w-1/2 p-2 rounded-3xl
                   scale-100 hover:scale-105 transform
                   transition duration-300
@@ -88,16 +88,16 @@ export default async function Home() {
         </div>
         <div
           className="
-          col-start-1 2xl:col-start-3 col-span-full 2xl:col-span-2
-          row-start-3 md:row-start-4 2xl:row-start-2 row-span-1 md:row-span-2
-          ml-12 2xl:ml-0 mr-12 2xl:mr-6 mb-6
+          col-start-1 xl:col-start-3 col-span-full xl:col-span-2
+          row-start-3 md:row-start-4 xl:row-start-2 row-span-1 md:row-span-2
+          ml-12 xl:ml-0 mr-12 xl:mr-6 mb-6
           text-white text-center
           rounded-3xl border-2 border-black
           backdrop-brightness-75 backdrop-blur-2xl
           shadow-xl"
         >
-          <div className="rounded-3xl shadow-[0_0_0_1px_rgba(255,255,255,0.25)] p-12 w-full h-full items-center">
-            <div className="mx-auto mb-10 w-[132px] h-[132px] md:w-[264px] md:h-[264px] rounded-3xl bg-gradient-to-tr from-teal-500 via-indigo-500 to-rose-500 p-2 shadow-xl">
+          <div className="rounded-3xl shadow-[0_0_0_1px_rgba(255,255,255,0.25)] p-6 w-full h-full items-center">
+            <div className="mx-auto mb-10 w-[128px] h-[128px] md:w-[256px] md:h-[256px] rounded-3xl bg-gradient-to-tr from-teal-500 via-indigo-500 to-rose-500 p-2 shadow-xl">
               <Image
                 src={wip}
                 width={264}
@@ -106,10 +106,10 @@ export default async function Home() {
                 className="rounded-2xl"
               />
             </div>
-            <h1 className="text-3xl font-bold uppercase">
+            <h1 className="text-lg text-left font-bold uppercase">
               Work in <br /> progress
             </h1>
-            <p className="text-xl py-4">
+            <p className="text-md text-left py-4">
               There will be more to come soon. Stay tuned!
             </p>
           </div>
