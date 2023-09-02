@@ -2,8 +2,8 @@ import Image from "next/image";
 import localFont from "next/font/local";
 import LogoModel from "@/app/home/LogoModel";
 
-import bfos from "../../../public/BeatsFromOuterSpace.png";
-import wip from "../../../public/workInProgress.png";
+import bfos from "/public/BeatsFromOuterSpace.png";
+import wip from "/public/workInProgress.png";
 
 const monomaniac = localFont({
   src: "../fonts/MonomaniacOne-Regular.ttf",
