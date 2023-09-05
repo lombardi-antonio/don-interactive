@@ -26,7 +26,7 @@ export default async function Home() {
         <div className="col-start-1 xl:col-start-5 col-span-full row-start-1 row-span-full">
           <LogoModel />
         </div>
-        <div className="col-start-1 col-span-full xl:col-span-4 row-start-1 row-span-1 mx-0 xs:mx-12 xl:mx-6 mt-6 text-white text-center rounded-3xl border-2 border-black backdrop-brightness-75 backdrop-blur-2xl shadow-xl">
+        <div className="col-start-1 col-span-full xl:col-span-4 row-start-1 row-span-1 mx-0 xs:mx-12 xl:mx-6 mt-6 text-black dark:text-white text-center rounded-3xl border-2 border-black backdrop-brightness-125 dark:backdrop-brightness-75 backdrop-blur-2xl shadow-xl">
           <div className="rounded-3xl shadow-[0_0_0_1px_rgba(255,255,255,0.25)] p-14 h-full w-full">
             <h1 className={`${monomaniac.className} text-5xl font-bold`}>
               DO∩ アントニオ
@@ -46,9 +46,9 @@ export default async function Home() {
           col-start-1 col-span-full xl:col-span-2
           row-start-2 md:row-start-2 row-span-1 md:row-span-2
           ml:0 xs:ml-12 xl:ml-6 mr-0 xs:mr-12 xl:mr-0 mb-0 xl:mb-6
-          text-white text-center
+          text-black dark:text-white text-center
           rounded-3xl border-2 border-black
-          backdrop-brightness-75 backdrop-blur-2xl
+          backdrop-brightness-125 dark:backdrop-brightness-75 backdrop-blur-2xl
           shadow-xl"
         >
           <div className="rounded-3xl shadow-[0_0_0_1px_rgba(255,255,255,0.25)] p-6 w-full h-full">
@@ -73,12 +73,13 @@ export default async function Home() {
             <form action="https://github.com/lombardi-antonio/beats-from-outer-space">
               <input
                 className="
-                  text-lg text-white hover:text-black
+                  text-lg text-black dark:text-white hover:text-black
                   w-1/2 p-2 rounded-3xl
                   scale-100 hover:scale-105 transform
                   transition duration-300
                   bg-gradient-to-tr
-                  from-teal-500 via-indigo-500 to-rose-500
+                  from-teal-200 via-indigo-200 to-rose-200
+                  dark:from-teal-500 dark:via-indigo-500 dark:to-rose-500
                   hover:from-teal-300 hover:via-indigo-300 hover:to-rose-300
                   shadow-[0_0_0_1px_rgba(0,0,0,0.25)]"
                 type="submit"
@@ -91,9 +92,9 @@ export default async function Home() {
           col-start-1 xl:col-start-3 col-span-full xl:col-span-2
           row-start-3 md:row-start-4 xl:row-start-2 row-span-1 md:row-span-2
           ml:0 xs:ml-12 xl:ml-0 mr-0 xs:mr-12 xl:mr-6 mb-6
-          text-white text-center
+          text-black dark:text-white text-center
           rounded-3xl border-2 border-black
-          backdrop-brightness-75 backdrop-blur-2xl
+          backdrop-brightness-125 dark:backdrop-brightness-75 backdrop-blur-2xl
           shadow-xl"
         >
           <div className="rounded-3xl shadow-[0_0_0_1px_rgba(255,255,255,0.25)] p-6 w-full h-full items-center">
