@@ -18,7 +18,7 @@ const rubik = localFont({
   fontFamily: "Rubik",
 });
 
-export function Home() {
+export default function Home() {
   useEffect(() => {
     const elements = [
       document.getElementById("main-card"),
