@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import localFont from "next/font/local";
@@ -40,15 +40,18 @@ export default function Home() {
         <div className="terrazzo-end col-span-6 bg-[url('../../public/BrightTerrazzoLessEnd.png')] dark:bg-[url('../../public/TerrazzoLessEnd.png')] h-[512px]"></div>
       </div>
       <div className="main-card relative grid auto-cols-fr auto-rows-fr grid-cols-7 grid-rows-3 gap-6 h-full m-auto max-w-full lg:max-w-[920px] xl:max-w-[1080px] xl:max-w-[2160px]">
-        <div id="three-logo"
+        <div
+          id="three-logo"
           className="
           opacity-0 transition-opacity ease-in-out duration-[0.8s]
           col-start-1 xl:col-start-5 col-span-full
           row-start-1 row-span-1 xl:row-span-full
-          h-xl xl:h-full">
+          h-xl xl:h-full"
+        >
           <LogoModel />
         </div>
-        <div id="main-card"
+        <div
+          id="main-card"
           className="
           opacity-0 -translate-x-96 transition ease-in-out duration-500
           col-start-1 col-span-full xl:col-span-4
@@ -56,12 +59,19 @@ export default function Home() {
           mx-0 xs:mx-12 xl:mx-6 mt-6
           text-gray-800 dark:text-white text-center
           rounded-3xl  backdrop-brightness-110 dark:backdrop-brightness-110 backdrop-blur-2xl
-          shadow-lg shadow-black/60">
+          shadow-lg shadow-black/60"
+        >
           <div className="rounded-3xl shadow-[0_0_0_1px_rgba(0,0,0,0.25)] dark:shadow-[0_0_0_1px_rgba(255,255,255,0.25)] p-14 h-full w-full">
-            <h1 className={`${monomaniac.className} text-5xl font-bold drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,0.8)] dark:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]`}>
+            <h1
+              className={`${monomaniac.className} text-5xl font-bold drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,0.8)] dark:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]`}
+            >
               DO∩ アントニオ
             </h1>
-            <h2 className={`${monomaniac.className} text-3xl drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,0.8)] dark:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]`}>interactive</h2>
+            <h2
+              className={`${monomaniac.className} text-3xl drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,0.8)] dark:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]`}
+            >
+              interactive
+            </h2>
             <p className="text-gray-900 dark:text-white text-md pt-6">
               Welcome to DON interactive, the home of innovative and immersive
               media experiences. We are a team of passionate and creative
@@ -71,7 +81,8 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div id="first-card"
+        <div
+          id="first-card"
           className="
           opacity-0 -translate-x-96 transition ease-in-out duration-500
           col-start-1 col-span-full xl:col-span-2
@@ -83,7 +94,7 @@ export default function Home() {
           shadow-lg shadow-black/60"
         >
           <div className="rounded-3xl shadow-[0_0_0_1px_rgba(0,0,0,0.25)] dark:shadow-[0_0_0_1px_rgba(255,255,255,0.25)] p-6 w-full h-full">
-          <div className="mx-auto mb-10 w-[128px] h-[128px] md:w-[256px] md:h-[256px] rounded-3xl bg-gradient-to-tr from-teal-500 via-indigo-500 to-rose-500 p-2 drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]">
+            <div className="mx-auto mb-10 w-[128px] h-[128px] md:w-[256px] md:h-[256px] rounded-3xl bg-gradient-to-tr from-teal-500 via-indigo-500 to-rose-500 p-2 drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]">
               <Image
                 src={bfos}
                 width={264}
@@ -118,7 +129,8 @@ export default function Home() {
             </form>
           </div>
         </div>
-        <div id="second-card"
+        <div
+          id="second-card"
           className="
           opacity-0 -translate-x-96 transition ease-in-out duration-500
           col-start-1 xl:col-start-3 col-span-full xl:col-span-2
