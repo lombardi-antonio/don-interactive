@@ -39,7 +39,7 @@ export default function Home() {
         <div className="terrazzo-main col-span-6 bg-[url('../../public/BrightTerrazzoLess.png')] dark:bg-[url('../../public/TerrazzoLess.png')] min-h-[512px]"></div>
         <div className="terrazzo-end col-span-6 bg-[url('../../public/BrightTerrazzoLessEnd.png')] dark:bg-[url('../../public/TerrazzoLessEnd.png')] h-[512px]"></div>
       </div>
-      <div className="main-card relative grid auto-cols-fr auto-rows-fr grid-cols-7 grid-rows-3 gap-6 h-full m-auto max-w-full lg:max-w-[920px] xl:max-w-[1080px] xl:max-w-[2160px]">
+      <div className="main-card relative grid auto-cols-fr auto-rows-fr grid-cols-7 grid-rows-3 gap-6 h-full m-auto max-w-full lg:max-w-[920px] xl:max-w-[2160px]">
         <div
           id="three-logo"
           className="
@@ -112,7 +112,7 @@ export default function Home() {
               a brave space hero, who pilots the magnificent Vapor Falcon in a
               battle against the body snatching aliens from outer space.
             </p>
-            <form action="https://github.com/lombardi-antonio/beats-from-outer-space">
+            <form action="/bfos">
               <input
                 className="
                   text-lg text-gray-800 dark:text-white hover:text-black
