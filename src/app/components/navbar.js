@@ -18,7 +18,7 @@ const rubik = localFont({
 
 export default function Navbar() {
   const router = useRouter();
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
 
   return (
     <nav
@@ -74,10 +74,10 @@ export default function Navbar() {
           </button>
         </div>
         <div
-          className={`${isVisible ? 'visible' : 'invisible'} items-center justify-between w-full backdrop-blur-xl backdrop-brightness-150 dark:backdrop-brightness-50 md:backdrop-blur-0 md:backdrop-brightness-100 md:flex md:w-auto md:order-1`}
+          className={`${isVisible ? 'visible' : 'invisible'} items-center justify-between w-full  md:flex md:w-auto md:order-1`}
           id="navbar-sticky"
         >
-          <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:border-gray-700">
+          <ul className="flex flex-col p-4 md:p-0 mt-0 font-medium border border-gray-100 rounded-lg backdrop-blur-xl backdrop-brightness-150 dark:backdrop-brightness-50 md:backdrop-blur-0 md:backdrop-brightness-100 md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:border-gray-700">
             <li>
               <a
                 onClick={() => router.push("/")}
