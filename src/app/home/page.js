@@ -39,13 +39,14 @@ export default function Home() {
         <div className="terrazzo-main col-span-6 bg-[url('../../public/BrightTerrazzoLess.png')] dark:bg-[url('../../public/TerrazzoLess.png')] min-h-[512px]"></div>
         <div className="terrazzo-end col-span-6 bg-[url('../../public/BrightTerrazzoLessEnd.png')] dark:bg-[url('../../public/TerrazzoLessEnd.png')] h-[512px]"></div>
       </div>
-      <div className="main-card relative grid auto-cols-fr auto-rows-fr grid-cols-7 grid-rows-3 gap-6 h-full m-auto max-w-full lg:max-w-[920px] xl:max-w-[2160px]">
+
+      <div className="main-card relative grid auto-cols-fr auto-rows-fr grid-cols-7 grid-rows-3 gap-6 h-full mx-auto max-w-full lg:max-w-[920px] xl:max-w-[2160px]">
         <div
           id="three-logo"
           className="
           opacity-0 transition-opacity ease-in-out duration-[0.8s]
           col-start-1 xl:col-start-5 col-span-full
-          row-start-1 row-span-1 xl:row-span-full
+          row-start-1 row-span-full
           h-xl xl:h-full"
         >
           <LogoModel />
@@ -55,7 +56,7 @@ export default function Home() {
           className="
           opacity-0 -translate-x-96 transition ease-in-out duration-500
           col-start-1 col-span-full xl:col-span-4
-          row-start-2 xl:row-start-1 row-span-1
+          row-start-1 xl:row-start-1 row-span-1
           mx-0 xs:mx-12 xl:mx-6 mt-6
           text-gray-800 dark:text-white text-center
           rounded-3xl  backdrop-brightness-110 dark:backdrop-brightness-110 backdrop-blur-2xl
@@ -86,7 +87,7 @@ export default function Home() {
           className="
           opacity-0 -translate-x-96 transition ease-in-out duration-500
           col-start-1 col-span-full xl:col-span-2
-          row-start-3 md:row-start-3 xl:row-start-2 row-span-1 md:row-span-2
+          row-start-2 md:row-start-2 xl:row-start-2 row-span-1 md:row-span-2
           ml:0 xs:ml-12 xl:ml-6 mr-0 xs:mr-12 xl:mr-0 mb-0 xl:mb-6
           text-gray-800 dark:text-white text-center
           rounded-3xl
@@ -134,7 +135,7 @@ export default function Home() {
           className="
           opacity-0 -translate-x-96 transition ease-in-out duration-500
           col-start-1 xl:col-start-3 col-span-full xl:col-span-2
-          row-start-4 md:row-start-5 xl:row-start-2 row-span-1 md:row-span-2
+          row-start-4 md:row-start-4 xl:row-start-2 row-span-1 md:row-span-2
           ml:0 xs:ml-12 xl:ml-0 mr-0 xs:mr-12 xl:mr-6 mb-6
           text-gray-800 dark:text-white text-center
           rounded-3xl 

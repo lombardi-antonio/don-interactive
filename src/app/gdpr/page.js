@@ -1,22 +1,22 @@
 export default function Gdpr() {
   return (
-    <main className="robot text-black dark:text-white max-w-[1080px] min-w-[512px] px-4 py-10 mx-auto">
+    <main className="robot text-black dark:text-white max-w-[1080px] min-w-[512px] px-4 py-10 mx-auto pt-4">
       <h1 className="text-4xl pb-8">Datenschutzerklärung</h1>
       <p className="text-sm pb-8 opacity-60">Stand: 15. September 2023</p>
       <h2 className="text-2xl font-bold pb-4">Inhaltsübersicht</h2>
       <ul className="index pb-8">
         <li>
-          <a class="index-link" href="#m3">
+          <a className="index-link" href="#m3">
             Verantwortlicher
           </a>
         </li>
         <li>
-          <a class="index-link" href="#mOverview">
+          <a className="index-link" href="#mOverview">
             Übersicht der Verarbeitungen
           </a>
         </li>
         <li>
-          <a class="index-link" href="#m2427">
+          <a className="index-link" href="#m2427">
             Maßgebliche Rechtsgrundlagen
           </a>
         </li>
@@ -88,7 +88,7 @@ export default function Gdpr() {
         die Zwecke ihrer Verarbeitung zusammen und verweist auf die betroffenen
         Personen.
       </p>
-      <p class="seal">
+      <p className="seal">
         <a
           href="https://datenschutz-generator.de/"
           title="Rechtstext von Dr. Schwenke - für weitere Informationen bitte anklicken."
