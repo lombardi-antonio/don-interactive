@@ -135,7 +135,7 @@ export default function Home() {
           className="
           opacity-0 -translate-x-96 transition ease-in-out duration-500
           col-start-1 xl:col-start-3 col-span-full xl:col-span-2
-          row-start-4 md:row-start-4 xl:row-start-2 row-span-1 md:row-span-2
+          row-start-3 md:row-start-4 xl:row-start-2 row-span-1 md:row-span-2
           ml:0 xs:ml-12 xl:ml-0 mr-0 xs:mr-12 xl:mr-6 mb-6
           text-gray-800 dark:text-white text-center
           rounded-3xl 
