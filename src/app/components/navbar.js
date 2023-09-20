@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import localFont from "next/font/local";
 import logo from "/public/logo.png";
+import Link from "next/link";
 
 const monomaniac = localFont({
   src: "../fonts/MonomaniacOne-Regular.ttf",
@@ -19,8 +20,6 @@ const rubik = localFont({
 export default function Navbar() {
   const router = useRouter();
   const [isVisible, setIsVisible] = useState(false);
-
-  document.addEventListener('mousedown', () => {setIsVisible(false)});
 
   return (
     <nav
@@ -76,34 +75,42 @@ export default function Navbar() {
           </button>
         </div>
         <div
-          className={`${isVisible ? 'visible' : 'invisible'} items-center justify-between w-full md:visible md:flex md:w-auto md:order-1`}
+          className={`drop-down-nav  ${isVisible ? 'visible' : 'invisible'} items-center justify-between w-full md:visible md:flex md:w-auto md:order-1`}
           id="navbar-sticky"
         >
           <ul className="flex flex-col p-4 md:p-0 mt-0 font-medium border border-gray-100 rounded-lg backdrop-blur-xl backdrop-brightness-150 dark:backdrop-brightness-50 md:backdrop-blur-0 md:backdrop-brightness-100 md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:border-gray-700">
             <li>
-              <a
-                onClick={() => router.push("/")}
-                className="uppercase hover:cursor-pointer block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-indigo-600 md:p-0 md:dark:hover:text-indigo-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                aria-current="page"
+            <Link
+                href="/"
+                onClick={() => {
+                  setIsVisible(false);
+                }}
+                className="drop-down-nav uppercase hover:cursor-pointer block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-indigo-600 md:p-0 md:dark:hover:text-indigo-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 home
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                onClick={() => router.push("/bfos")}
-                className="uppercase hover:cursor-pointer block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-indigo-600 md:p-0 md:dark:hover:text-indigo-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+              <Link
+                href="/bfos"
+                onClick={() => {
+                  setIsVisible(false);
+                }}
+                className="drop-down-nav uppercase hover:cursor-pointer block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-indigo-600 md:p-0 md:dark:hover:text-indigo-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 bfos
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                onClick={() => router.push("/gdpr")}
-                className="uppercase hover:cursor-pointer block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-indigo-600 md:p-0 md:dark:hover:text-indigo-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+            <Link
+                href="/gdpr"
+                onClick={() => {
+                  setIsVisible(false);
+                }}
+                className="drop-down-nav uppercase hover:cursor-pointer block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-indigo-600 md:p-0 md:dark:hover:text-indigo-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 gdpr
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
