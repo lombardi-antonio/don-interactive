@@ -20,6 +20,8 @@ export default function Navbar() {
   const router = useRouter();
   const [isVisible, setIsVisible] = useState(false);
 
+  document.addEventListener('mousedown', () => {setIsVisible(false)});
+
   return (
     <nav
       className={`${rubik.className} backdrop-blur-xl backdrop-brightness-150 dark:backdrop-brightness-50 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600`}
