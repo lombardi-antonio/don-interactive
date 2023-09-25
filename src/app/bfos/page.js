@@ -131,33 +131,38 @@ export default function Home() {
                 View in Github
               </button>
             </form>
+            <p className="p-10 text-xl">coming soon...</p>
             <form action="">
               <button
                 className="
-                w-1/3
+                  w-1/3
                   scale-100 hover:scale-105 transform
                   transition duration-300"
                 type="submit"
+                disabled
               >
                 <Image
                   src={playStoreButton}
                   height={264}
                   alt="Google Play Store Button"
+                  className="opacity-[0.05]"
                 />
               </button>
             </form>
             <form action="">
               <button
                 className="
-                w-1/3
+                  w-1/3
                   scale-100 hover:scale-105 transform
                   transition duration-300"
                 type="submit"
+                disabled
               >
                 <Image
                   src={appStoreButton}
                   height={264}
                   alt="Apple App Store Button"
+                  className="opacity-[0.05]"
                 />
               </button>
             </form>
