@@ -107,7 +107,7 @@ export default function Home() {
             </p>
             <form action="https://github.com/lombardi-antonio/beats-from-outer-space">
               <button
-                type="button"
+                type="submit"
                 className="text-center text-white hover:text-black
                 scale-100 hover:scale-105 transform
                 transition duration-300 bg-gradient-to-tr
