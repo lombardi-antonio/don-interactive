@@ -76,6 +76,38 @@ export default function Home() {
               Beats form <br /> Outer Space
             </h1>
             <br />
+            <div className="flex flex-row justify-center">
+              <a href="https://play.google.com/store/apps/details?id=org.doninteractive.beatsfromouterspace">
+                <button
+                  className="
+                    px-10
+                    scale-100 hover:scale-105 transform
+                    transition duration-300"
+                  type="submit"
+                >
+                  <Image
+                    src={playStoreButton}
+                    height={264}
+                    alt="Google Play Store Button"
+                  />
+                </button>
+              </a>
+            <a href="https://apps.apple.com/us/app/beats-from-outer-space/id6467766328">
+              <button
+                className="
+                  px-10
+                  scale-100 hover:scale-105 transform
+                  transition duration-300"
+                type="submit"
+              >
+                <Image
+                  src={appStoreButton}
+                  height={264}
+                  alt="Apple App Store Button"
+                />
+              </button>
+            </a>
+            </div>
             <p className="text-md text-left pt-2 pb-4">
               Hello there, Terrarians! I am your mysterious radio host,
               Midnight, and I have a story to share with you. It is the tale of
@@ -129,41 +161,6 @@ export default function Home() {
                   />
                 </svg>
                 View in Github
-              </button>
-            </form>
-            <p className="p-10 text-xl">coming soon...</p>
-            <form action="">
-              <button
-                className="
-                  w-1/3
-                  scale-100 hover:scale-105 transform
-                  transition duration-300"
-                type="submit"
-                disabled
-              >
-                <Image
-                  src={playStoreButton}
-                  height={264}
-                  alt="Google Play Store Button"
-                  className="opacity-[0.05]"
-                />
-              </button>
-            </form>
-            <form action="">
-              <button
-                className="
-                  w-1/3
-                  scale-100 hover:scale-105 transform
-                  transition duration-300"
-                type="submit"
-                disabled
-              >
-                <Image
-                  src={appStoreButton}
-                  height={264}
-                  alt="Apple App Store Button"
-                  className="opacity-[0.05]"
-                />
               </button>
             </form>
           </div>
