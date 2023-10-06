@@ -80,7 +80,7 @@ export default function Home() {
               <a href="https://play.google.com/store/apps/details?id=org.doninteractive.beatsfromouterspace">
                 <button
                   className="
-                    px-10
+                    md:px-10
                     scale-100 hover:scale-105 transform
                     transition duration-300"
                   type="submit"
@@ -95,7 +95,7 @@ export default function Home() {
             <a href="https://apps.apple.com/us/app/beats-from-outer-space/id6467766328">
               <button
                 className="
-                  px-10
+                  px-10 min-width-[256px]
                   scale-100 hover:scale-105 transform
                   transition duration-300"
                 type="submit"
@@ -106,6 +106,7 @@ export default function Home() {
                   alt="Apple App Store Button"
                 />
               </button>
+              <p className="text-xl text-red-800 dark:text-red-300">please deactivate silent mode for the sound!</p>
             </a>
             </div>
             <p className="text-md text-left pt-2 pb-4">
