@@ -27,7 +27,7 @@ export default function Home() {
         <div
           id="three-logo"
           className="
-          opacity-0 transition-opacity ease-in-out duration-[0.8s]
+          animate-fade-in-model transition ease-in-out duration-[0.8s]
           col-start-1 xl:col-start-5 col-span-full
           row-start-1 row-span-full
           h-xl xl:h-full"
