@@ -1,14 +1,10 @@
-"use client";
-
 import Image from "next/image";
 import localFont from "next/font/local";
-import { useEffect } from "react";
 
 import BfosModel from "@/app/bfos/BfosModel";
 import bfos from "/public/beatsFromOuterSpace.png";
 import appStoreButton from "public/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg";
 import playStoreButton from "public/google-play-badge.png";
-import githubButton from "public/github-mark-white.svg";
 
 const monomaniac = localFont({
   src: "../fonts/MonomaniacOne-Regular.ttf",
@@ -21,18 +17,6 @@ const rubik = localFont({
 });
 
 export default function Home() {
-  useEffect(() => {
-    const elements = [
-      document.getElementById("first-card"),
-      document.getElementById("three-logo"),
-    ];
-
-    elements.forEach((element) => {
-      element.classList.remove("-translate-x-96", "opacity-0");
-      element.classList.add("opacity-100");
-    });
-  });
-
   return (
     <main className={`${rubik.className}`}>
       <div className="header grid grid-cols-6 w-full fixed">
@@ -43,7 +27,7 @@ export default function Home() {
         <div
           id="three-logo"
           className="
-          opacity-0 transition-opacity ease-in-out duration-[0.8s]
+          animate-fade-in-model transition ease-in-out duration-[0.8s]
           col-start-1 xl:col-start-5 col-span-full
           row-start-1 row-span-3
           h-xl xl:h-full"
@@ -53,7 +37,7 @@ export default function Home() {
         <div
           id="first-card"
           className="
-          opacity-0 -translate-x-96 transition ease-in-out duration-500
+          animate-fade-in transition ease-in-out duration-500
           col-start-1 col-span-full xl:col-span-4
           row-start-1 md:row-start-1 xl:row-start-1 row-span-2 md:row-span-3
           m-4 xl:m-6
@@ -77,7 +61,7 @@ export default function Home() {
             </h1>
             <br />
             <div className="flex flex-row justify-center">
-              <a href="https://play.google.com/store/apps/details?id=org.doninteractive.beatsfromouterspace">
+              <a href="https://play.google.com/store/apps/details?id=org.doninteractive.beatsfromouterspace" target="_blank" rel="noopener noreferrer">
                 <button
                   className="
                     md:px-10
@@ -92,7 +76,7 @@ export default function Home() {
                   />
                 </button>
               </a>
-            <a href="https://apps.apple.com/us/app/beats-from-outer-space/id6467766328">
+            <a href="https://apps.apple.com/us/app/beats-from-outer-space/id6467766328" target="_blank" rel="noopener noreferrer">
               <button
                 className="
                   px-10 min-width-[256px]
@@ -138,7 +122,7 @@ export default function Home() {
               <br />
               This is Midnight signing off.
             </p>
-            <form action="https://github.com/lombardi-antonio/beats-from-outer-space">
+            <form action="https://github.com/lombardi-antonio/beats-from-outer-space" target="_blank" rel="noopener noreferrer">
               <button
                 type="submit"
                 className="text-center text-white hover:text-black

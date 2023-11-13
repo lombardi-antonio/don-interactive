@@ -1,8 +1,5 @@
-"use client";
-
 import Image from "next/image";
 import localFont from "next/font/local";
-import { useEffect } from "react";
 
 import LogoModel from "@/app/home/LogoModel";
 import bfos from "/public/beatsFromOuterSpace.png";
@@ -19,20 +16,6 @@ const rubik = localFont({
 });
 
 export default function Home() {
-  useEffect(() => {
-    const elements = [
-      document.getElementById("main-card"),
-      document.getElementById("first-card"),
-      document.getElementById("second-card"),
-      document.getElementById("three-logo"),
-    ];
-
-    elements.forEach((element) => {
-      element.classList.remove("-translate-x-96", "opacity-0");
-      element.classList.add("opacity-100");
-    });
-  });
-
   return (
     <main className={rubik.className}>
       <div className="header grid grid-cols-6 w-full fixed">
@@ -54,7 +37,8 @@ export default function Home() {
         <div
           id="main-card"
           className="
-          opacity-0 -translate-x-96 transition ease-in-out duration-500
+          animate-fade-in
+          transition ease-in-out duration-500
           col-start-1 col-span-full xl:col-span-4
           row-start-1 xl:row-start-1 row-span-1
           mx-0 xs:mx-12 xl:mx-6 mt-6
@@ -85,7 +69,8 @@ export default function Home() {
         <div
           id="first-card"
           className="
-          opacity-0 -translate-x-96 transition ease-in-out duration-500
+          animate-fade-in
+          transition ease-in-out duration-500
           col-start-1 col-span-full xl:col-span-2
           row-start-2 md:row-start-2 xl:row-start-2 row-span-1 md:row-span-2
           ml:0 xs:ml-12 xl:ml-6 mr-0 xs:mr-12 xl:mr-0 mb-0 xl:mb-6
@@ -133,7 +118,8 @@ export default function Home() {
         <div
           id="second-card"
           className="
-          opacity-0 -translate-x-96 transition ease-in-out duration-500
+          animate-fade-in
+          transition ease-in-out duration-500
           col-start-1 xl:col-start-3 col-span-full xl:col-span-2
           row-start-3 md:row-start-4 xl:row-start-2 row-span-1 md:row-span-2
           ml:0 xs:ml-12 xl:ml-0 mr-0 xs:mr-12 xl:mr-6 mb-6

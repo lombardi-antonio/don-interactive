@@ -16,8 +16,28 @@ module.exports = {
         '4xl': '1440px',
         'xs': '580px',
         '2xs': '320px',
-      }
-    },
+      },
+      animation: {
+        'fade-in': 'fade-in 0.4s ease-out',
+        'fade-in-model': 'fade-in 2.5s ease-out'
+      },
+      keyframes: {
+        'fade-in': {
+          '0%': {
+            opacity: '0',
+            transform: 'translateX(-100%)',
+          },
+          '70%': {
+            opacity: '0.2',
+            transform: 'translateX(-80%)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateX(0)',
+          },
+        },
+      },
+    }
   },
   plugins: [],
 }
