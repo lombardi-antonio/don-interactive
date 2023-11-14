@@ -1,5 +1,6 @@
 import Image from "next/image";
 import localFont from "next/font/local";
+import { Suspense } from "react";
 
 import LogoModel from "@/app/home/LogoModel";
 import bfos from "/public/beatsFromOuterSpace.png";
