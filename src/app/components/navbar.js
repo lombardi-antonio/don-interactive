@@ -43,7 +43,7 @@ export default function Navbar() {
         <div className="flex md:order-2">
           <button
             type="button"
-            onClick={() => router.push("/bfos")}
+            onClick={() => router.push("/money-penny")}
             className="text-white bg-indigo-600 hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-xs px-4 py-2 text-center mr-3 md:mr-0 hidden md:block dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800"
           >
             what is new?
@@ -99,6 +99,17 @@ export default function Navbar() {
                 className="drop-down-nav uppercase hover:cursor-pointer block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-indigo-600 md:p-0 md:dark:hover:text-indigo-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 bfos
+              </Link>
+            </li>
+            <li>
+            <Link
+                href="/money-penny"
+                onClick={() => {
+                  setIsVisible(false);
+                }}
+                className="drop-down-nav uppercase hover:cursor-pointer block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-indigo-600 md:p-0 md:dark:hover:text-indigo-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+              >
+                money penny
               </Link>
             </li>
             <li>
