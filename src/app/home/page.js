@@ -4,6 +4,7 @@ import { Suspense } from "react";
 
 import LogoModel from "@/app/home/LogoModel";
 import bfos from "/public/beatsFromOuterSpace.png";
+import moneyPenny from "/public/moneyPenny.png";
 import wip from "/public/workInProgress.png";
 
 const monomaniac = localFont({
@@ -133,20 +134,38 @@ export default function Home() {
             <div className="mx-auto mb-10 w-[128px] h-[128px] md:w-[256px] md:h-[256px] rounded-3xl bg-gradient-to-tr from-teal-500 via-indigo-500 to-rose-500 p-2 drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]">
               <div className=" shadow-[0_0_0_1px_rgba(0,0,0,0.25)] dark:shadow-[0_0_0_1px_rgba(255,255,255,0.25)] rounded-2xl backdrop-brightness-50 dark:backdrop-brightness-[0.2] backdrop-blur-2xl">
                 <Image
-                  src={wip}
+                  src={moneyPenny}
                   width={264}
                   height={264}
-                  alt="Work in Progress Icon"
+                  alt="Money Penny (GER)"
                   className="rounded-2xl drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]"
                 />
               </div>
             </div>
             <h1 className="text-lg text-left font-bold uppercase">
-              Work in <br /> progress
+              Money Penny <br /> Finanzbewertung
             </h1>
             <p className="text-md text-left py-4">
-              There will be more to come soon. Stay tuned!
+              Money Penny ist deine persönliche Finanzbewertungs-App, die dir dabei hilft, deine Finanzen intelligent und mühelos zu organisieren.
             </p>
+            <p className="text-md text-left py-4">
+              Money Penny fragt dich nach deinem aktuellen Finanzstatus ab und erstellt dir einen Finanzbericht, der dir hilft, deine Finanzen zu verstehen und zu verbessern.
+            </p>
+            <form action="/money-penny">
+              <input
+                className="
+                  text-lg text-gray-800 dark:text-white hover:text-black
+                  w-1/2 p-2 rounded-3xl
+                  scale-100 hover:scale-105 transform
+                  transition duration-300
+                  bg-gradient-to-tr
+                  from-teal-500 via-indigo-500 to-rose-500
+                  hover:from-teal-300 hover:via-indigo-300 hover:to-rose-300
+                  shadow-[0_0_0_1px_rgba(0,0,0,0.25)]"
+                type="submit"
+                value="more..."
+              />
+            </form>
           </div>
         </div>
       </div>
