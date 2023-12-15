@@ -42,13 +42,13 @@ export default function Home() {
                 <h1 className="text-5xl text-left pt-5 font-bold uppercase">
                   Money Penny
                 </h1>
-                <h2 className="text-4xl text-left pt-5">
+                <h2 className="text-3xl sm:text-4xl text-left pt-5">
                   Deine persönliche
                   <br />
                   Finanzbewertung
                 </h2>
                 <p className="text-md text-left pt-2 pb-4">
-                  Money Penny hilft die bei deinen Finanzen.
+                  Money Penny hilft dir bei deinen Finanzen.
                   Eine Bewertung wie es aktuell mit deinen Finanzen aussieht und wie du dich verbessern kannst.
                 </p>
               </div>
@@ -109,7 +109,7 @@ export default function Home() {
                 />
               </div>
               <div className="col-start-1 col-span-full row-start-3 md:row-start-2 md:col-start-2 md:col-span-1 my-auto md:p-5">
-                <h1 className="text-4xl text-left pt-10">
+                <h1 className="text-3xl sm:text-4xl text-left pt-10">
                   Maßgeschneiderte
                   <br />
                   Beratung
@@ -119,7 +119,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="col-start-1 col-span-full md:col-start-1 md:col-span-1 my-auto md:p-5">
-                <h1 className="text-4xl text-left pt-10">
+                <h1 className="text-3xl sm:text-4xl text-left pt-10">
                   Hilfsbereit bei
                   <br />
                   Finanzfragen
@@ -139,6 +139,16 @@ export default function Home() {
                   alt="Beats from Outer Space Game Icon"
                   className="rounded-2xl"
                 />
+              </div>
+              <div className="col-start-1 col-span-full my-auto md:p-5">
+                <a href="https://www.iubenda.com/privacy-policy/96483223" target="_blank" rel="noopener noreferrer">
+                  <button
+                    type="button"
+                    className="text-white bg-indigo-600 hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-xs px-4 py-2 text-center mr-3 md:mr-0 hidden md:block dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800"
+                  >
+                    Datenschutzerklärung
+                  </button>
+                </a>
               </div>
             </div>
           </div>
