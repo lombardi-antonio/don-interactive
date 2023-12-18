@@ -15,7 +15,7 @@ const Placeholder = () => (
             width={500}
             height={500}
             alt="Beats from Outer Space Game Icon"
-            className="rounded-2xl"
+            className="rounded-2xl h-[250px] md:h-auto w-[200px] md:w-auto"
         />
     </div>
 );

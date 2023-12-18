@@ -31,8 +31,8 @@ export default function Home() {
           className="
           animate-fade-in-model transition ease-in-out duration-[0.8s]
           col-start-1 xl:col-start-5 col-span-full
-          row-start-1 row-span-full
-          h-xl xl:h-full"
+          row-start-2 row-span-1 md:row-start-1 md:row-span-full
+          h-[400px] md:h-auto md:mt-0 xl:h-full"
         >
           <LogoModel />
         </div>
@@ -42,8 +42,9 @@ export default function Home() {
           animate-fade-in
           transition ease-in-out duration-500
           col-start-1 col-span-full xl:col-span-4
-          row-start-1 xl:row-start-1 row-span-1
+          row-start-1 row-span-1
           mx-0 xs:mx-12 xl:mx-6 mt-6
+          justify-self-start
           text-gray-800 dark:text-white text-center
           rounded-3xl  backdrop-brightness-110 dark:backdrop-brightness-110 backdrop-blur-2xl
           shadow-lg shadow-black/60"
@@ -73,9 +74,9 @@ export default function Home() {
           className="
           animate-fade-in
           transition ease-in-out duration-500
-          col-start-1 col-span-full xl:col-span-2
-          row-start-2 md:row-start-2 xl:row-start-2 row-span-1 md:row-span-2
-          ml:0 xs:ml-12 xl:ml-6 mr-0 xs:mr-12 xl:mr-0 mb-0 xl:mb-6
+          col-start-1 col-span-full xl:col-start-3 xl:col-span-2
+          row-start-5 md:row-start-4 xl:row-start-2 row-span-2 md:row-span-2
+          ml:0 xs:ml-12 xl:ml-0 mr-0 xs:mr-12 xl:mr-6 mb-6 xl:mb-6
           text-gray-800 dark:text-white text-center
           rounded-3xl
           backdrop-brightness-110 dark:backdrop-brightness-110 backdrop-blur-2xl
@@ -91,7 +92,7 @@ export default function Home() {
                 className="rounded-2xl"
               />
             </div>
-            <h1 className="text-lg text-left font-bold uppercase">
+            <h1 className="text-lg text-left pt-8 font-bold uppercase">
               Beats form <br /> Outer Space
             </h1>
             <p className="text-md text-left pt-2 pb-4">
@@ -100,7 +101,7 @@ export default function Home() {
               a brave space hero, who pilots the magnificent Vapor Falcon in a
               battle against the body snatching aliens from outer space.
             </p>
-            <form action="/bfos">
+            <form action="/bfos" className="mt-32">
               <input
                 className="
                   text-lg text-gray-800 dark:text-white hover:text-black
@@ -122,9 +123,9 @@ export default function Home() {
           className="
           animate-fade-in
           transition ease-in-out duration-500
-          col-start-1 xl:col-start-3 col-span-full xl:col-span-2
-          row-start-3 md:row-start-4 xl:row-start-2 row-span-1 md:row-span-2
-          ml:0 xs:ml-12 xl:ml-0 mr-0 xs:mr-12 xl:mr-6 mb-6
+          col-start-1 xl:col-start-1 col-span-full xl:col-span-2
+          row-start-3 md:row-start-2 xl:row-start-2 row-span-2 md:row-span-2
+          ml:0 xs:ml-12 xl:ml-6 mr-0 xs:mr-12 xl:mr-0 mb-0
           text-gray-800 dark:text-white text-center
           rounded-3xl 
           backdrop-brightness-110 dark:backdrop-brightness-110 backdrop-blur-2xl
@@ -142,7 +143,7 @@ export default function Home() {
                 />
               </div>
             </div>
-            <h1 className="text-lg text-left font-bold uppercase">
+            <h1 className="text-lg pt-8 text-left font-bold uppercase">
               Money Penny <br /> Finanzbewertung
             </h1>
             <p className="text-md text-left py-4">
@@ -151,7 +152,7 @@ export default function Home() {
             <p className="text-md text-left py-4">
               Money Penny fragt dich nach deinem aktuellen Finanzstatus ab und erstellt dir einen Finanzbericht, der dir hilft, deine Finanzen zu verstehen und zu verbessern.
             </p>
-            <form action="/money-penny">
+            <form action="/money-penny" className="mt-20">
               <input
                 className="
                   text-lg text-gray-800 dark:text-white hover:text-black
