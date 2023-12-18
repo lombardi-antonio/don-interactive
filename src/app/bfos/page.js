@@ -2,6 +2,7 @@ import Image from "next/image";
 import localFont from "next/font/local";
 
 import BfosModel from "@/app/bfos/BfosModel";
+import Card from "@/app/components/vetro/Card";
 import bfos from "/public/beatsFromOuterSpace.png";
 import appStoreButton from "public/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg";
 import playStoreButton from "public/google-play-badge.png";
@@ -35,32 +36,14 @@ export default function Home() {
           <BfosModel />
         </div>
         <div
-          id="first-card"
           className="
-          animate-fade-in transition ease-in-out duration-500
           col-start-1 col-span-full xl:col-span-4
           row-start-1 md:row-start-1 xl:row-start-1 row-span-2 md:row-span-3
           m-4 xl:m-6
-          text-gray-800 dark:text-white text-center
-          rounded-3xl
-          backdrop-brightness-110 dark:backdrop-brightness-110 backdrop-blur-2xl
-          shadow-lg shadow-black/60"
+          "
         >
-          <div className="rounded-3xl shadow-[0_0_0_1px_rgba(0,0,0,0.25)] dark:shadow-[0_0_0_1px_rgba(255,255,255,0.25)] p-6 w-full h-full">
-            <div className="mx-auto mb-10 w-[128px] h-[128px] md:w-[256px] md:h-[256px] rounded-3xl bg-gradient-to-tr from-teal-500 via-indigo-500 to-rose-500 p-2 drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]">
-              <Image
-                src={bfos}
-                width={264}
-                height={264}
-                alt="Beats from Outer Space Game Icon"
-                className="rounded-2xl"
-              />
-            </div>
-            <h1 className="text-xl text-center font-bold uppercase">
-              Beats form <br /> Outer Space
-            </h1>
-            <br />
-            <div className="flex flex-row justify-center">
+          <Card appImageSrc={bfos} header="Beats form Outer Space">
+          <div className="flex flex-row justify-center">
               <a href="https://play.google.com/store/apps/details?id=org.doninteractive.beatsfromouterspace" target="_blank" rel="noopener noreferrer">
                 <button
                   className="
@@ -148,7 +131,7 @@ export default function Home() {
                 View in Github
               </button>
             </form>
-          </div>
+          </Card>
         </div>
       </div>
     </main>
