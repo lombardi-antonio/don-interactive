@@ -105,7 +105,7 @@ export default function Home() {
                   src={screenShot0}
                   width={264}
                   alt="Beats from Outer Space Game Icon"
-                  className="rounded-2xl"
+                  className="rounded-2xl drop-shadow-[6px_6px_10px_rgba(0,0,0,0.5)] dark:drop-shadow-[6px_6px_10px_rgba(255,255,255,0.1)]"
                 />
               </div>
               <div className="col-start-1 col-span-full row-start-3 md:row-start-2 md:col-start-2 md:col-span-1 my-auto md:p-5">
@@ -137,7 +137,7 @@ export default function Home() {
                   src={screenShot1}
                   width={264}
                   alt="Beats from Outer Space Game Icon"
-                  className="rounded-2xl"
+                  className="rounded-2xl drop-shadow-[6px_6px_10px_rgba(0,0,0,0.5)] dark:drop-shadow-[6px_6px_10px_rgba(255,255,255,0.1)]"
                 />
               </div>
               <div className="col-start-1 col-span-full my-auto md:p-5">
