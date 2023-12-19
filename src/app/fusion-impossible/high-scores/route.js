@@ -1,0 +1,46 @@
+import { NextResponse } from "next/server";
+import { sql } from "@vercel/postgres";
+
+export async function GET(request) {
+    const apiKey = request.headers.get("authorization");
+
+    if (!apiKey) {
+        return NextResponse.error(new Error("Missing authorization"));
+    }
+    else if (apiKey !== process.env.FUSION_API_KEY) {
+        return NextResponse.error(new Error("Not authorized"));
+    }
+
+    const { rows } = await sql`
+        SELECT name, score FROM fusionimpossible
+        ORDER BY score DESC
+        LIMIT 10;
+    `;
+
+    return NextResponse.json(rows);
+}
+
+export async function POST(request) {
+    const apiKey = request.headers.get("authorization");
+
+    if (!apiKey) {
+        return NextResponse.error(new Error("Missing authorization"));
+    }
+    else if (apiKey !== process.env.FUSION_API_KEY) {
+        return NextResponse.error(new Error("Not authorized"));
+    }
+
+    const body = await request.json();
+    const { name, score } = body;
+
+    if (!name || !score) {
+        return Response.error(new Error("Missing name or score"));
+    }
+
+    const queryResult = await sql`
+        INSERT INTO fusionimpossible (name, score)
+        VALUES (${name}, ${score});
+    `;
+
+    return NextResponse.json({ message: `${queryResult.rows}: Name - ${name} Score - ${parseInt(score)}`});
+}
