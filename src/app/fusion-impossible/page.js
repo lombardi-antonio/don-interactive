@@ -92,11 +92,17 @@ export default async function FusionImpossible() {
                                 <tbody>
                                     {
                                         highScores.map((entry, index) => (
-                                            <tr key={index} className="bg-opacity-30 bg-gray-300 dark:bg-opacity-30 dark:bg-black dark:text-gray-200">
+                                            <tr
+                                                key={index}
+                                                className={index === 0 ? 'text-[#beb254] dark:text-[#baac43] bg-opacity-30 bg-gray-300 dark:bg-opacity-30 dark:bg-black' : 'dark:text-gray-200 bg-opacity-30 bg-gray-300 dark:bg-opacity-30 dark:bg-black'}
+                                            >
                                                 <th className="px-6 py-4 text-center max-w-[100px]">
                                                     {index + 1}
                                                 </th>
-                                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                <th
+                                                    scope="row"
+                                                    className={index === 0 ? 'px-6 py-4 font-medium whitespace-nowrap text-[#beb254] dark:text-[#baac43]' : 'px-6 py-4 font-medium whitespace-nowrap text-gray-900 dark:text-white'}
+                                                >
                                                     {entry.name}
                                                 </th>
                                                 <th className="px-6 py-4">
