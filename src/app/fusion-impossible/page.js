@@ -10,7 +10,9 @@ const monomaniac = localFont({
 
 async function getTotalEnergy() {
     const queryResult = await sql`
-        SELECT SUM(score) AS total_score FROM fusionimpossible;
+        SELECT SUM(
+            CAST(score AS INTEGER)
+            ) AS total_score FROM fusionimpossible;
     `;
 
     const totalEnergy = queryResult.rows[0].total_score;
@@ -20,9 +22,12 @@ async function getTotalEnergy() {
 
 async function loader() {
     const queryResult = await sql`
-        SELECT name, score FROM fusionimpossible
+        SELECT
+            name,
+            CAST(score AS INTEGER)
+            FROM fusionimpossible
         ORDER BY score DESC
-        LIMIT 50;
+        LIMIT 30;
     `;
 
     const highScores = queryResult.rows;
