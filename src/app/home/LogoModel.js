@@ -6,14 +6,14 @@ import { useState, useEffect } from "react";
 import { Canvas, useLoader, useThree } from "@react-three/fiber";
 import { Environment, OrbitControls } from "@react-three/drei";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import HomeLogo from 'public/donModel.png';
+import HomeLogo from 'public/logo.png';
 
 const Placeholder = () => (
     <div style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <Image
             src={HomeLogo}
-            width={500}
-            height={500}
+            width={800}
+            height={800}
             alt="Beats from Outer Space Game Icon"
             className="rounded-2xl h-[250px] md:h-auto w-[200px] md:w-auto"
         />
@@ -46,7 +46,7 @@ function LogoModel() {
             <Suspense fallback={null}>
                 <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 0, 3.5] }}>
                     <Model />
-                    <Environment preset="city" />
+                    <Environment preset="dawn" />
                     <OrbitControls autoRotate autoRotateSpeed={-1} enableZoom={false} />
                     <Loader />
                 </Canvas>

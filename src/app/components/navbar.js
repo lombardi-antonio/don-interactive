@@ -4,7 +4,7 @@ import {React, useState} from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import localFont from "next/font/local";
-import logo from "/public/don-logo-brut.png";
+import logo from "/public/logo.png";
 import Link from "next/link";
 
 const monomaniac = localFont({
