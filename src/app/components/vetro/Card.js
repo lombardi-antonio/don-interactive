@@ -20,24 +20,24 @@ function Card({appImageSrc, header, subheader, children, textPosition = "center"
      */
     return (
         <div
-          id="main-card"
-          className="
-          max-w-full max-h-full h-full
-          animate-fade-in transition ease-in-out duration-500
-          text-gray-800 dark:text-white text-center
-          rounded-3xl  backdrop-brightness-110 dark:backdrop-brightness-110 backdrop-blur-2xl
-          shadow-lg shadow-black/60"
+            id="main-card"
+            className="
+            max-w-full max-h-full h-full
+            animate-fade-in transition ease-in-out duration-500
+            text-gray-800 dark:text-white text-center
+            rounded-3xl  backdrop-brightness-110 dark:backdrop-brightness-110 backdrop-blur-2xl
+            shadow-lg shadow-black/60"
         >
             <div className="rounded-3xl shadow-[0_0_0_1px_rgba(0,0,0,0.25)] dark:shadow-[0_0_0_1px_rgba(255,255,255,0.25)] p-14 h-full w-full">
                 {appImageSrc &&
                     <div className="mx-auto mb-10 w-[128px] h-[128px] md:w-[256px] md:h-[256px] rounded-3xl bg-gradient-to-tr from-teal-500 via-indigo-500 to-rose-500 p-2 drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]">
-                      <Image
+                        <Image
                         src={appImageSrc}
                         width={264}
                         height={264}
                         alt="Beats from Outer Space Game Icon"
                         className="rounded-2xl"
-                      />
+                        />
                     </div>
                 }
                 <h1 className={`${monomaniac.className} text-${textPosition} text-5xl font-bold drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,0.8)] dark:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]`}>
