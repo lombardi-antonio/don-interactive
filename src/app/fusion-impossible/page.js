@@ -51,8 +51,7 @@ export default async function FusionImpossible() {
     const totalEnergy = await getTotalEnergy();
 
     return (
-        <main>
-            <div className="w-full h-full absolute bg-repeat bg-[url('../../public/grid.png')]"></div>
+        <main className="w-full h-full bg-repeat bg-[url('../../public/grid.png')]">
             <div className="fixed header grid grid-cols-6 w-full blur-[200px]">
                 <div className="terrazzo-main col-span-6 min-h-[512px] w-full animate-[spin_14s_linear_infinite]">
                 <Image src={bgElement00} alt="Terrazzo Background"/>
