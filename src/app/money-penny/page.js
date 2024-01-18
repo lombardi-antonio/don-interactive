@@ -6,6 +6,10 @@ import screenShot0 from "/public/moneyPennyScreenShot00.PNG";
 import screenShot1 from "/public/moneyPennyScreenShot01.PNG";
 import appStoreButton from "public/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg";
 import playStoreButton from "public/google-play-badge.png";
+import bgElement00 from "/public/bgElement00.svg";
+import bgElement01 from "/public/bgElement01.svg";
+import bgElement02 from "/public/bgElement02.svg";
+import bgElement03 from "/public/bgElement03.svg";
 
 const monomaniac = localFont({
   src: "../fonts/MonomaniacOne-Regular.ttf",
@@ -20,10 +24,34 @@ const rubik = localFont({
 export default function Home() {
   return (
     <main className={`${rubik.className}`}>
-      <div className="header grid grid-cols-6 w-full fixed">
-        <div className="terrazzo-main col-span-6 bg-[url('../../public/BrightTerrazzoLess.png')] dark:bg-[url('../../public/TerrazzoLess.png')] min-h-[512px]"></div>
-        <div className="terrazzo-end col-span-6 bg-[url('../../public/BrightTerrazzoLessEnd.png')] dark:bg-[url('../../public/TerrazzoLessEnd.png')] h-[512px]"></div>
+      <div className="w-full h-full absolute bg-repeat bg-[url('../../public/grid.png')]"></div>
+      <div className="header grid grid-cols-6 w-full fixed blur-[200px]">
+        <div className="terrazzo-main col-span-6 min-h-[512px] w-full animate-[spin_14s_linear_infinite]">
+          <Image src={bgElement00} alt="Terrazzo Background"/>
+        </div>
+        <div className="terrazzo-end col-span-6 h-[512px] w-full animate-[spin_18s_linear_infinite]">
+          <Image src={bgElement01} alt="Terrazzo Background" />
+        </div>
+        <div className="terrazzo-main col-span-6 h-0 w-full animate-[spin_10s_linear_infinite]">
+          <Image src={bgElement02} alt="Terrazzo Background"/>
+        </div>
+        <div className="terrazzo-end col-span-6 h-[512px] w-full animate-[spin_12s_linear_infinite]">
+          <Image src={bgElement03} alt="Terrazzo Background"/>
+        </div>
+        <div className="terrazzo-main col-span-6 absolute top-20 right-50 h-0 w-full animate-[spin_16s_linear_infinite]">
+          <Image src={bgElement00} alt="Terrazzo Background" height={500} width={500}/>
+        </div>
+        <div className="terrazzo-end col-span-6 absolute top-20 right-10 h-0 w-full animate-[spin_22s_linear_infinite]">
+          <Image src={bgElement01} alt="Terrazzo Background" height={500} width={500} />
+        </div>
+        <div className="terrazzo-main col-span-6 absolute top-4 left-10 h-0 w-full animate-[spin_12s_linear_infinite]">
+          <Image src={bgElement02} alt="Terrazzo Background" height={500} width={500}/>
+        </div>
+        <div className="terrazzo-end col-span-6 absolute top-50 right-30 h-0 w-full animate-[spin_10s_linear_infinite]">
+          <Image src={bgElement03} alt="Terrazzo Background" height={500} width={500}/>
+        </div>
       </div>
+
       <div className="main-card relative grid grid-cols-1 gap-6 h-full m-auto max-w-4xl">
         <div
           id="first-card"
