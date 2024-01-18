@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1500.07611mm"
+   height="550.07428mm"
+   viewBox="0 0 11.339164 21.942072"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="bgElement00.svg"
+   inkscape:export-filename="bgElement00.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm" />
+  <defs
+     id="defs1">
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect201"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,5.9725431,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+  </defs>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-151.06938,-147.40517)">
+    <path
+       id="path150"
+       style="fill:#21d8c6;fill-opacity:0.996078;stroke-width:12;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.497423"
+       inkscape:transform-center-x="2.2222022"
+       inkscape:transform-center-y="1.6702136"
+       d="m 85.546448,169.73243 c 3.091136,12.98612 6.236932,44.35889 3.417797,45.56862 -10.158117,4.35899 -48.287599,-17.23201 -48.162958,-25.08487 0.04836,-3.04659 25.236262,-19.0307 36.967009,-24.35003 2.959179,-1.34185 7.024296,0.69927 7.778152,3.86628 z"
+       sodipodi:nodetypes="ssss"
+       transform="matrix(-0.44010076,0.12405214,-0.12405214,-0.44010076,193.52119,232.16711)"
+       inkscape:original-d="m 83.420697,164.23448 c 3.371407,1.75594 9.036785,49.56757 5.543548,51.06657 -10.158117,4.35899 -48.287599,-17.23201 -48.162958,-25.08487 0.06033,-3.8008 39.248003,-27.73764 42.61941,-25.9817 z"
+       inkscape:path-effect="#path-effect201" />
+  </g>
+</svg>
