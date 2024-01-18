@@ -25,8 +25,7 @@ const rubik = localFont({
 
 export default function Home() {
   return (
-    <main className={rubik.className}>
-      <div className="w-full h-full absolute bg-repeat bg-[url('../../public/grid.png')]"></div>
+    <main className={`${rubik.className} w-full h-full bg-repeat bg-[url('../../public/grid.png')]`}>
       <div className="header grid grid-cols-6 w-full fixed blur-[200px]">
         <div className="terrazzo-main col-span-6 min-h-[512px] w-full animate-[spin_14s_linear_infinite]">
           <Image src={bgElement00} alt="Terrazzo Background"/>

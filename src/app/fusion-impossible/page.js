@@ -6,7 +6,7 @@ import React from "react";
 import localFont from "next/font/local";
 
 import Card from "@/app/components/vetro/Card";
-import fusionImpossible from "/public/FusionImpossible.png";
+import fusionImpossible from "/public/fusionImpossible.png";
 import appStoreButton from "public/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg";
 import playStoreButton from "public/google-play-badge.png";
 import bgElement00 from "/public/bgElement00.svg";
@@ -51,8 +51,7 @@ export default async function FusionImpossible() {
     const totalEnergy = await getTotalEnergy();
 
     return (
-        <main>
-            <div className="w-full h-full absolute bg-repeat bg-[url('../../public/grid.png')]"></div>
+        <main className="w-full h-full bg-repeat bg-[url('../../public/grid.png')]">
             <div className="fixed header grid grid-cols-6 w-full blur-[200px]">
                 <div className="terrazzo-main col-span-6 min-h-[512px] w-full animate-[spin_14s_linear_infinite]">
                 <Image src={bgElement00} alt="Terrazzo Background"/>
