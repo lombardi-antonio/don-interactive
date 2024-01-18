@@ -23,7 +23,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`${rubik.className} backdrop-blur-xl backdrop-brightness-150 dark:backdrop-brightness-50 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600`}
+      className={`${rubik.className} backdrop-blur-xl backdrop-brightness-[1.4] dark:backdrop-brightness-50 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600`}
     >
       <div className="max-w-screen-xl h-12 backdrop-blur-xl flex flex-wrap items-center justify-between mx-auto p-2">
         <a onClick={() => router.push("/")} className="flex items-center hover:cursor-pointer">
@@ -35,9 +35,14 @@ export default function Navbar() {
             alt="DON interactive Logo"
           />
           <span
-            className={`${monomaniac.className} self-center text-gray-800 text-2xl font-bold drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,0.8)] dark:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] whitespace-nowrap dark:text-white`}
+            className={`${monomaniac.className} antialiased tracking-wider self-center text-gray-700 text-2xl font-semibold drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,0.8)] dark:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] whitespace-nowrap dark:text-gray-300`}
           >
-            DO∩ アントニオ
+            DO∩
+          </span>
+          <span
+            className={`${monomaniac.className} antialiased self-center text-gray-700 text-2xl font-semibold drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,0.8)] dark:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] whitespace-nowrap dark:text-gray-300`}
+          >
+            &nbsp;アントニオ
           </span>
         </a>
         <div className="flex md:order-2">

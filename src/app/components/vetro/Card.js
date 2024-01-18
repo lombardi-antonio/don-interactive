@@ -6,7 +6,7 @@ const monomaniac = localFont({
     fontFamily: "Monomaniac",
 });
 
-function Card({appImageSrc, header, subheader, children, textPosition = "center", linkButtonUrl}) {
+function Card({appImageSrc, hasImageHalo = true, header, subheader, children, textPosition = "center", linkButtonUrl}) {
     /**
      * Vetro Card Component - A card component that can display a image, header, subheader, and text.
      * Optional buttons can be added to the card.
@@ -30,7 +30,10 @@ function Card({appImageSrc, header, subheader, children, textPosition = "center"
         >
             <div className="rounded-3xl shadow-[0_0_0_1px_rgba(0,0,0,0.25)] dark:shadow-[0_0_0_1px_rgba(255,255,255,0.25)] p-14 h-full w-full">
                 {appImageSrc &&
-                    <div className="mx-auto mb-10 w-[128px] h-[128px] md:w-[256px] md:h-[256px] rounded-3xl bg-gradient-to-tr from-teal-500 via-indigo-500 to-rose-500 p-2 drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]">
+                    <div className={
+                        hasImageHalo ? 'mx-auto mb-10 w-[128px] h-[128px] md:w-[256px] md:h-[256px] rounded-3xl bg-gradient-to-tr from-teal-500 via-indigo-500 to-rose-500 p-2 drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]' :
+                        'mx-auto mb-10 w-[128px] h-[128px] md:w-[256px] md:h-[256px]'
+                    }>
                         <Image
                         src={appImageSrc}
                         width={264}

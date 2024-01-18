@@ -71,7 +71,7 @@ export default function Home() {
           "
         >
           <Card appImageSrc={bfos} header="Beats form Outer Space">
-          <div className="flex flex-row justify-center">
+            <div className="flex flex-row justify-center">
               <a href="https://play.google.com/store/apps/details?id=org.doninteractive.beatsfromouterspace" target="_blank" rel="noopener noreferrer">
                 <button
                   className="
@@ -87,22 +87,22 @@ export default function Home() {
                   />
                 </button>
               </a>
-            <a href="https://apps.apple.com/us/app/beats-from-outer-space/id6467766328" target="_blank" rel="noopener noreferrer">
-              <button
-                className="
-                  px-10 min-width-[256px]
-                  scale-100 hover:scale-105 transform
-                  transition duration-300"
-                type="submit"
-              >
-                <Image
-                  src={appStoreButton}
-                  height={264}
-                  alt="Apple App Store Button"
-                />
-              </button>
-              <p className="text-xl text-red-800 dark:text-red-300">please deactivate silent mode for the sound!</p>
-            </a>
+              <a href="https://apps.apple.com/us/app/beats-from-outer-space/id6467766328" target="_blank" rel="noopener noreferrer">
+                <button
+                  className="
+                    px-10 min-width-[256px]
+                    scale-100 hover:scale-105 transform
+                    transition duration-300"
+                  type="submit"
+                >
+                  <Image
+                    src={appStoreButton}
+                    height={264}
+                    alt="Apple App Store Button"
+                  />
+                </button>
+                <p className="text-xl text-red-800 dark:text-red-300">please deactivate silent mode for the sound!</p>
+              </a>
             </div>
             <p className="text-md text-left pt-2 pb-4">
               Hello there, Terrarians! I am your mysterious radio host,

@@ -12,7 +12,10 @@ export async function GET(request) {
     }
 
     const { rows } = await sql`
-        SELECT name, score FROM fusionimpossible
+        SELECT
+            CAST(score AS INTEGER),
+            name,
+            score FROM fusionimpossible
         ORDER BY score DESC
         LIMIT 10;
     `;
