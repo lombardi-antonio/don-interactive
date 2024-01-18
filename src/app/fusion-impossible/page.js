@@ -6,7 +6,7 @@ import React from "react";
 import localFont from "next/font/local";
 
 import Card from "@/app/components/vetro/Card";
-import fusionImpossible from "/public/FusionImpossible.png";
+import fusionImpossible from "/public/fusionImpossible.png";
 import appStoreButton from "public/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg";
 import playStoreButton from "public/google-play-badge.png";
 import bgElement00 from "/public/bgElement00.svg";
