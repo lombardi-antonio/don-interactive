@@ -35,6 +35,6 @@ export async function GET(request) {
         )
     `;
 
-    return NextResponse.json(rows);
+    return NextResponse.json(rows, { status: 200 });
 }
 

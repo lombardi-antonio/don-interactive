@@ -20,7 +20,7 @@ export async function GET(request) {
         LIMIT 10;
     `;
 
-    return NextResponse.json(rows);
+    return NextResponse.json(rows, { status: 200 });
 }
 
 export async function POST(request) {
@@ -45,5 +45,5 @@ export async function POST(request) {
         VALUES (${name}, ${score});
     `;
 
-    return NextResponse.json({ message: `${queryResult.rows}: Name - ${name} Score - ${parseInt(score)}`});
+    return NextResponse.json({ message: `${queryResult.rows}: Name - ${name} Score - ${parseInt(score)}`}, {status: 200});
 }
