@@ -1,15 +1,17 @@
+export const dynamic = 'force-dynamic'
+
 import { NextResponse } from "next/server";
 import { sql } from "@vercel/postgres";
 
 export async function GET(request) {
-    const apiKey = request.headers.get("authorization");
+    // const apiKey = request.headers.get("authorization");
 
-    if (!apiKey) {
-        return NextResponse.error(new Error("Missing authorization"));
-    }
-    else if (apiKey !== process.env.FUSION_API_KEY) {
-        return NextResponse.error(new Error("Not authorized"));
-    }
+    // if (!apiKey) {
+    //     return NextResponse.error(new Error("Missing authorization"));
+    // }
+    // else if (apiKey !== process.env.FUSION_API_KEY) {
+    //     return NextResponse.error(new Error("Not authorized"));
+    // }
 
     const { rows } = await sql`
         SELECT
@@ -20,7 +22,7 @@ export async function GET(request) {
         LIMIT 10;
     `;
 
-    return NextResponse.json(rows, { status: 200 });
+    return Response.json(rows, { status: 200 });
 }
 
 export async function POST(request) {
