@@ -4,14 +4,13 @@ import { NextResponse } from "next/server";
 import { sql } from "@vercel/postgres";
 
 export async function GET(request) {
-    // const apiKey = request.headers.get("authorization");
-
-    // if (!apiKey) {
-    //     return NextResponse.error(new Error("Missing authorization"));
-    // }
-    // else if (apiKey !== process.env.FUSION_API_KEY) {
-    //     return NextResponse.error(new Error("Not authorized"));
-    // }
+    const apiKey = request.headers.get("authorization");
+    if (!apiKey) {
+        return NextResponse.error(new Error("Missing authorization"));
+    }
+    else if (apiKey !== process.env.FUSION_API_KEY) {
+        return NextResponse.error(new Error("Not authorized"));
+    }
 
     const { rows } = await sql`
         SELECT
