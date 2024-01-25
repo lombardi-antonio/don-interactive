@@ -1,0 +1,15 @@
+{
+    "gdpr": {
+        "privacyPolicy": "Datenschutzerklärung",
+        "fromDate": "Stand: 15. September 2023",
+        "tableOfContents": "Inhaltsübersicht",
+        "responsiblePerson": "Verantwortlicher",
+        "overviewOfProcessing": "Übersicht der Verarbeitungen",
+        "relevantLegalBasis": "Maßgebliche Rechtsgrundlagen",
+        "eMailAdress": "E-Mail-Adresse:",
+        "relevantLegalBasisContent":"Maßgebliche Rechtsgrundlagen nach der DSGVO: Im Folgenden erhalten Sie eine Übersicht der Rechtsgrundlagen der DSGVO, auf deren Basis wir personenbezogene Daten verarbeiten. Bitte nehmen Sie zur Kenntnis, dass neben den Regelungen der DSGVO nationale Datenschutzvorgaben in Ihrem bzw. unserem Wohn- oder Sitzland gelten können. Sollten ferner im Einzelfall speziellere Rechtsgrundlagen maßgeblich sein, teilen wir Ihnen diese in der Datenschutzerklärung mit.",
+        "personalInformationProcessing":"Wir sammeln und/oder verarbeiten keine persönlichen Daten über das Spiel Beats from Outer Space.",
+        "sensitivePersonalInformationProcessing":"Wir sammeln und/oder verarbeiten keine sensiblen persönlichen Daten über das Spiel Beats from Outer Space",
+        "thirdPartiesInformationProcessing":"Wir sammeln und/oder verarbeiten keine Informationen von Dritten über das Spiel Beats from Outer Space."
+    }
+}

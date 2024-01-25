@@ -1,6 +1,24 @@
+"use client";
+
+import React from "react";
+import LanguageSwitcher from "@/app/components/languageSwitcher"
+import { useRouter } from 'next/navigation';
+import en from '@/translations/en.json';
+import de from '@/translations/de.json';
+
+const useTranslation = () => {
+  const { locale } = useRouter();
+  const t = locale === 'de' ? de : en;
+  return { t };
+};
+
 export default function Gdpr() {
+  const { t } = useTranslation();
+
   return (
     <main className="robot text-black dark:text-white max-w-[1080px] min-w-[512px] px-4 py-10 mx-auto pt-4">
+      <LanguageSwitcher />
+      <h1>{t.privacyPolicy}</h1>
       <h1 className="text-4xl pb-8">Datenschutzerklärung</h1>
       <p className="text-sm pb-8 opacity-60">Stand: 15. September 2023</p>
       <h2 className="text-2xl font-bold pb-4">Inhaltsübersicht</h2>

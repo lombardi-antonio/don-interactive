@@ -1,0 +1,15 @@
+{
+    "gdpr": {
+        "privacyPolicy": "Provacy Policy",
+        "fromDate": "Last updated September 15, 2023",
+        "tableOfContents": "Table of contents",
+        "responsiblePerson": "Responsible person",
+        "overviewOfProcessing": "Overview of processing",
+        "relevantLegalBasis": "Relevant legal basis",
+        "eMailAdress": "E-Mail address:",
+        "relevantLegalBasisContent":"Relevant legal bases under the GDPR: Below you will find an overview of the legal bases of the GDPR on the basis of which we process personal data. Please note that in addition to the provisions of the GDPR, national data protection regulations may apply in your or our country of residence or domicile. Should more specific legal bases also apply in individual cases, we will inform you of these in the privacy policy.",
+        "personalInformationProcessing":"We do not collect and/or process any personal information through the Beats from Outer Space game.",
+        "sensitivePersonalInformationProcessing":"We do not collect and/or process any sensitive personal information through the Beats from Outer Space game.",
+        "thirdPartiesInformationProcessing":"We do not collect, revieve and/or process any information from thrid parties through the Beats from Outer Space game."
+    }
+}
