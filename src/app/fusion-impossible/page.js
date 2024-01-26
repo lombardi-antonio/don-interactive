@@ -177,13 +177,13 @@ export default async function FusionImpossible() {
                                 <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                                     <thead className="text-xs text-gray-700 uppercase bg-transparent dark:bg-opacity-30 dark:bg-gray-200 dark:text-gray-200">
                                         <tr>
-                                            <th scope="col" className="px-6 py-3 w-10">
+                                            <th scope="col" className="p-2 pl-4 sm:px-6 sm:py-3 w-10">
                                                 Place
                                             </th>
-                                            <th scope="col" className="px-6 py-3">
+                                            <th scope="col" className="p-2 sm:px-6 sm:py-3">
                                                 Name
                                             </th>
-                                            <th scope="col" className="px-6 py-3">
+                                            <th scope="col" className="p-2 sm:px-6 sm:py-3">
                                                 Energy
                                             </th>
                                         </tr>
@@ -194,24 +194,24 @@ export default async function FusionImpossible() {
                                                 <tr
                                                     key={index}
                                                     className={
-                                                        index === 0 ? 'text-2xl text-[#a09540] dark:text-[#baac43] bg-opacity-50 bg-gray-300 dark:bg-opacity-50 dark:bg-black' :
-                                                        index === 1 ? 'text-xl text-[#8b8996] dark:text-[#a2a0ad] bg-opacity-50 bg-gray-300 dark:bg-opacity-50 dark:bg-black' :
-                                                        'dark:text-gray-200 bg-opacity-50 bg-gray-300 dark:bg-opacity-50 dark:bg-black'
+                                                        index === 0 ? 'text-md sm:text-2xl text-[#a09540] dark:text-[#baac43] bg-opacity-50 bg-gray-300 dark:bg-opacity-50 dark:bg-black' :
+                                                        index === 1 ? 'text-sm sm:text-xl text-[#8b8996] dark:text-[#a2a0ad] bg-opacity-50 bg-gray-300 dark:bg-opacity-50 dark:bg-black' :
+                                                        'text-xs sm:text-lg dark:text-gray-200 bg-opacity-50 bg-gray-300 dark:bg-opacity-50 dark:bg-black'
                                                     }
                                                 >
-                                                    <th className="px-6 py-4 text-center max-w-[100px]">
+                                                    <th className="p-2 sm:px-6 sm:py-3 text-center max-w-[100px]">
                                                         {index + 1}
                                                     </th>
                                                     <th
                                                         scope="row"
                                                         className={
-                                                            index === 0 ? 'text-2xl px-6 py-4 font-medium whitespace-nowrap text-[#a09540] dark:text-[#baac43]' :
-                                                            index === 1 ? 'text-xl px-6 py-4 font-medium whitespace-nowrap text-[#8b8996] dark:text-[#a2a0ad]' :
-                                                            'px-6 py-4 font-medium whitespace-nowrap text-gray-900 dark:text-white'}
+                                                            index === 0 ? 'text-lg sm:text-2xl p-2 sm:px-6 sm:py-3 font-medium whitespace-nowrap text-[#a09540] dark:text-[#baac43]' :
+                                                            index === 1 ? 'text-sm sm:text-xl p-2 sm:px-6 sm:py-3 font-medium whitespace-nowrap text-[#8b8996] dark:text-[#a2a0ad]' :
+                                                            'text-xs sm:text-lg p-2 sm:px-6 sm:py-3 font-medium whitespace-nowrap text-gray-900 dark:text-white'}
                                                     >
                                                         {entry.name}
                                                     </th>
-                                                    <th className="px-6 py-4">
+                                                    <th className="p-2 sm:px-6 sm:py-3">
                                                         {entry.score}
                                                     </th>
                                                 </tr>
@@ -220,9 +220,9 @@ export default async function FusionImpossible() {
                                     </tbody>
                                     <tfoot>
                                         <tr className="font-semibold text-gray-900 dark:text-white">
-                                            <th scope="row" className="px-6 py-3 text-base max-w-[100px]"></th>
-                                            <th scope="row" className="px-6 py-3 text-base">Total Energy Produced</th>
-                                            <th className="px-6 py-3">{totalEnergy}</th>
+                                            <th scope="row" className="p-2 sm:px-6 sm:py-3 text-base max-w-[100px]"></th>
+                                            <th scope="row" className="p-2 sm:px-6 sm:py-3 text-base">Total Energy Produced</th>
+                                            <th className="p2 sm:px-6 sm:py-3">{totalEnergy}</th>
                                         </tr>
                                     </tfoot>
                                 </table>
