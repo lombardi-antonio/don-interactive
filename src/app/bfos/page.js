@@ -71,7 +71,7 @@ export default function Home() {
             "
           >
             <Card appImageSrc={bfos} header="Beats form Outer Space">
-              <div className="flex flex-row justify-center">
+              <div className="flex flex-row space-x-2 justify-center">
                 <a href="https://play.google.com/store/apps/details?id=org.doninteractive.beatsfromouterspace" target="_blank" rel="noopener noreferrer">
                   <button
                     className="
@@ -90,9 +90,9 @@ export default function Home() {
                 <a href="https://apps.apple.com/us/app/beats-from-outer-space/id6467766328" target="_blank" rel="noopener noreferrer">
                   <button
                     className="
-                      px-10 min-width-[256px]
-                      scale-100 hover:scale-105 transform
-                      transition duration-300"
+                    md:px-10
+                    scale-100 hover:scale-105 transform
+                    transition duration-300"
                     type="submit"
                   >
                     <Image
@@ -101,9 +101,9 @@ export default function Home() {
                       alt="Apple App Store Button"
                     />
                   </button>
-                  <p className="text-xl text-red-800 dark:text-red-300">please deactivate silent mode for the sound!</p>
                 </a>
               </div>
+              <p className="text-md text-red-800 dark:text-red-300 py-4">please deactivate silent mode for the sound!</p>
               <p className="text-md text-left pt-2 pb-4">
                 Hello there, Terrarians! I am your mysterious radio host,
                 Midnight, and I have a story to share with you. It is the tale of
@@ -160,13 +160,13 @@ export default function Home() {
                 </button>
               </form>
               <a href="/bfos/en/gdpr" target="_blank" rel="noopener noreferrer">
-                    <button
-                      type="button"
-                      className="text-white bg-indigo-600 hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-xs px-4 py-2 text-center mr-3 md:mr-0 hidden md:block dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800"
-                    >
-                      General Data Protection Regulation (GDPR)
-                    </button>
-                  </a>
+                <button
+                  type="button"
+                  className="text-white bg-indigo-600 hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-xs px-4 py-2 text-center mr-3 md:mr-0 hidden md:block dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800"
+                >
+                  General Data Protection Regulation (GDPR)
+                </button>
+              </a>
             </Card>
           </div>
         </div>
