@@ -1,11 +1,9 @@
 import Image from "next/image";
 import localFont from "next/font/local";
-import { Suspense } from "react";
 
 import LogoModel from "@/app/home/LogoModel";
 import bfos from "/public/beatsFromOuterSpace.png";
 import moneyPenny from "/public/moneyPenny.png";
-import wip from "/public/workInProgress.png";
 import Card from "../components/vetro/Card";
 import githubGlyph from "/public/githubMarkWhite.svg";
 import redditGlyph from "/public/redditGlyph.svg";
@@ -78,10 +76,10 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="main-card relative mx-auto grid h-full max-w-full auto-cols-fr auto-rows-fr grid-cols-7 grid-rows-3 gap-6 lg:max-w-[920px] xl:max-w-[2160px]">
+        <div className="main-card relative m-auto grid h-full h-full auto-cols-fr auto-rows-fr grid-cols-7 grid-rows-3 gap-6 px-4 lg:max-w-[920px] xl:max-w-[2160px]">
           <div
             id="three-logo"
-            className="animate-fade-in-model col-span-full col-start-1 row-span-1 row-start-2 h-[400px] transition duration-[0.8s] ease-in-out md:row-span-full md:row-start-1 md:mt-0 md:h-auto xl:col-start-5 xl:h-full"
+            className="animate-fade-in-model col-span-full col-start-1 row-span-1 row-start-2 my-auto h-[400px] transition duration-[0.8s] ease-in-out md:row-span-full md:row-start-1 md:mt-0 md:h-auto xl:col-start-5 xl:h-full"
           >
             <LogoModel />
           </div>
@@ -158,7 +156,7 @@ export default function Home() {
               </div>
             </Card>
           </div>
-          <div className="ml:0 xs:ml-12 xs:mr-12 col-span-full col-start-1 row-span-2 row-start-5 mb-6 mr-0 md:row-span-2 md:row-start-4 xl:col-span-2 xl:col-start-3 xl:row-start-2 xl:mb-0 xl:ml-0 xl:mr-6">
+          <div className="ml:0 xs:ml-12 xs:mr-12 col-span-full col-start-1 row-span-1 row-start-4 mb-6 mr-0 md:row-span-2 md:row-start-4 xl:col-span-2 xl:col-start-3 xl:row-start-2 xl:mb-0 xl:ml-0 xl:mr-6">
             <Card
               appImageSrc={bfos}
               header="Beats from Outer Space"
@@ -171,7 +169,7 @@ export default function Home() {
               battle against the body snatching aliens from outer space.
             </Card>
           </div>
-          <div className="ml:0 xs:ml-12 xs:mr-12 col-span-full col-start-1 row-span-2 row-start-3 mb-0 mr-0 md:row-span-2 md:row-start-2 xl:col-span-2 xl:col-start-1 xl:row-start-2 xl:ml-6 xl:mr-0">
+          <div className="ml:0 xs:ml-12 xs:mr-12 col-span-full col-start-1 row-span-1 row-start-3 mb-0 mr-0 md:row-span-2 md:row-start-2 xl:col-span-2 xl:col-start-1 xl:row-start-2 xl:ml-6 xl:mr-0">
             <Card
               appImageSrc={moneyPenny}
               header="Money Penny"
