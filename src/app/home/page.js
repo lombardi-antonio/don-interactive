@@ -110,7 +110,7 @@ export default function Home() {
                   key={index}
                   src={image}
                   alt="DON Interactive Logo"
-                  className={`'my-auto h-full md:h-[50%] 2xl:h-[70%] object-cover transition duration-300 ease-in-out' ${currentImage === index ? "block" : "hidden"}`}
+                  className={`'my-auto h-[70%] md:h-[50%] 2xl:h-[70%] object-cover transition duration-300 ease-in-out' ${currentImage === index ? "block" : "hidden"}`}
                 />
               ))}
             </div>
