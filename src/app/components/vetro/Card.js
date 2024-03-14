@@ -1,5 +1,6 @@
 import Image from "next/image";
 import localFont from "next/font/local";
+import styles from "./Card.module.css";
 
 const monomaniac = localFont({
   src: "../../fonts/MonomaniacOne-Regular.ttf",
@@ -29,11 +30,14 @@ function Card({
   return (
     <div
       id="main-card"
-      className="
-        animate-fade-in h-full max-h-full max-w-full rounded-3xl text-center text-gray-800 shadow-lg shadow-black/60 backdrop-blur-2xl backdrop-brightness-110  transition duration-500 ease-in-out dark:text-white dark:backdrop-brightness-110
-      "
+      className={`${styles.gloweffect} relative animate-fade-in max-h-full max-w-full rounded-3xl text-center text-gray-800 shadow-lg shadow-black/60 backdrop-blur-2xl backdrop-brightness-110 transition duration-500 ease-in-out dark:text-white dark:backdrop-brightness-110
+      `}
     >
-      <div className="h-full w-full rounded-3xl px-6 py-14 shadow-[0_0_0_1px_rgba(0,0,0,0.25)] md:px-12 dark:shadow-[0_0_0_1px_rgba(255,255,255,0.25)]">
+      <svg className={styles.glowcontainer}>
+        <rect rx="1.5rem" strokeLinecap="round" pathLength={100} className={`${styles.glowblur} fill-transparent stroke-black stroke-[5px]`}></rect>
+        <rect rx="1.5rem" strokeLinecap="round" pathLength={100} className={`${styles.glowline} fill-transparent stroke-black stroke-[5px]`}></rect>
+      </svg>
+      <div className="h-full w-full rounded-3xl px-6 py-14 md:px-12 shadow-[0_0_0_1px_rgba(0,0,0,0.25)] dark:shadow-[0_0_0_1px_rgba(255,255,255,0.25)]">
         {appImageSrc && (
           <div
             className={
