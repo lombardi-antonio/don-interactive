@@ -34,8 +34,11 @@ function Card({
       `}
     >
       <svg className={styles.glowcontainer}>
-        <rect rx="1.5rem" strokeLinecap="round" pathLength={100} className={`${styles.glowblur} fill-transparent stroke-black stroke-[5px]`}></rect>
-        <rect rx="1.5rem" strokeLinecap="round" pathLength={100} className={`${styles.glowline} fill-transparent stroke-black stroke-[5px]`}></rect>
+        <filter id="blur">
+          <feGaussianBlur stdDeviation="20" />
+        </filter>
+        <rect rx="24px" filter="url(#blur)" strokeLinecap="round" pathLength={100} className={styles.glowblur}></rect>
+        <rect rx="24px" strokeLinecap="round" pathLength={100} className={styles.glowline}></rect>
       </svg>
       <div className="h-full w-full rounded-3xl px-6 py-14 md:px-12 shadow-[0_0_0_1px_rgba(0,0,0,0.25)] dark:shadow-[0_0_0_1px_rgba(255,255,255,0.25)]">
         {appImageSrc && (

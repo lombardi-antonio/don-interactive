@@ -4,7 +4,7 @@
     --glow-line-length: 35px;
     --glow-blur-color: #fff;
     --glow-blur-width: 20px;
-    --contianer-offset: 100px;
+    --contianer-offset: 60px;
     --animation-speed: 1.4s;
 }
 
@@ -20,6 +20,7 @@
 .glowblur, .glowline {
     width: calc(100% - var(--contianer-offset));
     height: calc(100% - var(--contianer-offset));
+    fill-opacity: 0;
     x: calc(var(--contianer-offset) / 2);
     y: calc(var(--contianer-offset) / 2);
     stroke-dasharray:
@@ -35,7 +36,6 @@
 .glowblur {
     stroke: var(--glow-blur-color);
     stroke-width: var(--glow-blur-width);
-    filter: blur(20px);
 }
 
 .gloweffect:is(:hover, :focus) :is(.glowline, .glowblur) {
