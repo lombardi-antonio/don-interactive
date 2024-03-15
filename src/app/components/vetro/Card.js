@@ -85,7 +85,7 @@ function Card({
                             text-gray-800 shadow-[0_0_0_1px_rgba(0,0,0,0.25)]
                             transition
                             duration-300 hover:scale-105 hover:from-teal-300
-                            hover:via-indigo-300 hover:to-rose-300 hover:text-black
+                            hover:via-indigo-300 hover:to-rose-300
                             dark:text-white"
               type="submit"
               value="more..."

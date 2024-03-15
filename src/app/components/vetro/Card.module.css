@@ -4,7 +4,7 @@
     --glow-line-length: 35px;
     --glow-blur-color: #fff;
     --glow-blur-width: 20px;
-    --contianer-offset: 60px;
+    --contianer-offset: 100px;
     --animation-speed: 1.4s;
 }
 
@@ -40,12 +40,14 @@
 
 .gloweffect:is(:hover, :focus) :is(.glowline, .glowblur) {
     stroke-dashoffset: -60px;
+    will-change: stroke-dashoffset, transition;
     transition:
         stroke-dashoffset
         var(--animation-speed);
 }
 
 .gloweffect:is(:hover, :focus) .glowcontainer {
+    will-change: opacity;
     animation: glow-visibility var(--animation-speed);
 }
 
