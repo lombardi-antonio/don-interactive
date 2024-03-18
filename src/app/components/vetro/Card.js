@@ -35,7 +35,7 @@ function Card({
     >
       <svg className={styles.glowcontainer}>
         <filter id="blur">
-          <feGaussianBlur stdDeviation="20" />
+          <feGaussianBlur stdDeviation="5" />
         </filter>
         <rect rx="24px" filter="url(#blur)" strokeLinecap="round" pathLength={100} className={styles.glowblur}></rect>
         <rect rx="24px" strokeLinecap="round" pathLength={100} className={styles.glowline}></rect>

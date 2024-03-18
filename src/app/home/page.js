@@ -4,7 +4,6 @@ import Image from "next/image";
 import localFont from "next/font/local";
 import { useEffect, useState } from "react";
 
-import LogoModel from "@/app/home/LogoModel";
 import bfos from "/public/beatsFromOuterSpace.png";
 import moneyPenny from "/public/moneyPenny.png";
 import Card from "../components/vetro/Card";
@@ -45,10 +44,7 @@ export default function Home() {
   return (
     <main>
       <div
-        className={`absolute h-auto min-h-screen w-full bg-repeat`}
-        style={{
-          background: `linear-gradient(0deg, rgba(0,0,0,.9), rgba(0,0,0,.9)),url(${grainy.src})`,
-        }}
+        className={`absolute h-auto min-h-screen w-full bg-repeat bg-[linear-gradient(0deg, rgba(255,255,255,.9), rgba(255,255,255,.9)),url(${grainy.src})] dark:bg-[linear-gradient(0deg, rgba(0,0,0,.9), rgba(0,0,0,.9)),url(${grainy.src})]`}
       >
         <div
           className={`h-auto min-h-screen bg-[url('../../public/grid.png')] bg-repeat`}
@@ -103,8 +99,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="main-card relative m-auto grid h-full auto-cols-fr auto-rows-fr grid-cols-7 grid-rows-3 gap-6 px-4 lg:max-w-[920px] xl:max-w-[2160px]">
-            <div className="col-span-full col-start-1 row-span-1 row-start-2 md:row-span-full md:row-start-1 xl:col-start-5 xl:h-full mx-auto">
+          <div className="main-card relative m-auto grid h-full auto-cols-fr auto-rows-fr grid-cols-7 gap-6 px-4 lg:max-w-[920px] xl:max-w-[2160px]">
+            <div className="col-span-full col-start-1 row-span-1 row-start-2 md:row-span-3 md:row-start-1 xl:col-start-5 xl:h-full mx-auto">
               {logoAnimated.map((image, index) => (
                 <Image priority={true}
                   key={index}
@@ -135,7 +131,7 @@ export default function Home() {
                   >
                     <button
                       type="submit"
-                      className="mb-2 mr-2 inline-flex scale-100 transform items-center rounded-full bg-gradient-to-tr from-teal-500 via-indigo-500 to-rose-500 px-5 py-2.5 text-center text-sm font-medium text-white transition duration-300 hover:scale-105 hover:from-teal-300 hover:via-indigo-300 hover:to-rose-300 hover:text-black"
+                      className="mb-2 mr-2 inline-flex scale-100 transform items-center rounded-full bg-gradient-to-tr from-teal-500 via-indigo-500 to-rose-500 px-5 py-2.5 text-center text-sm font-medium text-white transition duration-300 hover:scale-105 hover:from-teal-300 hover:via-indigo-300 hover:to-rose-300"
                     >
                       <Image priority={true}
                         src={instagramGlyph}
@@ -154,7 +150,7 @@ export default function Home() {
                   >
                     <button
                       type="submit"
-                      className="mb-2 mr-2 inline-flex scale-100 transform items-center rounded-full bg-gradient-to-tr from-teal-500 via-indigo-500 to-rose-500 px-5 py-2.5 text-center text-sm font-medium text-white transition duration-300 hover:scale-105 hover:from-teal-300 hover:via-indigo-300 hover:to-rose-300 hover:text-black"
+                      className="mb-2 mr-2 inline-flex scale-100 transform items-center rounded-full bg-gradient-to-tr from-teal-500 via-indigo-500 to-rose-500 px-5 py-2.5 text-center text-sm font-medium text-white transition duration-300 hover:scale-105 hover:from-teal-300 hover:via-indigo-300 hover:to-rose-300"
                     >
                       <Image priority={true}
                         src={githubGlyph}
@@ -173,7 +169,7 @@ export default function Home() {
                   >
                     <button
                       type="submit"
-                      className="mb-2 mr-2 inline-flex scale-100 transform items-center rounded-full bg-gradient-to-tr from-teal-500 via-indigo-500 to-rose-500 px-5 py-2.5 text-center text-sm font-medium text-white transition duration-300 hover:scale-105 hover:from-teal-300 hover:via-indigo-300 hover:to-rose-300 hover:text-black"
+                      className="mb-2 mr-2 inline-flex scale-100 transform items-center rounded-full bg-gradient-to-tr from-teal-500 via-indigo-500 to-rose-500 px-5 py-2.5 text-center text-sm font-medium text-white transition duration-300 hover:scale-105 hover:from-teal-300 hover:via-indigo-300 hover:to-rose-300"
                     >
                       <Image priority={true}
                         src={redditGlyph}

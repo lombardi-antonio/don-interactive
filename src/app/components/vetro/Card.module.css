@@ -1,9 +1,11 @@
 .gloweffect {
-    --glow-line-color: #fff;
+    --glow-line-color: #ccc;
+    --glow-line-color-dark: #333;
     --glow-line-width: 1px;
     --glow-line-length: 35px;
     --glow-blur-color: #fff;
-    --glow-blur-width: 20px;
+    --glow-blur-color-dark: #000;
+    --glow-blur-width: 2px;
     --contianer-offset: 100px;
     --animation-speed: 1.4s;
 }
@@ -36,6 +38,17 @@
 .glowblur {
     stroke: var(--glow-blur-color);
     stroke-width: var(--glow-blur-width);
+}
+
+@media (prefers-color-scheme: light) {
+    .glowline {
+        stroke: var(--glow-line-color-dark);
+        stroke-width: var(--glow-line-width);
+    }
+    .glowblur {
+        stroke: var(--glow-blur-color-dark);
+        stroke-width: var(--glow-blur-width);
+    }
 }
 
 .gloweffect:is(:hover, :focus) :is(.glowline, .glowblur) {
