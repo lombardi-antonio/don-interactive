@@ -26,10 +26,7 @@ export default function Home() {
   return (
     <main>
       <div
-        className={`absolute h-auto min-h-screen w-full bg-repeat`}
-        style={{
-          background: `linear-gradient(0deg, rgba(0,0,0,.9), rgba(0,0,0,.9)),url(${grainy.src})`,
-        }}
+        className={`absolute h-auto min-h-screen w-full bg-repeat bg-[linear-gradient(0deg, rgba(255,255,255,.9), rgba(255,255,255,.9)),url(${grainy.src})] dark:bg-[linear-gradient(0deg, rgba(0,0,0,.9), rgba(0,0,0,.9)),url(${grainy.src})]`}
       >
         <div
           className={`h-auto min-h-screen bg-[url('../../public/grid.png')] bg-repeat`}
