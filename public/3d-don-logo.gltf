@@ -150,103 +150,40 @@
 			},
 			"name":"O.002",
 			"pbrMetallicRoughness":{
-				"baseColorFactor":[
-					0.2753152847290039,
-					0.19118732213974,
-					0.8000000715255737,
-					1
-				],
-				"roughnessFactor":0.5
+				"metallicFactor":0,
+				"roughnessFactor":0.9
 			}
 		},
 		{
 			"doubleSided":true,
-			"emissiveFactor":[
-				0.023649675771594048,
-				0.023649675771594048,
-				0.023649675771594048
-			],
 			"extensions":{
-				"KHR_materials_specular":{
-					"specularColorFactor":[
-						0.711407312601205,
-						0.711407312601205,
-						0.711407312601205
-					]
-				},
-				"KHR_materials_ior":{
-					"ior":1.4500000476837158
-				}
+				"KHR_materials_unlit":{}
 			},
 			"name":"D",
 			"pbrMetallicRoughness":{
-				"baseColorFactor":[
-					0.1354769617319107,
-					0.8000000715255737,
-					0.6473668813705444,
-					1
-				],
-				"roughnessFactor":0.5
+				"metallicFactor":0,
+				"roughnessFactor":0.9
 			}
 		},
 		{
 			"doubleSided":true,
-			"emissiveFactor":[
-				0.01738651655614376,
-				0.01738651655614376,
-				0.01738651655614376
-			],
 			"extensions":{
-				"KHR_materials_specular":{
-					"specularColorFactor":[
-						0.711407312601205,
-						0.711407312601205,
-						0.711407312601205
-					]
-				},
-				"KHR_materials_ior":{
-					"ior":1.4500000476837158
-				}
+				"KHR_materials_unlit":{}
 			},
 			"name":"O.001",
 			"pbrMetallicRoughness":{
-				"baseColorFactor":[
-					0.8000000715255737,
-					0.21766917407512665,
-					0.6563220620155334,
-					1
-				],
-				"roughnessFactor":0.5
+				"metallicFactor":0,
+				"roughnessFactor":0.9
 			}
 		},
 		{
-			"doubleSided":true,
-			"emissiveFactor":[
-				0.00000000000000001,
-				0.00000000000000001,
-				0.00000000000000001
-			],
 			"extensions":{
-				"KHR_materials_specular":{
-					"specularColorFactor":[
-						0.000000000000001,
-						0.000000000000001,
-						0.000000000000001
-					]
-				},
-				"KHR_materials_ior":{
-					"ior":1.4500000476837158
-				}
+				"KHR_materials_unlit":{}
 			},
 			"name":"Outline",
 			"pbrMetallicRoughness":{
-				"baseColorFactor":[
-					0.00000000000000001,
-					0.00000000000000001,
-					0.00000000000000001,
-					1
-				],
-				"roughnessFactor":0.5
+				"metallicFactor":0,
+				"roughnessFactor":0.9
 			}
 		}
 	],

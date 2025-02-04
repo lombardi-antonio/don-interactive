@@ -106,7 +106,7 @@ export default function Home() {
                       className="
                       scale-100
                       transform transition duration-300
-                      hover:scale-105 md:px-10"
+                      hover:scale-105 focus:scale-105 md:px-10"
                       type="submit"
                     >
                       <Image
@@ -125,7 +125,7 @@ export default function Home() {
                       className="
                     scale-100
                     transform transition duration-300
-                    hover:scale-105 md:px-10"
+                    hover:scale-105 focus:scale-105 md:px-10"
                       type="submit"
                     >
                       <Image
@@ -179,12 +179,7 @@ export default function Home() {
                 >
                   <button
                     type="submit"
-                    className="mb-2 mr-2 inline-flex
-                  scale-100 transform items-center
-                  rounded-full bg-gradient-to-tr from-teal-500
-                  via-indigo-500 to-rose-500 px-5
-                  py-2.5 text-center text-sm
-                    font-medium text-white transition duration-300 hover:scale-105 hover:from-teal-300 hover:via-indigo-300 hover:to-rose-300 hover:text-black"
+                    className="mb-2 mr-2 inline-flex scale-100 transform items-center rounded-full bg-gradient-to-tr from-teal-500 via-indigo-500 to-rose-500 px-5 py-2.5 text-center text-sm font-medium text-white transition duration-300 hover:scale-105 focus:scale-105 hover:from-teal-300 hover:via-indigo-300 hover:to-rose-300 hover:text-black focus:from-teal-300 focus:via-indigo-300 focus:to-rose-300 focus:text-black"
                   >
                     <svg
                       className="mr-2 h-4 w-4"
@@ -209,7 +204,7 @@ export default function Home() {
                 >
                   <button
                     type="button"
-                    className="mr-3 hidden rounded-full bg-indigo-600 px-4 py-2 text-center text-xs font-medium text-white hover:bg-indigo-800 focus:outline-none focus:ring-4 focus:ring-blue-300 md:mr-0 md:block dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800"
+                    className="mr-3 hidden rounded-full bg-indigo-600 px-4 py-2 text-center text-xs font-medium text-white hover:bg-indigo-800 focus:outline-none md:mr-0 md:block dark:bg-indigo-600 dark:hover:bg-indigo-700 focus:bg-indigo-200 focus:text-black"
                   >
                     General Data Protection Regulation (GDPR)
                   </button>

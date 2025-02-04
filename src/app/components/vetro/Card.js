@@ -79,14 +79,7 @@ function Card({
           <form action={linkButtonUrl} className="mt-20">
             <input
               className="
-                            w-1/2 scale-100 transform rounded-3xl
-                            bg-gradient-to-tr from-teal-500 via-indigo-500
-                            to-rose-500 p-2 text-lg
-                            text-gray-800 shadow-[0_0_0_1px_rgba(0,0,0,0.25)]
-                            transition
-                            duration-300 hover:scale-105 hover:from-teal-300
-                            hover:via-indigo-300 hover:to-rose-300
-                            dark:text-white"
+                w-1/2 scale-100 transform rounded-3xl bg-gradient-to-tr from-teal-500 via-indigo-500 to-rose-500 p-2 text-lg text-gray-800 shadow-[0_0_0_1px_rgba(0,0,0,0.25)] transition duration-300 hover:scale-105 hover:from-teal-300 hover:via-indigo-300 hover:to-rose-300 focus:scale-105 focus:from-teal-300 focus:via-indigo-300 focus:to-rose-300 dark:text-white"
               type="submit"
               value="more..."
             />

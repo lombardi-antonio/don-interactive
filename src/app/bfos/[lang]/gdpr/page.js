@@ -14,7 +14,7 @@ export default async function Gdpr({ params: { lang } }) {
           <a href="/bfos/en/gdpr" rel="noopener noreferrer">
             <button
               type="button"
-              className="text-white bg-indigo-600 hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-xs px-4 py-2 text-center mr-3 md:mr-0 hidden md:block dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800"
+              className="text-white bg-indigo-600 hover:bg-indigo-800 focus:bg-indigo-800 font-medium rounded-full text-xs px-4 py-2 text-center mr-3 md:mr-0 hidden md:block dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-700"
             >
               EN
             </button>
@@ -23,7 +23,7 @@ export default async function Gdpr({ params: { lang } }) {
           <a href="/bfos/de/gdpr" rel="noopener noreferrer">
             <button
               type="button"
-              className="text-white bg-indigo-600 hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-xs px-4 py-2 text-center mr-3 md:mr-0 hidden md:block dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800"
+              className="text-white bg-indigo-600 hover:bg-indigo-800 focus:bg-indigo-800 font-medium rounded-full text-xs px-4 py-2 text-center mr-3 md:mr-0 hidden md:block dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-700"
             >
               DE
             </button>

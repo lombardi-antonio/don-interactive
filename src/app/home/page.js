@@ -33,6 +33,12 @@ const logoAnimated = images.keys().map((image) => images(image).default);
 export default function Home() {
   let [currentImage, setCurrentImage] = useState(0);
 
+  document.addEventListener("keydown", (keyEvent) => {
+    if (
+      keyEvent.key.toLowerCase() === "j"
+    ) {navigateTo}
+  });
+
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentImage(currentImage++ % logoAnimated.length);
@@ -131,7 +137,7 @@ export default function Home() {
                   >
                     <button
                       type="submit"
-                      className="mb-2 mr-2 inline-flex scale-100 transform items-center rounded-full bg-gradient-to-tr from-teal-500 via-indigo-500 to-rose-500 px-5 py-2.5 text-center text-sm font-medium text-white transition duration-300 hover:scale-105 hover:from-teal-300 hover:via-indigo-300 hover:to-rose-300"
+                      className="mb-2 mr-2 inline-flex scale-100 transform items-center rounded-full bg-gradient-to-tr from-teal-500 via-indigo-500 to-rose-500 px-5 py-2.5 text-center text-sm font-medium text-white transition duration-300 hover:scale-105 hover:from-teal-300 hover:via-indigo-300 hover:to-rose-300 focus:scale-105 focus:from-teal-300 focus:via-indigo-300 focus:to-rose-300"
                     >
                       <Image priority={true}
                         src={instagramGlyph}
@@ -150,7 +156,7 @@ export default function Home() {
                   >
                     <button
                       type="submit"
-                      className="mb-2 mr-2 inline-flex scale-100 transform items-center rounded-full bg-gradient-to-tr from-teal-500 via-indigo-500 to-rose-500 px-5 py-2.5 text-center text-sm font-medium text-white transition duration-300 hover:scale-105 hover:from-teal-300 hover:via-indigo-300 hover:to-rose-300"
+                      className="mb-2 focus:ring-6 focus:ring-emerald-500 mr-2 inline-flex scale-100 transform items-center rounded-full bg-gradient-to-tr from-teal-500 via-indigo-500 to-rose-500 px-5 py-2.5 text-center text-sm font-medium text-white transition duration-300 hover:scale-105 hover:from-teal-300 hover:via-indigo-300 hover:to-rose-300 focus:scale-105 focus:from-teal-300 focus:via-indigo-300 focus:to-rose-300"
                     >
                       <Image priority={true}
                         src={githubGlyph}
@@ -169,7 +175,7 @@ export default function Home() {
                   >
                     <button
                       type="submit"
-                      className="mb-2 mr-2 inline-flex scale-100 transform items-center rounded-full bg-gradient-to-tr from-teal-500 via-indigo-500 to-rose-500 px-5 py-2.5 text-center text-sm font-medium text-white transition duration-300 hover:scale-105 hover:from-teal-300 hover:via-indigo-300 hover:to-rose-300"
+                      className="mb-2 focus:ring-6 focus:ring-emerald-500 mr-2 inline-flex scale-100 transform items-center rounded-full bg-gradient-to-tr from-teal-500 via-indigo-500 to-rose-500 px-5 py-2.5 text-center text-sm font-medium text-white transition duration-300 hover:scale-105 hover:from-teal-300 hover:via-indigo-300 hover:to-rose-300 focus:scale-105 focus:from-teal-300 focus:via-indigo-300 focus:to-rose-300"
                     >
                       <Image priority={true}
                         src={redditGlyph}

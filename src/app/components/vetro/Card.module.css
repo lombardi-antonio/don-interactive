@@ -2,12 +2,12 @@
     --glow-line-color: #ccc;
     --glow-line-color-dark: #333;
     --glow-line-width: 1px;
-    --glow-line-length: 35px;
+    --glow-line-length: 40px;
     --glow-blur-color: #fff;
     --glow-blur-color-dark: #000;
     --glow-blur-width: 2px;
     --contianer-offset: 100px;
-    --animation-speed: 1.4s;
+    --animation-speed: 0.8s;
 }
 
 .glowcontainer {
@@ -27,7 +27,7 @@
     y: calc(var(--contianer-offset) / 2);
     stroke-dasharray:
         var(--glow-line-length)
-        calc(50px - var(--glow-line-length));
+        calc(100px - var(--glow-line-length));
 }
 
 .glowline {
@@ -42,29 +42,33 @@
 
 @media (prefers-color-scheme: light) {
     .glowline {
-        stroke: var(--glow-line-color-dark);
-        stroke-width: var(--glow-line-width);
     }
     .glowblur {
-        stroke: var(--glow-blur-color-dark);
-        stroke-width: var(--glow-blur-width);
     }
 }
 
 .gloweffect:is(:hover, :focus) :is(.glowline, .glowblur) {
-    stroke-dashoffset: -60px;
+    stroke-dashoffset: -20px;
+    stroke-dasharray: 100 0;
+    opacity: 1;
     will-change: stroke-dashoffset, transition;
     transition:
-        stroke-dashoffset
-        var(--animation-speed);
+        stroke-dashoffset var(--animation-speed),
+        stroke-dasharray var(--animation-speed),
+        opacity 0.1s;
+}
+
+.gloweffect:is(:focus) :is(.glowline) {
+    stroke: #f00;
 }
 
 .gloweffect:is(:hover, :focus) .glowcontainer {
+    opacity: 1;
     will-change: opacity;
-    animation: glow-visibility var(--animation-speed);
+    transition: opacity 0.2s;
 }
 
 @keyframes glow-visibility {
-    0%, 100% { opacity: 0 }
-    25%, 75% { opacity: 1 }
+    0% { opacity: 1 }
+    100% { opacity: 1 }
 }

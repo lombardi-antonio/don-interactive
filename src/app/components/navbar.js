@@ -26,7 +26,7 @@ export default function Navbar() {
       className={`${rubik.className} backdrop-blur-xl backdrop-brightness-[1.4] dark:backdrop-brightness-50 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600`}
     >
       <div className="max-w-screen-xl h-12 backdrop-blur-xl flex flex-wrap items-center justify-between mx-auto p-2">
-        <a onClick={() => router.push("/")} className="flex items-center hover:cursor-pointer">
+        <a onClick={() => router.push("/")} className="flex items-center hover:cursor-pointer focus:text-red-500">
           <Image
             src={logo}
             height={32}
@@ -49,7 +49,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => router.push("/money-penny")}
-            className="text-white bg-indigo-600 hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-xs px-4 py-2 text-center mr-3 md:mr-0 hidden md:block dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800"
+            className="text-white bg-indigo-600 hover:bg-indigo-800 focus:bg-indigo-800 font-medium rounded-full text-xs px-4 py-2 text-center mr-3 md:mr-0 hidden md:block dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:bg-indigo-700 "
           >
             what is new?
           </button>
@@ -90,7 +90,7 @@ export default function Navbar() {
                 onClick={() => {
                   setIsVisible(false);
                 }}
-                className="drop-down-nav uppercase hover:cursor-pointer block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-indigo-600 md:p-0 md:dark:hover:text-indigo-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                className="drop-down-nav uppercase hover:cursor-pointer block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-indigo-600 md:p-0 md:dark:hover:text-indigo-400 focus:bg-gray-100 md:focus:bg-transparent md:focus:text-indigo-600 md:dark:focus:text-indigo-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:focus:bg-gray-700 dark:focus:text-white md:dark:focus:bg-transparent dark:border-gray-700"
               >
                 home
               </Link>
@@ -101,7 +101,7 @@ export default function Navbar() {
                 onClick={() => {
                   setIsVisible(false);
                 }}
-                className="drop-down-nav uppercase hover:cursor-pointer block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-indigo-600 md:p-0 md:dark:hover:text-indigo-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                className="drop-down-nav uppercase hover:cursor-pointer block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-indigo-600 md:p-0 md:dark:hover:text-indigo-400 focus:bg-gray-100 md:focus:bg-transparent md:focus:text-indigo-600 md:dark:focus:text-indigo-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:focus:bg-gray-700 dark:focus:text-white md:dark:focus:bg-transparent dark:border-gray-700"
               >
                 bfos
               </Link>
@@ -112,7 +112,7 @@ export default function Navbar() {
                 onClick={() => {
                   setIsVisible(false);
                 }}
-                className="drop-down-nav uppercase hover:cursor-pointer block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-indigo-600 md:p-0 md:dark:hover:text-indigo-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                className="drop-down-nav uppercase hover:cursor-pointer block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-indigo-600 md:p-0 md:dark:hover:text-indigo-400 focus:bg-gray-100 md:focus:bg-transparent md:focus:text-indigo-600 md:dark:focus:text-indigo-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:focus:bg-gray-700 dark:focus:text-white md:dark:focus:bg-transparent dark:border-gray-700"
               >
                 money penny
               </Link>
@@ -123,7 +123,7 @@ export default function Navbar() {
                 onClick={() => {
                   setIsVisible(false);
                 }}
-                className="drop-down-nav uppercase hover:cursor-pointer block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-indigo-600 md:p-0 md:dark:hover:text-indigo-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                className="drop-down-nav uppercase hover:cursor-pointer block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-indigo-600 md:p-0 md:dark:hover:text-indigo-400 focus:bg-gray-100 md:focus:bg-transparent md:focus:text-indigo-600 md:dark:focus:text-indigo-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:focus:bg-gray-700 dark:focus:text-white md:dark:focus:bg-transparent dark:border-gray-700"
               >
                 gdpr
               </Link>

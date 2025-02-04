@@ -174,7 +174,7 @@ export default function Home() {
                     <a href="https://www.iubenda.com/privacy-policy/96483223" target="_blank" rel="noopener noreferrer">
                       <button
                         type="button"
-                        className="text-white bg-indigo-600 hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-xs px-4 py-2 text-center mr-3 md:mr-0 hidden md:block dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800"
+                        className="text-white bg-indigo-600 hover:bg-indigo-800 focus:ring-6 focus:outline-none focus:ring-emerald-500 font-medium rounded-full text-xs px-4 py-2 text-center mr-3 md:mr-0 hidden md:block dark:bg-indigo-600 dark:hover:bg-indigo-700"
                       >
                         Datenschutzerklärung
                       </button>
