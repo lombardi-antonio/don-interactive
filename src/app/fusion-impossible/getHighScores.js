@@ -1,7 +1,5 @@
 "use client"
 
-import { sql } from "@vercel/postgres";
-
 export default async function getHighScores() {
     const queryResult = await sql`
         SELECT

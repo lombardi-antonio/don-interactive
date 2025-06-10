@@ -1,14 +1,13 @@
 export const dynamic = "force-dynamic";
 
 import Image from "next/image";
-import { sql } from "@vercel/postgres";
 import React from "react";
 import localFont from "next/font/local";
 
 import Card from "@/app/components/vetro/Card";
-import fusionImpossible from "/public/fusionImpossible.png";
-import appStoreButton from "public/appStoreBadgeDark.svg";
-import playStoreButton from "public/googlePlayBadge.png";
+import fusionimpossible from "/public/fusionimpossible.png";
+import appStoreButton from "/public/appStoreBadgeDark.svg";
+import playStoreButton from "/public/googlePlayBadge.png";
 import bgElement00 from "/public/bgElement00.svg";
 import bgElement01 from "/public/bgElement01.svg";
 import bgElement02 from "/public/bgElement02.svg";
@@ -112,7 +111,7 @@ export default async function FusionImpossible() {
           <div className="main-card relative m-auto grid h-full max-w-full auto-cols-fr auto-rows-fr grid-cols-7 grid-rows-3 gap-6 lg:max-w-[920px] xl:max-w-[1660px]">
             <div className="col-span-full col-start-1 row-span-1 row-start-1 m-4 md:row-span-1 md:row-start-1 xl:col-span-4 xl:row-start-1 xl:m-6">
               <Card
-                appImageSrc={fusionImpossible}
+                appImageSrc={fusionimpossible}
                 hasImageHalo={false}
                 header="Fusion Impossible"
               >
