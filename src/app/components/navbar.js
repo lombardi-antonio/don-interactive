@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import localFont from "next/font/local";
 import logo from "/public/don-logo-brut.png";
 import Link from "next/link";
+import { useEffect, useRef } from "react";
 
 const monomaniac = localFont({
   src: "../fonts/MonomaniacOne-Regular.ttf",
@@ -21,8 +22,28 @@ export default function Navbar() {
   const router = useRouter();
   const [isVisible, setIsVisible] = useState(false);
 
+  // Close dropdown when clicking outside
+  const navRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setIsVisible(false);
+      }
+    }
+    if (isVisible) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isVisible]);
+
   return (
     <nav
+      ref={navRef}
       className={`${rubik.className} backdrop-blur-xl backdrop-brightness-150 dark:backdrop-brightness-50 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600`}
     >
       <div className="max-w-screen-xl h-12 backdrop-blur-xl flex flex-wrap items-center justify-between mx-auto p-2">
@@ -43,7 +64,7 @@ export default function Navbar() {
         <div className="flex md:order-2">
           <button
             type="button"
-            onClick={() => router.push("/money-penny")}
+            onClick={() => router.push("/fusion")}
             className="text-white bg-indigo-600 hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-xs px-4 py-2 text-center mr-3 md:mr-0 hidden md:block dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800"
           >
             what is new?
@@ -75,10 +96,10 @@ export default function Navbar() {
           </button>
         </div>
         <div
-          className={`drop-down-nav  ${isVisible ? 'visible' : 'invisible'} items-center justify-between w-full md:visible md:flex md:w-auto md:order-1`}
+          className={`drop-down-nav ${isVisible ? 'visible' : 'invisible'} items-center justify-between w-full md:visible md:flex md:w-auto md:order-1`}
           id="navbar-sticky"
         >
-          <ul className="flex flex-col p-4 md:p-0 mt-0 font-medium border border-gray-100 rounded-lg backdrop-blur-xl backdrop-brightness-150 dark:backdrop-brightness-50 md:backdrop-blur-0 md:backdrop-brightness-100 md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:border-gray-700">
+          <ul className="flex flex-col p-4 md:p-0 mt-0 font-medium border bg-white dark:bg-black border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:border-gray-700">
             <li>
             <Link
                 href="/"
@@ -102,14 +123,14 @@ export default function Navbar() {
               </Link>
             </li>
             <li>
-            <Link
-                href="/money-penny"
+              <Link
+                href="/fusion"
                 onClick={() => {
                   setIsVisible(false);
                 }}
                 className="drop-down-nav uppercase hover:cursor-pointer block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-indigo-600 md:p-0 md:dark:hover:text-indigo-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
-                money penny
+                fusion
               </Link>
             </li>
             <li>
