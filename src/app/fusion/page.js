@@ -45,7 +45,7 @@ export default function Home() {
                   style={{ opacity: 0.5, pointerEvents: "none" }}
                 >
                   <Image
-                    src="/google-play-badge.png"
+                    src="/googlePlayBadge.png"
                     height={264}
                     width={800}
                     alt="Google Play Store Button"
