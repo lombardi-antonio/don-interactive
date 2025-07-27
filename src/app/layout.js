@@ -38,7 +38,7 @@ export default function RootLayout({ children }) {
         <meta name="googlebot" content="index, follow" />
         <StructuredData type="website" />
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.className} min-w-[318px]`}>
         <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 bg-blue-600 text-white p-2 z-50">
           Skip to main content
         </a>

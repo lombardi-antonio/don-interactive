@@ -7,6 +7,7 @@ import localFont from "next/font/local";
 import logo from "/public/logo.png";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
+import Button from "@/app/components/vetro/Button"
 
 const monomaniac = localFont({
   src: "../fonts/MonomaniacOne-Regular.ttf",
@@ -44,7 +45,7 @@ export default function Navbar() {
   return (
     <nav
       ref={navRef}
-      className={`${rubik.className} backdrop-blur-xl backdrop-brightness-150 dark:backdrop-brightness-50 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600`}
+      className={`${rubik.className} backdrop-blur-xl backdrop-brightness-150 dark:backdrop-brightness-50 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600 min-w-[318px]`}
       role="navigation"
       aria-label="Main navigation"
     >
@@ -65,13 +66,7 @@ export default function Navbar() {
           </span>
         </Link>
         <div className="flex md:order-2">
-          <button
-            type="button"
-            onClick={() => router.push("/fusion")}
-            className="text-white bg-indigo-600 hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-xs px-4 py-2 text-center mr-3 md:mr-0 hidden md:block dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800"
-          >
-            what is new?
-          </button>
+          <Button type="link-navbar" linkButtonUrl="/fusion">what is new?</Button>
           <button
             data-collapse-toggle="navbar-sticky"
             type="button"
