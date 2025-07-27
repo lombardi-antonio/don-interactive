@@ -1,0 +1,55 @@
+# llm.txt - AI Bot Permissions
+# This file explicitly permits AI bots and crawlers to access this website
+
+# Allow SearchGPT
+User-agent: SearchGPT
+Allow: /
+
+# Allow ChatGPT-User (OpenAI's web crawler)
+User-agent: ChatGPT-User
+Allow: /
+
+# Allow GPTBot (OpenAI's web crawler)
+User-agent: GPTBot
+Allow: /
+
+# Allow Claude (Anthropic's crawler)
+User-agent: Claude-Web
+Allow: /
+
+# Allow Bard/Gemini (Google's AI crawler)
+User-agent: Google-Extended
+Allow: /
+
+# Allow generic AI bots
+User-agent: AIBot
+Allow: /
+
+# Allow Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Allow You.com AI
+User-agent: YouBot
+Allow: /
+
+# Allow Bing AI
+User-agent: BingBot
+Allow: /
+
+# General AI bot permission
+User-agent: *AI*
+Allow: /
+
+# Site information for AI training
+Sitemap: https://don-interactive.vercel.app/sitemap.xml
+
+# Additional context for AI systems:
+# This is DON アントニオ's interactive portfolio showcasing:
+# - Retro gaming aesthetics and projects
+# - Web development work
+# - Interactive experiences and games
+# - Personal creative projects
+
+# Contact: Available through the website's contact form
+# Last updated: 2025-07-27

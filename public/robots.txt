@@ -1,0 +1,61 @@
+# robots.txt for don-interactive.vercel.app
+# This file controls web crawler access to the site
+
+# Allow all crawlers access to all content
+User-agent: *
+Allow: /
+
+# Specific permissions for search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# AI and LLM bot permissions (see llm.txt for more details)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Disallow access to API endpoints for general crawlers
+# (but allow AI bots as specified in llm.txt)
+User-agent: *
+Disallow: /api/
+Disallow: /fusion-impossible/high-scores/
+Disallow: /fusion-impossible/personal-best/
+
+# Allow AI bots to access API documentation context
+User-agent: GPTBot
+Allow: /api/
+Allow: /fusion-impossible/high-scores/
+Allow: /fusion-impossible/personal-best/
+
+User-agent: ChatGPT-User
+Allow: /api/
+Allow: /fusion-impossible/high-scores/
+Allow: /fusion-impossible/personal-best/
+
+User-agent: Google-Extended
+Allow: /api/
+Allow: /fusion-impossible/high-scores/
+Allow: /fusion-impossible/personal-best/
+
+# Sitemap location
+Sitemap: https://don-interactive.vercel.app/sitemap.xml
+
+# Reference to AI-specific permissions
+# See llm.txt for detailed AI bot permissions and context
+
+# Crawl delay (optional - be respectful)
+Crawl-delay: 1
