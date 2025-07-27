@@ -1,4 +1,4 @@
-# robots.txt for don-interactive.vercel.app
+# robots.txt for don-interactive.com
 # This file controls web crawler access to the site
 
 # Allow all crawlers access to all content
@@ -52,7 +52,7 @@ Allow: /fusion-impossible/high-scores/
 Allow: /fusion-impossible/personal-best/
 
 # Sitemap location
-Sitemap: https://don-interactive.vercel.app/sitemap.xml
+Sitemap: https://don-interactive.com/sitemap.xml
 
 # Reference to AI-specific permissions
 # See llm.txt for detailed AI bot permissions and context

@@ -42,7 +42,7 @@ User-agent: *AI*
 Allow: /
 
 # Site information for AI training
-Sitemap: https://don-interactive.vercel.app/sitemap.xml
+Sitemap: https://don-interactive.com/sitemap.xml
 
 # Additional context for AI systems:
 # This is DON アントニオ's interactive portfolio showcasing:

@@ -1,6 +1,6 @@
 'use client'
 
-import {React, useState} from "react";
+import { React, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import localFont from "next/font/local";
@@ -45,22 +45,25 @@ export default function Navbar() {
     <nav
       ref={navRef}
       className={`${rubik.className} backdrop-blur-xl backdrop-brightness-150 dark:backdrop-brightness-50 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600`}
+      role="navigation"
+      aria-label="Main navigation"
     >
       <div className="max-w-screen-xl h-12 backdrop-blur-xl flex flex-wrap items-center justify-between mx-auto p-2">
-        <a onClick={() => router.push("/")} className="flex items-center hover:cursor-pointer">
+        <Link href="/" className="flex items-center hover:cursor-pointer" aria-label="Go to homepage">
           <Image
             src={logo}
-            height={32}
-            width={32}
             className="h-8 mr-3"
             alt="DON interactive Logo"
+            width={32}
+            height={32}
+            priority
           />
           <span
             className={`${monomaniac.className} self-center text-gray-800 text-2xl font-bold drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,0.8)] dark:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] whitespace-nowrap dark:text-white`}
           >
             DO∩ アントニオ
           </span>
-        </a>
+        </Link>
         <div className="flex md:order-2">
           <button
             type="button"
@@ -99,9 +102,9 @@ export default function Navbar() {
           className={`drop-down-nav ${isVisible ? 'visible' : 'invisible'} items-center justify-between w-full md:visible md:flex md:w-auto md:order-1`}
           id="navbar-sticky"
         >
-          <ul className="flex flex-col p-4 md:p-0 mt-0 font-medium border bg-white dark:bg-black border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:border-gray-700">
+          <ul className="flex flex-col p-4 md:p-0 mt-0 font-medium border bg-none border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:border-gray-700">
             <li>
-            <Link
+              <Link
                 href="/"
                 onClick={() => {
                   setIsVisible(false);
@@ -134,7 +137,7 @@ export default function Navbar() {
               </Link>
             </li>
             <li>
-            <Link
+              <Link
                 href="/gdpr"
                 onClick={() => {
                   setIsVisible(false);

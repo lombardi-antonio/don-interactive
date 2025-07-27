@@ -5,8 +5,9 @@ import { Analytics } from '@vercel/analytics/react';
 
 export default function Root() {
   return (
-  <main>
-    <Home />
-    <Analytics />
-  </main>);
+    <>
+      <Home />
+      <Analytics />
+    </>
+  );
 }
