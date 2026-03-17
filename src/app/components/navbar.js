@@ -19,11 +19,17 @@ const rubik = localFont({
   fontFamily: "Rubik",
 });
 
+const links = [
+  { href: "/", label: "home" },
+  { href: "/bfos", label: "bfos" },
+  { href: "/fusion", label: "fusion" },
+  { href: "/gdpr", label: "gdpr" },
+];
+
 export default function Navbar() {
   const router = useRouter();
   const [isVisible, setIsVisible] = useState(false);
 
-  // Close dropdown when clicking outside
   const navRef = useRef(null);
 
   useEffect(() => {
@@ -45,11 +51,12 @@ export default function Navbar() {
   return (
     <nav
       ref={navRef}
-      className={`${rubik.className} backdrop-blur-xl backdrop-brightness-150 dark:backdrop-brightness-50 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600 min-w-[318px]`}
+      className={`${rubik.className} fixed w-full z-20 top-0 left-0 min-w-[318px]`}
       role="navigation"
       aria-label="Main navigation"
     >
-      <div className="max-w-screen-xl h-12 backdrop-blur-xl flex flex-wrap items-center justify-between mx-auto p-2">
+      {/* Top bar — backdrop-filter is scoped here so the dropdown below can have its own */}
+      <div className="max-w-screen-xl h-14 backdrop-blur-xl backdrop-brightness-150 dark:backdrop-brightness-50 flex flex-wrap items-center justify-between mx-auto p-2 border-b border-gray-200 dark:border-gray-600">
         <Link href="/" className="flex items-center hover:cursor-pointer" aria-label="Go to homepage">
           <Image
             src={logo}
@@ -65,14 +72,26 @@ export default function Navbar() {
             DO∩ アントニオ
           </span>
         </Link>
-        <div className="flex md:order-2">
-          {/* <Button type="link-navbar" linkButtonUrl="/fusion">what is new?</Button> */}
+        <div className="flex items-center md:order-2 gap-8">
+          {/* Desktop links — inline in the bar */}
+          <ul className="hidden md:flex md:flex-row md:space-x-8 font-medium">
+            {links.map(({ href, label }) => (
+              <li key={href}>
+                <Link
+                  href={href}
+                  className="uppercase hover:cursor-pointer block py-2 text-gray-900 md:hover:text-indigo-600 md:p-0 md:dark:hover:text-indigo-400 dark:text-white"
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          {/* Hamburger — mobile only */}
           <button
-            data-collapse-toggle="navbar-sticky"
             type="button"
             onClick={() => setIsVisible(!isVisible)}
             className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-            aria-controls="navbar-sticky"
+            aria-controls="navbar-dropdown"
             aria-expanded={isVisible}
           >
             <span className="sr-only">Open main menu</span>
@@ -93,57 +112,26 @@ export default function Navbar() {
             </svg>
           </button>
         </div>
-        <div
-          className={`drop-down-nav ${isVisible ? 'visible' : 'invisible'} items-center justify-between w-full md:visible md:flex md:w-auto md:order-1`}
-          id="navbar-sticky"
-        >
-          <ul className="flex flex-col p-4 md:p-0 mt-0 font-medium border bg-none border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:border-gray-700">
-            <li>
+      </div>
+
+      {/* Mobile dropdown — sibling to the bar, NOT inside a backdrop-filter ancestor */}
+      <div
+        id="navbar-dropdown"
+        className={`${isVisible ? 'block' : 'hidden'} md:hidden`}
+      >
+        <ul className="flex flex-col p-4 font-medium backdrop-blur-2xl backdrop-brightness-110 dark:backdrop-brightness-110 shadow-[0_0_0_1px_rgba(0,0,0,0.25)] dark:shadow-[0_0_0_1px_rgba(255,255,255,0.25)] rounded-b-xl">
+          {links.map(({ href, label }) => (
+            <li key={href}>
               <Link
-                href="/"
-                onClick={() => {
-                  setIsVisible(false);
-                }}
-                className="drop-down-nav uppercase hover:cursor-pointer block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-indigo-600 md:p-0 md:dark:hover:text-indigo-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                href={href}
+                onClick={() => setIsVisible(false)}
+                className="uppercase hover:cursor-pointer block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white dark:border-gray-700"
               >
-                home
+                {label}
               </Link>
             </li>
-            <li>
-              <Link
-                href="/bfos"
-                onClick={() => {
-                  setIsVisible(false);
-                }}
-                className="drop-down-nav uppercase hover:cursor-pointer block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-indigo-600 md:p-0 md:dark:hover:text-indigo-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-              >
-                bfos
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/fusion"
-                onClick={() => {
-                  setIsVisible(false);
-                }}
-                className="drop-down-nav uppercase hover:cursor-pointer block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-indigo-600 md:p-0 md:dark:hover:text-indigo-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-              >
-                fusion
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/gdpr"
-                onClick={() => {
-                  setIsVisible(false);
-                }}
-                className="drop-down-nav uppercase hover:cursor-pointer block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-indigo-600 md:p-0 md:dark:hover:text-indigo-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-              >
-                gdpr
-              </Link>
-            </li>
-          </ul>
-        </div>
+          ))}
+        </ul>
       </div>
     </nav>
   );
