@@ -56,7 +56,7 @@ export default function Navbar() {
       aria-label="Main navigation"
     >
       {/* Top bar — backdrop-filter is scoped here so the dropdown below can have its own */}
-      <div className="max-w-screen-xl h-14 backdrop-blur-xl backdrop-brightness-150 dark:backdrop-brightness-50 flex flex-wrap items-center justify-between mx-auto p-2 border-b border-gray-200 dark:border-gray-600">
+      <div className="max-w-screen-full h-14 backdrop-blur-xl backdrop-brightness-150 dark:backdrop-brightness-50 flex flex-wrap items-center justify-between mx-auto p-2 border-b border-gray-200 dark:border-gray-600">
         <Link href="/" className="flex items-center hover:cursor-pointer" aria-label="Go to homepage">
           <Image
             src={logo}
