@@ -30,4 +30,4 @@ function Message({ type = "info", children }) {
     )
 }
 
-module.exports = Message;
+export default Message;

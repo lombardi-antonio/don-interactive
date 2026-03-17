@@ -7,13 +7,13 @@ import { generateMetadata as genMeta } from "../utils/metadata";
 
 import Card from "@/app/components/vetro/Card";
 import StructuredData from "@/app/components/StructuredData";
-import fusionimpossible from "/public/fusionimpossible.png";
-import appStoreButton from "/public/appStoreBadgeDark.svg";
-import playStoreButton from "/public/googlePlayBadge.png";
-import bgElement00 from "/public/bgElement00.svg";
-import bgElement01 from "/public/bgElement01.svg";
-import bgElement02 from "/public/bgElement02.svg";
-import bgElement03 from "/public/bgElement03.svg";
+import fusionimpossible from "../../../public/fusionimpossible.png";
+import appStoreButton from "../../../public/appStoreBadgeDark.svg";
+import playStoreButton from "../../../public/googlePlayBadge.png";
+import bgElement00 from "../../../public/bgElement00.svg";
+import bgElement01 from "../../../public/bgElement01.svg";
+import bgElement02 from "../../../public/bgElement02.svg";
+import bgElement03 from "../../../public/bgElement03.svg";
 import grainy from "@/app/components/grainy/noise.svg";
 
 export const metadata = genMeta('fusion-impossible');

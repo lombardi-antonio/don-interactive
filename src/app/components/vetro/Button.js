@@ -5,7 +5,7 @@ const monomaniac = localFont({
     fontFamily: "Monomaniac",
 });
 
-function Message({ children, type = "default", linkButtonUrl }) {
+function Button({ children, type = "default", linkButtonUrl }) {
     /**
      * Vetro Card Component - A card component that can display a image, header, subheader, and text.
      * Optional buttons can be added to the card.
@@ -86,4 +86,4 @@ function Message({ children, type = "default", linkButtonUrl }) {
     )
 }
 
-module.exports = Message;
+export default Button;

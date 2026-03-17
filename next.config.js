@@ -2,9 +2,9 @@
 const nextConfig = {
     async headers() {
         return [
-        {
-            // matching all API routes
-            source: "/api/:path*",
+            {
+                // matching all API routes
+                source: "/api/:path*",
                 headers: [
                     { key: "Access-Control-Allow-Credentials", value: "true" },
                     { key: "Access-Control-Allow-Origin", value: "*" },
@@ -15,14 +15,13 @@ const nextConfig = {
         ]
     },
 
-    webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
-        // Important: return the modified config
-        config.module.rules.push({
-        test: /\.glsl$/,
-        type: 'asset/source',
-        });
-
-        return config;
+    turbopack: {
+        rules: {
+            '*.glsl': {
+                loaders: ['raw-loader'],
+                as: '*.js',
+            },
+        },
     },
 }
 

@@ -65,4 +65,4 @@ function Card({ appImageSrc, header, subheader, children, textPosition = "center
     )
 }
 
-module.exports = Card;
+export default Card;

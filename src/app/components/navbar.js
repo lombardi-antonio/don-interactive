@@ -4,10 +4,10 @@ import { React, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import localFont from "next/font/local";
-import logo from "/public/logo.png";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
-import Button from "@/app/components/vetro/Button"
+
+const logo = "/logo.png";
 
 const monomaniac = localFont({
   src: "../fonts/MonomaniacOne-Regular.ttf",
@@ -66,7 +66,7 @@ export default function Navbar() {
           </span>
         </Link>
         <div className="flex md:order-2">
-          <Button type="link-navbar" linkButtonUrl="/fusion">what is new?</Button>
+          {/* <Button type="link-navbar" linkButtonUrl="/fusion">what is new?</Button> */}
           <button
             data-collapse-toggle="navbar-sticky"
             type="button"

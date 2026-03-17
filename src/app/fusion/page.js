@@ -4,7 +4,7 @@ import localFont from "next/font/local";
 import Card from "@/app/components/vetro/Card";
 import Button from "@/app/components/vetro/Button";
 import Message from "@/app/components/vetro/Message";
-import fusion from "/public/fusionimpossible.png";
+import TerrazzoDynamic from "../components/vetro/TerrazzoDynamic";
 
 const monomaniac = localFont({
   src: "../fonts/MonomaniacOne-Regular.ttf",
@@ -19,19 +19,16 @@ const rubik = localFont({
 export default function Home() {
   return (
     <main className={`${rubik.className}`}>
-      <div className="header grid grid-cols-6 w-full fixed">
-        <div className="terrazzo-main col-span-6 bg-[url('../../public/TerrazzoLess.png')] dark:bg-[url('../../public/TerrazzoLess.png')] min-h-[512px]"></div>
-        <div className="terrazzo-end col-span-6 bg-[url('../../public/TerrazzoLessEnd.png')] dark:bg-[url('../../public/TerrazzoLessEnd.png')] h-[512px]"></div>
-      </div>
+      <TerrazzoDynamic />
       <div className="main-card relative grid auto-cols-fr auto-rows-fr grid-cols-7 grid-rows-3 gap-6 h-full m-auto max-w-full lg:max-w-[920px] xl:max-w-[2160px]">
         <div
           className="
           col-start-1 col-span-full xl:col-start-2 xl:col-span-5
           row-start-1 md:row-start-1 xl:row-start-1 row-span-2 md:row-span-3
-          m-4 xl:m-6
+          mx-4 my-16 xl:m-6
           "
         >
-          <Card appImageSrc={fusion} header="Fusion Impossible">
+          <Card appImageSrc="/fusionimpossible.png" header="Fusion Impossible">
             <div className="flex flex-row justify-center">
               <a target="_blank" rel="noopener noreferrer">
                 <button

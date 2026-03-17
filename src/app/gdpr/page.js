@@ -16,8 +16,7 @@ export default function Gdpr() {
   const { t } = useTranslation();
 
   return (
-    <main className="robot text-black dark:text-white max-w-[1080px] min-w-[512px] px-4 py-10 mx-auto pt-4">
-      <LanguageSwitcher />
+    <main className="robot text-black dark:text-white max-w-[1080px] min-w-[512px] px-4 py-10 mx-auto mt-10 pt-4">
       <h1>{t.privacyPolicy}</h1>
       <h1 className="text-4xl pb-8">Datenschutzerklärung</h1>
       <p className="text-sm pb-8 opacity-60">Stand: 15. September 2023</p>
