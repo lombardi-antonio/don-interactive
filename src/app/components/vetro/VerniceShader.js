@@ -214,10 +214,24 @@ export default function VerniceShader({ className = '' }) {
   }, []);
 
   return (
-    <canvas
-      ref={canvasRef}
-      className={className}
-      style={{ display: 'block', width: '100%', height: '100%' }}
-    />
+    <div className={className}>
+      <canvas
+        ref={canvasRef}
+        style={{ display: 'block', width: '100%', height: '100%' }}
+      />
+      <div
+        aria-hidden="true"
+        style={{
+          position: 'absolute',
+          inset: 0,
+          backgroundImage: 'url(/grid.png)',
+          backgroundRepeat: 'repeat',
+          backgroundSize: 'auto',
+          mixBlendMode: 'multiply',
+          opacity: 1,
+          pointerEvents: 'none',
+        }}
+      />
+    </div>
   );
 }
