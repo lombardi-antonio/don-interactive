@@ -22,18 +22,32 @@ out vec4 out_color;
 uniform vec2  u_resolution;
 uniform float u_time;
 uniform vec4  u_mouse;
+uniform float u_dark_mode;
 
 float hash(vec2 p) {
   return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);
 }
 
-// IQ cosine palette — monochromatic mint green (dark mint → mid → bright)
-vec3 palette(float t) {
-  vec3 a = vec3(0.30, 0.65, 0.50);
-  vec3 b = vec3(0.25, 0.30, 0.22);
+// Light mode: medium mint → near-white mint
+vec3 palette_light(float t) {
+  vec3 a = vec3(0.60, 0.87, 0.74);
+  vec3 b = vec3(0.38, 0.13, 0.26);
   vec3 c = vec3(1.00, 1.00, 1.00);
   vec3 d = vec3(0.00, 0.00, 0.05);
   return a + b * cos(6.28318 * (c * t + d));
+}
+
+// Dark mode: very dark mint → medium mint
+vec3 palette_dark(float t) {
+  vec3 a = vec3(0.15, 0.35, 0.25);
+  vec3 b = vec3(0.13, 0.25, 0.18);
+  vec3 c = vec3(1.00, 1.00, 1.00);
+  vec3 d = vec3(0.00, 0.00, 0.05);
+  return a + b * cos(6.28318 * (c * t + d));
+}
+
+vec3 palette(float t) {
+  return mix(palette_light(t), palette_dark(t), u_dark_mode);
 }
 
 void main() {
@@ -136,6 +150,15 @@ export default function VerniceShader({ className = '' }) {
     const uResolution = gl.getUniformLocation(program, 'u_resolution');
     const uTime       = gl.getUniformLocation(program, 'u_time');
     const uMouse      = gl.getUniformLocation(program, 'u_mouse');
+    const uDarkMode   = gl.getUniformLocation(program, 'u_dark_mode');
+
+    const darkMQ = window.matchMedia('(prefers-color-scheme: dark)');
+    const onSchemeChange = () => {
+      gl.useProgram(program);
+      gl.uniform1f(uDarkMode, darkMQ.matches ? 1.0 : 0.0);
+    };
+    onSchemeChange();
+    darkMQ.addEventListener('change', onSchemeChange);
 
     const mouse = [0, 0, 0, 0];
     const onMouseMove = (e) => { mouse[0] = e.clientX; mouse[1] = e.clientY; };
@@ -181,6 +204,7 @@ export default function VerniceShader({ className = '' }) {
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('mousedown', onMouseDown);
       window.removeEventListener('mouseup', onMouseUp);
+      darkMQ.removeEventListener('change', onSchemeChange);
       gl.deleteProgram(program);
       gl.deleteShader(vs);
       gl.deleteShader(fs);
