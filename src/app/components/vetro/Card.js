@@ -25,13 +25,26 @@ function Card({ appImageSrc, header, subheader, children, textPosition = "center
         <div
             id="main-card"
             className="
+            relative overflow-hidden
             max-w-full max-h-full h-full
             animate-fade-in transition ease-in-out duration-500
             text-gray-800 dark:text-white text-center
-            rounded-3xl  backdrop-brightness-110 dark:backdrop-brightness-110 backdrop-blur-2xl
-            shadow-lg shadow-black/60"
+            rounded-3xl vetro-glass"
         >
-            <div className="rounded-3xl shadow-[0_0_0_1px_rgba(0,0,0,0.25)] dark:shadow-[0_0_0_1px_rgba(255,255,255,0.25)] px-4 py-8 md:px-14 md:py-14 h-full w-full">
+            {/* Edge refraction — stronger blur+saturation masked to the border region only */}
+            <div
+                className="pointer-events-none absolute inset-0"
+                style={{
+                    backdropFilter: 'blur(8px) brightness(1.1) saturate(2.5)',
+                    WebkitBackdropFilter: 'blur(8px) brightness(1.1) saturate(2.5)',
+                    maskImage: 'radial-gradient(ellipse 80% 75% at 50% 50%, transparent 78%, black 100%)',
+                    WebkitMaskImage: 'radial-gradient(ellipse 80% 75% at 50% 50%, transparent 78%, black 100%)',
+                }}
+                aria-hidden="true"
+            />
+            {/* Specular highlight — simulates light refracting at the glass surface */}
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-1/3 rounded-t-3xl bg-gradient-to-b from-white/[0.18] to-transparent" aria-hidden="true" />
+            <div className="rounded-3xl px-4 py-8 md:px-14 md:py-14 h-full w-full">
                 {!available &&
                     <Message>Available soon!</Message>
                 }
