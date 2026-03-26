@@ -1,6 +1,6 @@
 import localFont from "next/font/local";
 import Card from "@/app/components/vetro/Card";
-import TerrazzoDynamic from "@/app/components/vetro/TerrazzoDynamic";
+import TerrazzoShader from "@/app/components/vetro/TerrazzoShader";
 
 const monomaniac = localFont({
   src: "../fonts/MonomaniacOne-Regular.ttf",
@@ -15,7 +15,7 @@ const rubik = localFont({
 export default function Home() {
   return (
     <div className={rubik.className}>
-      <TerrazzoDynamic />
+      <TerrazzoShader />
 
       <section className="main-card relative grid auto-cols-fr auto-rows-fr grid-cols-7 grid-rows-3 gap-6 py-16 h-full mx-auto max-w-full lg:max-w-[920px] xl:max-w-[2160px]" aria-labelledby="main-content">
         <article className="col-start-1 col-end-8 xl:col-start-2 xl:col-end-7 row-start-1 row-span-1">
