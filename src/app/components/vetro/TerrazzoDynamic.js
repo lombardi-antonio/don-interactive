@@ -47,7 +47,14 @@ function TerrazzoDynamic() {
     useEffect(() => {
         if (!objects) return;
 
-        const tick = () => {
+        const FPS_LIMIT = 12;
+        const FRAME_INTERVAL = 1000 / FPS_LIMIT;
+        let lastTime = 0;
+
+        const tick = (timestamp) => {
+            rafRef.current = requestAnimationFrame(tick);
+            if (timestamp - lastTime < FRAME_INTERVAL) return;
+            lastTime = timestamp;
             const maxX = window.innerWidth;
             const maxY = window.innerHeight;
 
@@ -81,9 +88,7 @@ function TerrazzoDynamic() {
                 return { ...obj, x, y, directionX, directionY, rotation };
             });
 
-            rafRef.current = requestAnimationFrame(tick);
         };
-
         rafRef.current = requestAnimationFrame(tick);
         return () => cancelAnimationFrame(rafRef.current);
     }, [objects]);
