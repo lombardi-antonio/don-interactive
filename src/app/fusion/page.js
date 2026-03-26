@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <main className={`${rubik.className}`}>
       <TerrazzoDynamic />
-      <div className="main-card relative grid auto-cols-fr auto-rows-fr grid-cols-7 grid-rows-3 gap-6 h-full m-auto max-w-full lg:max-w-[920px] xl:max-w-[2160px]">
+      <div className="main-card relative grid auto-cols-fr auto-rows-fr grid-cols-7 grid-rows-3 gap-6 py-1 h-full mx-auto max-w-full lg:max-w-[920px] xl:max-w-[2160px]">
         <div
           className="
           col-start-1 col-span-full xl:col-start-2 xl:col-span-5

@@ -19,12 +19,12 @@ export default function Home() {
   return (
     <main className={`${rubik.className}`}>
       <TerrazzoDynamic />
-      <div className="main-card relative grid auto-cols-fr auto-rows-fr grid-cols-7 grid-rows-3 gap-6 h-full m-auto max-w-full lg:max-w-[920px] xl:max-w-[2160px]">
+      <div className="main-card relative grid auto-cols-fr auto-rows-fr grid-cols-7 grid-rows-3 gap-6 py-12 h-full mx-auto max-w-full lg:max-w-[920px] xl:max-w-[2160px]">
         <div
           className="
           col-start-1 col-span-full xl:col-start-2 xl:col-span-5
           row-start-1 md:row-start-1 xl:row-start-1 row-span-2 md:row-span-3
-          mx-4 my-16 xl:m-6
+          mt-4 mx-4 my-16 xl:m-6
           "
         >
           <Card appImageSrc="/beatsFromOuterSpace.png" header="Beats form Outer Space">
