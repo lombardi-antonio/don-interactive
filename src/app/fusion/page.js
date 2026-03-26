@@ -4,8 +4,7 @@ import localFont from "next/font/local";
 import Card from "@/app/components/vetro/Card";
 import Button from "@/app/components/vetro/Button";
 import Message from "@/app/components/vetro/Message";
-import TerrazzoDynamic from "../components/vetro/TerrazzoDynamic";
-import TerrazzoShader from "../components/vetro/TerrazzoShader";
+import VerniceShader from "../components/vetro/VerniceShader";
 
 const monomaniac = localFont({
   src: "../fonts/MonomaniacOne-Regular.ttf",
@@ -20,8 +19,8 @@ const rubik = localFont({
 export default function Home() {
   return (
     <main className={`${rubik.className}`}>
-      <TerrazzoShader />
-      <div className="main-card relative grid auto-cols-fr auto-rows-fr grid-cols-7 grid-rows-3 gap-6 py-1 h-full mx-auto max-w-full lg:max-w-[920px] xl:max-w-[2160px]">
+      <VerniceShader className="fixed inset-0 pointer-events-none z-0" />
+      <div className="main-card relative grid auto-cols-fr auto-rows-fr grid-cols-7 grid-rows-3 gap-6 py-10 h-full mx-auto max-w-full lg:max-w-[920px] xl:max-w-[2160px]">
         <div
           className="
           col-start-1 col-span-full xl:col-start-2 xl:col-span-5

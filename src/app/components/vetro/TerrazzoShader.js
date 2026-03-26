@@ -37,6 +37,10 @@ uniform float u_time;
 uniform vec4 u_mouse;
 uniform sampler2D u_textures[16];
 
+float hash(vec2 p) {
+  return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);
+}
+
 void main(){
   float u_speed_x    = 1.0;
   float u_amplitude_x = 0.01;
@@ -56,7 +60,10 @@ void main(){
   vec2 newCoords   = vec2(uv.x + offsetX, uv.y + offsetY) + scroll;
   vec2 tiledCoords = newCoords * (u_resolution / float(${TILE_SIZE}));
 
-  out_color = texture(u_textures[0], tiledCoords);
+  vec4 col = texture(u_textures[0], tiledCoords);
+  float grain = hash(uv * u_resolution + floor(u_time * 20.0));
+  col.rgb += (grain - 0.5) * 0.03;
+  out_color = col;
 }
 `;
 
