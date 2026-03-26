@@ -20,6 +20,7 @@ function Button({ children, type = "default", linkButtonUrl }) {
                 <a href={linkButtonUrl} >
                     <button
                         className="
+                    relative overflow-hidden
                     vetro-glass-button
                     hover:bg-black/50 dark:hover:bg-white/50
                     h-fit animate-fade-in transition ease-in-out duration-100
@@ -27,6 +28,17 @@ function Button({ children, type = "default", linkButtonUrl }) {
                     hover:scale-110 z-50 hover:text-black"
                         type="submit"
                     >
+                        {/* Edge refraction */}
+                        <div
+                            className="pointer-events-none absolute inset-0"
+                            style={{
+                                backdropFilter: 'blur(6px) brightness(1.1) saturate(2.5)',
+                                WebkitBackdropFilter: 'blur(6px) brightness(1.1) saturate(2.5)',
+                                maskImage: 'radial-gradient(ellipse 65% 55% at 50% 50%, transparent 65%, black 100%)',
+                                WebkitMaskImage: 'radial-gradient(ellipse 65% 55% at 50% 50%, transparent 65%, black 100%)',
+                            }}
+                            aria-hidden="true"
+                        />
                         <div className="
                         p-3 h-fit rounded-3xl
                         hover:shadow-[0_0_0_4px_rgba(255,255,255,0.5)] dark:hover:shadow-[0_0_0_4px_rgba(0,0,0,0.25)]"

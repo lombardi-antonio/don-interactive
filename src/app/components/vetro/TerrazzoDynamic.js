@@ -1,123 +1,109 @@
 
 'use client'
 
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 
-const bgElement00 = '/bgElement00.svg';
-const bgElement01 = '/bgElement01.svg';
-const bgElement02 = '/bgElement02.svg';
-const bgElement03 = '/bgElement03.svg';
-const bgElement04 = '/bgElement04.svg';
-const bgElement05 = '/bgElement05.svg';
+const bgElements = [
+    '/bgElement00.svg',
+    '/bgElement01.svg',
+    '/bgElement02.svg',
+    '/bgElement03.svg',
+    '/bgElement04.svg',
+    '/bgElement05.svg',
+];
+
+const SPEED = 6;
+const COUNT = 8;
+
+function generateObject() {
+    return {
+        id: Math.random(),
+        x: Math.random() * window.innerWidth,
+        y: Math.random() * window.innerHeight,
+        directionX: (Math.random() - 0.5) * 2,
+        directionY: (Math.random() - 0.5) * 2,
+        svg: bgElements[Math.floor(Math.random() * bgElements.length)],
+        size: 30 + Math.random() * 10,
+        rotation: Math.random() * 360,
+        rotationSpeed: (Math.random() - 0.5) * 0.5,
+    };
+}
 
 function TerrazzoDynamic() {
-    /**
-     * Vetro Dynamic Background Component - A Background component that displays a dynamic terrazzo pattern.
-     * It is used to create a visually appealing background for the Vetro components.
-     */
+    const [objects, setObjects] = useState(null); // null = SSR, array = client
+    const stateRef = useRef([]); // mutable positions, never triggers re-renders
+    const domRefs = useRef({}); // id -> DOM element
+    const rafRef = useRef(null);
 
-    // Memoize the array of all available SVG elements
-    const bgElements = useMemo(() => [
-        bgElement00, bgElement01, bgElement02, bgElement03, bgElement04, bgElement05
-    ], []);
-
-    const [objects, setObjects] = useState([]);
-    const [isClient, setIsClient] = useState(false);
-    const [speed] = useState(6); // pixels per frame
-
-    // Initialize objects after component mounts on client
+    // Mount: generate objects once on client
     useEffect(() => {
-        setIsClient(true);
+        const initial = Array.from({ length: COUNT }, generateObject);
+        stateRef.current = initial;
+        setObjects(initial); // single render to mount DOM elements
+    }, []);
 
-        // Generate multiple floating objects (only on client)
-        const generateRandomObject = () => ({
-            id: Math.random(),
-            x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 800),
-            y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 600),
-            directionX: (Math.random() - 0.5) * 2,
-            directionY: (Math.random() - 0.5) * 2,
-            svg: bgElements[Math.floor(Math.random() * bgElements.length)],
-            size: 30 + Math.random() * 10, // Random size between 30-40px
-            rotation: Math.random() * 360,
-            rotationSpeed: (Math.random() - 0.5)
-        });
-
-        setObjects(Array.from({ length: 8 }, generateRandomObject));
-    }, [bgElements]);
-
+    // Animation loop: runs after objects are mounted
     useEffect(() => {
-        const moveRandomly = () => {
-            if (!isClient) return; // Don't run if not on client
+        if (!objects) return;
 
-            setObjects(prevObjects =>
-                prevObjects.map(obj => {
-                    let newX = obj.x + obj.directionX * speed;
-                    let newY = obj.y + obj.directionY * speed;
-                    let newDirectionX = obj.directionX;
-                    let newDirectionY = obj.directionY;
-                    let newRotation = (obj.rotation + obj.rotationSpeed) * 1;
+        const tick = () => {
+            const maxX = window.innerWidth;
+            const maxY = window.innerHeight;
 
-                    // Get viewport dimensions safely
-                    const maxX = typeof window !== 'undefined' ? window.innerWidth : 800;
-                    const maxY = typeof window !== 'undefined' ? window.innerHeight : 600;
+            stateRef.current = stateRef.current.map(obj => {
+                let { x, y, directionX, directionY, rotation, rotationSpeed } = obj;
 
-                    // Bounce off edges and add some randomness
-                    if (newX <= 0 || newX >= maxX) {
-                        newDirectionX = -obj.directionX + (Math.random() - 0.5) * 0.5;
-                        newX = Math.max(0, Math.min(maxX, newX));
-                    }
+                x += directionX * SPEED;
+                y += directionY * SPEED;
+                rotation += rotationSpeed;
 
-                    if (newY <= 0 || newY >= maxY) {
-                        newDirectionY = -obj.directionY + (Math.random() - 0.5) * 0.5;
-                        newY = Math.max(0, Math.min(maxY, newY));
-                    }
+                if (x <= 0 || x >= maxX) {
+                    directionX = -directionX + (Math.random() - 0.5) * 0.5;
+                    x = Math.max(0, Math.min(maxX, x));
+                }
+                if (y <= 0 || y >= maxY) {
+                    directionY = -directionY + (Math.random() - 0.5) * 0.5;
+                    y = Math.max(0, Math.min(maxY, y));
+                }
 
-                    // Normalize direction to prevent it from getting too fast
-                    const magnitude = Math.sqrt(newDirectionX * newDirectionX + newDirectionY * newDirectionY);
-                    if (magnitude > 0.05) {
-                        newDirectionX = (newDirectionX / magnitude) * 0.05;
-                        newDirectionY = (newDirectionY / magnitude) * 0.05;
-                    }
+                const magnitude = Math.sqrt(directionX * directionX + directionY * directionY);
+                if (magnitude > 0.05) {
+                    directionX = (directionX / magnitude) * 0.05;
+                    directionY = (directionY / magnitude) * 0.05;
+                }
 
-                    return {
-                        ...obj,
-                        x: newX,
-                        y: newY,
-                        directionX: newDirectionX,
-                        directionY: newDirectionY,
-                        rotation: newRotation
-                    };
-                })
-            );
+                const el = domRefs.current[obj.id];
+                if (el) {
+                    el.style.transform = `translate(${x}px, ${y}px) rotate(${rotation}deg)`;
+                }
+
+                return { ...obj, x, y, directionX, directionY, rotation };
+            });
+
+            rafRef.current = requestAnimationFrame(tick);
         };
 
-        const interval = setInterval(moveRandomly, 64);
-        return () => clearInterval(interval);
-    }, [speed, bgElements, isClient]);
+        rafRef.current = requestAnimationFrame(tick);
+        return () => cancelAnimationFrame(rafRef.current);
+    }, [objects]);
 
-    // Don't render anything during SSR to prevent hydration mismatch
-    if (!isClient) {
-        return (
-            <div className="header grid grid-cols-6 w-full fixed pointer-events-none z-0">
-                {/* Placeholder during SSR */}
-            </div>
-        );
+    if (!objects) {
+        return <div className="header grid grid-cols-6 w-full fixed pointer-events-none z-0" />;
     }
 
     return (
         <div className="header grid grid-cols-6 w-full fixed pointer-events-none z-0">
-            {/* <div className="terrazzo-main col-span-6 bg-[url('../../public/TerrazzoLess.png')] dark:bg-[url('../../public/TerrazzoLessEnd.png')] min-h-[512px]" role="banner"></div>
-            <div className="terrazzo-end col-span-6 bg-[url('../../public/TerrazzoLessEnd.png')] dark:bg-[url('../../public/TerrazzoLessEnd.png')] h-[512px]"></div> */}
             {objects.map((obj) => (
                 <div
                     key={obj.id}
-                    className="absolute transition-all duration-75 ease-linear"
+                    ref={el => { domRefs.current[obj.id] = el; }}
+                    className="absolute"
                     style={{
-                        left: `${obj.x}px`,
-                        top: `${obj.y}px`,
-                        opacity: obj.opacity,
-                        transform: `rotate(${obj.rotation}deg)`
+                        top: 0,
+                        left: 0,
+                        willChange: 'transform',
+                        transform: `translate(${obj.x}px, ${obj.y}px) rotate(${obj.rotation}deg)`,
                     }}
                 >
                     <Image
@@ -130,7 +116,7 @@ function TerrazzoDynamic() {
                 </div>
             ))}
         </div>
-    )
+    );
 }
 
 export default TerrazzoDynamic;
