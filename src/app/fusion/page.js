@@ -29,7 +29,7 @@ export default function Home() {
           "
         >
           <Card appImageSrc="/fusionimpossible.png" header="Fusion Impossible">
-            <div className="flex flex-row justify-center">
+            <div className="flex flex-row justify-center items-center">
               <a target="_blank" rel="noopener noreferrer">
                 <button
                   className="
@@ -39,13 +39,14 @@ export default function Home() {
                   type="submit"
                   disabled
                   aria-disabled="true"
-                  style={{ opacity: 0.5, pointerEvents: "none" }}
+                  style={{ opacity: 0.1, pointerEvents: "none" }}
                 >
                   <Image
                     src="/googlePlayBadge.png"
                     height={264}
                     width={800}
                     alt="Google Play Store Button"
+                    style={{ maxWidth: "240px", height: "auto" }}
                   />
                 </button>
               </a>
@@ -58,13 +59,14 @@ export default function Home() {
                   type="submit"
                   disabled
                   aria-disabled="true"
-                  style={{ opacity: 0.5, pointerEvents: "none" }}
+                  style={{ opacity: 0.1, pointerEvents: "none" }}
                 >
                   <Image
                     src="/Download_on_the_App_Store_Badge_blk.svg"
                     height={264}
                     width={724}
                     alt="Apple App Store Button"
+                    style={{ maxWidth: "240px", height: "auto" }}
                   />
                 </button>
               </a>

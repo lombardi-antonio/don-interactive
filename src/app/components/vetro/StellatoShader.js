@@ -21,6 +21,7 @@ out vec4 out_color;
 
 uniform vec2  u_resolution;
 uniform float u_time;
+uniform float u_light_mode;
 
 // ── Hashing ──────────────────────────────────────────────────────────────────
 
@@ -79,16 +80,17 @@ vec3 milkyWay(vec2 p, float t) {
   float colorShift = fbm(p * 1.8 + 3.1 + t * 0.03);
   float blend = clamp(colorShift * 1.4 - 0.2, 0.0, 1.0);
 
-  // Muted green (left/outer) and muted teal-blue (right/inner) — both very faded
-  vec3 greenTint = vec3(0.10, 0.28, 0.16);
-  vec3 blueTint  = vec3(0.08, 0.18, 0.38);
+  // Dark mode: muted green → teal-blue. Light mode: muted red → muted yellow.
+  vec3 greenTint = mix(vec3(0.10, 0.28, 0.16), vec3(0.26, 0.10, 0.06), u_light_mode);
+  vec3 blueTint  = mix(vec3(0.08, 0.18, 0.38), vec3(0.30, 0.20, 0.04), u_light_mode);
   vec3 cloudColor = mix(greenTint, blueTint, blend);
 
   vec3 col = mix(vec3(0.0), cloudColor, cloud * 0.75);
 
-  // Thin brighter cyan spine at the band's densest core
+  // Spine: cyan in dark mode, warm amber in light mode
+  vec3 spineColor = mix(vec3(0.04, 0.14, 0.22), vec3(0.28, 0.14, 0.03), u_light_mode);
   float core = exp(-band * band * 35.0);
-  col += vec3(0.04, 0.14, 0.22) * core * cloud * 0.6;
+  col += spineColor * core * cloud * 0.6;
 
   return col;
 }
@@ -179,7 +181,7 @@ void main() {
   float fgDrift = 0.02;
   vec2 fgUV = vec2(p.x + u_time * fgDrift, p.y + u_time * fgSpeed);
 
-  vec3 col  = vec3(0.0);
+  vec3 col  = mix(vec3(0.0), vec3(0.03, 0.06, 0.14), u_light_mode);
   col      += milkyWay(bgUV, u_time);
   col      += bgStars(bgUV);
   col      += fgStars(fgUV, u_time);
@@ -241,6 +243,9 @@ export default function StellatoShader({ className = '' }) {
 
     const uResolution = gl.getUniformLocation(program, 'u_resolution');
     const uTime       = gl.getUniformLocation(program, 'u_time');
+    const uLightMode  = gl.getUniformLocation(program, 'u_light_mode');
+
+    const mq = window.matchMedia('(prefers-color-scheme: light)');
 
     const resize = () => {
       canvas.width  = canvas.clientWidth;
@@ -266,6 +271,7 @@ export default function StellatoShader({ className = '' }) {
       gl.useProgram(program);
       gl.uniform2f(uResolution, canvas.width, canvas.height);
       gl.uniform1f(uTime, elapsed);
+      gl.uniform1f(uLightMode, mq.matches ? 1.0 : 0.0);
       gl.bindVertexArray(vao);
       gl.drawArrays(gl.TRIANGLES, 0, 6);
     };

@@ -56,7 +56,7 @@ export default function Navbar() {
       aria-label="Main navigation"
     >
       {/* Top bar — backdrop-filter is scoped here so the dropdown below can have its own */}
-      <div className="max-w-screen-full h-14 backdrop-blur-xl backdrop-brightness-150 dark:backdrop-brightness-50 flex flex-wrap items-center justify-between mx-auto p-2 border-b border-gray-200 dark:border-gray-600">
+      <div className="max-w-screen-full h-14 vetro-glass flex flex-wrap items-center justify-between mx-auto p-2">
         <Link href="/" className="flex items-center hover:cursor-pointer" aria-label="Go to homepage">
           <Image
             src={logo}
@@ -119,7 +119,7 @@ export default function Navbar() {
         id="navbar-dropdown"
         className={`${isVisible ? 'block' : 'hidden'} md:hidden`}
       >
-        <ul className="flex flex-col p-4 font-medium backdrop-blur-2xl backdrop-brightness-110 dark:backdrop-brightness-110 shadow-[0_0_0_1px_rgba(0,0,0,0.25)] dark:shadow-[0_0_0_1px_rgba(255,255,255,0.25)] rounded-b-xl">
+        <ul className="flex flex-col p-4 font-medium vetro-glass rounded-b-xl">
           {links.map(({ href, label }) => (
             <li key={href}>
               <Link
