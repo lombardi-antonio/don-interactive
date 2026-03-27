@@ -60,7 +60,7 @@ function Message({ type = "info", children, onDismiss }) {
             {/* Dismiss button — right segment */}
             <button
                 onClick={handleDismiss}
-                className="relative px-4 py-3 text-blue-500 dark:text-blue-400 hover:bg-black/[0.06] dark:hover:bg-white/[0.08] transition-colors duration-150"
+                className="self-stretch flex items-center px-4 text-blue-500 dark:text-blue-400 hover:bg-black/[0.06] dark:hover:bg-white/[0.08] transition-colors duration-150"
                 aria-label="Dismiss"
             >
                 <svg className="w-3 h-3" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
