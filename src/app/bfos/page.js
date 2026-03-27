@@ -3,8 +3,7 @@ import localFont from "next/font/local";
 
 import Card from "@/app/components/vetro/Card";
 import Button from "@/app/components/vetro/Button";
-import TerrazzoDynamic from "../components/vetro/TerrazzoDynamic";
-import TerrazzoShader from "../components/vetro/TerrazzoShader";
+import StellatoShader from "../components/vetro/StellatoShader";
 
 const monomaniac = localFont({
   src: "../fonts/MonomaniacOne-Regular.ttf",
@@ -19,7 +18,7 @@ const rubik = localFont({
 export default function Home() {
   return (
     <main className={`${rubik.className}`}>
-      <TerrazzoShader />
+      <StellatoShader className="fixed inset-0 pointer-events-none z-0" />
       <div className="main-card relative grid auto-cols-fr auto-rows-fr grid-cols-7 grid-rows-3 gap-6 py-12 h-full mx-auto max-w-full lg:max-w-[920px] xl:max-w-[2160px]">
         <div
           className="
