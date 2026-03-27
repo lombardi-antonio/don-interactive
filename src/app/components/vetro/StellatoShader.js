@@ -58,9 +58,9 @@ float fbm(vec2 p) {
 // ── Milky-way band ────────────────────────────────────────────────────────────
 
 vec3 milkyWay(vec2 p, float t) {
-  // Gently curved band across the screen
-  float band = uv.y - 0.45 + sin(uv.x * 3.14159 + 0.4) * 0.09
-                            + cos(uv.x * 1.8 - 0.9)    * 0.05;
+  // Gently curved band — uses p so it scrolls with the scene
+  float band = p.y - 0.45 + sin(p.x * 3.14159 + 0.4) * 0.09
+                           + cos(p.x * 1.8 - 0.9)    * 0.05;
   float bandMask = exp(-band * band * 10.0);
 
   // Layered FBM clouds within the band
@@ -153,24 +153,31 @@ vec3 fgStars(vec2 p, float t) {
 
 void main() {
   // ── Tunnel / warp distortion ──────────────────────────────────────────────
-  // Pincushion warp: pushes UVs outward from centre so the screen edges are
-  // stretched (rushing past) and the centre appears compressed (tunnel mouth).
-  // A slow breath on the strength gives a subtle sense of acceleration.
+  // Cylindrical bend: pulls horizontal lines inward toward the centre y-axis,
+  // so they arc like the inside of a tunnel.  The more you are left/right of
+  // centre, the harder the lines are pulled toward the horizontal mid-line.
   vec2 c = uv - 0.5;
+  float bendCurve = 3.5;
+  c.y -= bendCurve * c.x * c.x * c.y;
+
+  // Depth pincushion on top for the compressed-centre / rushing-edge feel.
+  // A slow breath on strength gives a subtle sense of acceleration.
   float r2 = dot(c, c);
-  float warpStrength = 0.55 + 0.05 * sin(u_time * 0.25);
+  float warpStrength = 0.35 + 0.05 * sin(u_time * 0.25);
   vec2 warpedUV = c * (1.0 + warpStrength * r2) + 0.5;
 
   float aspect = u_resolution.x / u_resolution.y;
   vec2 p = vec2(warpedUV.x * aspect, warpedUV.y);
 
-  // Background UV scrolls slowly (right to left)
+  // Background UV scrolls slowly downward (flying through tunnel)
   float bgSpeed = 0.015;
-  vec2 bgUV = vec2(p.x + u_time * bgSpeed, p.y);
+  float bgDrift = 0.005;
+  vec2 bgUV = vec2(p.x + u_time * bgDrift, p.y + u_time * bgSpeed);
 
-  // Foreground UV scrolls ~4× faster for parallax
+  // Foreground UV scrolls ~4× faster for parallax depth
   float fgSpeed = 0.06;
-  vec2 fgUV = vec2(p.x + u_time * fgSpeed, p.y);
+  float fgDrift = 0.02;
+  vec2 fgUV = vec2(p.x + u_time * fgDrift, p.y + u_time * fgSpeed);
 
   vec3 col  = vec3(0.0);
   col      += milkyWay(bgUV, u_time);
