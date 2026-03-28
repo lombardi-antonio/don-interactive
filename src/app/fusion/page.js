@@ -4,8 +4,7 @@ import localFont from "next/font/local";
 import Card from "@/app/components/vetro/Card";
 import Button from "@/app/components/vetro/Button";
 import Message from "@/app/components/vetro/Message";
-import TerrazzoDynamic from "../components/vetro/TerrazzoDynamic";
-import TerrazzoShader from "../components/vetro/TerrazzoShader";
+import VerniceShader from "../components/vetro/VerniceShader";
 
 const monomaniac = localFont({
   src: "../fonts/MonomaniacOne-Regular.ttf",
@@ -20,8 +19,8 @@ const rubik = localFont({
 export default function Home() {
   return (
     <main className={`${rubik.className}`}>
-      <TerrazzoShader />
-      <div className="main-card relative grid auto-cols-fr auto-rows-fr grid-cols-7 grid-rows-3 gap-6 py-1 h-full mx-auto max-w-full lg:max-w-[920px] xl:max-w-[2160px]">
+      <VerniceShader className="fixed inset-0 pointer-events-none z-0" />
+      <div className="main-card relative grid auto-cols-fr auto-rows-fr grid-cols-7 grid-rows-3 gap-6 py-10 h-full mx-auto max-w-full lg:max-w-[920px] xl:max-w-[2160px]">
         <div
           className="
           col-start-1 col-span-full xl:col-start-2 xl:col-span-5
@@ -29,8 +28,8 @@ export default function Home() {
           mx-4 my-16 xl:m-6
           "
         >
-          <Card appImageSrc="/fusionimpossible.png" header="Fusion Impossible">
-            <div className="flex flex-row justify-center">
+          <Card appImageSrc="/fusionimpossible.png" header="Fusion Impossible" backLink>
+            <div className="flex flex-row justify-center items-center">
               <a target="_blank" rel="noopener noreferrer">
                 <button
                   className="
@@ -40,13 +39,14 @@ export default function Home() {
                   type="submit"
                   disabled
                   aria-disabled="true"
-                  style={{ opacity: 0.5, pointerEvents: "none" }}
+                  style={{ opacity: 0.1, pointerEvents: "none" }}
                 >
                   <Image
                     src="/googlePlayBadge.png"
                     height={264}
                     width={800}
                     alt="Google Play Store Button"
+                    style={{ maxWidth: "240px", height: "auto" }}
                   />
                 </button>
               </a>
@@ -59,18 +59,19 @@ export default function Home() {
                   type="submit"
                   disabled
                   aria-disabled="true"
-                  style={{ opacity: 0.5, pointerEvents: "none" }}
+                  style={{ opacity: 0.1, pointerEvents: "none" }}
                 >
                   <Image
                     src="/Download_on_the_App_Store_Badge_blk.svg"
                     height={264}
                     width={724}
                     alt="Apple App Store Button"
+                    style={{ maxWidth: "240px", height: "auto" }}
                   />
                 </button>
               </a>
               <Message>
-                Available soon on Google Play and Apple App Store!
+                Available soon!
               </Message>
             </div>
             <p className="text-md text-left pt-2 pb-4">
@@ -87,9 +88,9 @@ export default function Home() {
               Will you become the hero who solves the energy crisis, or will your ambitions go up in smoke? The challenge awaits in <b>Fusion Impossible</b>.
             </p>
             <Button type="link" linkButtonUrl="https://github.com/lombardi-antonio/fusion-impossible">
-              <div className="flex items-center justify-center">
+              <div className="flex items-center justify-center text-black dark:text-white">
                 <svg
-                  className="w-4 h-4 mr-2"
+                  className="w-5 h-5 mr-2 text-black dark:text-white"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -101,7 +102,7 @@ export default function Home() {
                     clipRule="evenodd"
                   />
                 </svg>
-                View in Github
+                view on github
               </div>
             </Button>
           </Card>

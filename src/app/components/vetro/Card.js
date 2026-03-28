@@ -1,5 +1,8 @@
+'use client';
+
 import Image from "next/image";
 import localFont from "next/font/local";
+import { useRouter } from "next/navigation";
 import Button from "@/app/components/vetro/Button";
 import Message from "@/app/components/vetro/Message";
 
@@ -8,7 +11,8 @@ const monomaniac = localFont({
     fontFamily: "Monomaniac",
 });
 
-function Card({ appImageSrc, header, subheader, children, textPosition = "center", available = true, linkButtonUrl }) {
+function Card({ appImageSrc, header, subheader, children, textPosition = "center", available = true, linkButtonUrl, backLink }) {
+    const router = useRouter();
     /**
      * Vetro Card Component - A card component that can display a image, header, subheader, and text.
      * Optional buttons can be added to the card.
@@ -20,6 +24,7 @@ function Card({ appImageSrc, header, subheader, children, textPosition = "center
      * @param {string} textPosition - The position of the text in the card.
      * @param {boolean} available - Whether the app is available or not.
      * @param {string} linkButtonUrl - The url of the link button.
+     * @param {string} backLink - Button to navigate back.
      */
     return (
         <div
@@ -31,6 +36,17 @@ function Card({ appImageSrc, header, subheader, children, textPosition = "center
             text-gray-800 dark:text-white text-center
             rounded-3xl vetro-glass"
         >
+            {backLink && (
+                <div className="absolute top-4 left-4 z-10 cursor-pointer" onClick={() => router.back()}>
+                    <Button type="info">
+                        <div className="flex items-center -mx-1 my-1 text-black dark:text-white">
+                            <svg className="w-8 h-8 rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </div>
+                    </Button>
+                </div>
+            )}
             {/* Edge refraction — stronger blur+saturation masked to the border region only */}
             <div
                 className="pointer-events-none absolute inset-0"
@@ -44,12 +60,12 @@ function Card({ appImageSrc, header, subheader, children, textPosition = "center
             />
             {/* Specular highlight — simulates light refracting at the glass surface */}
             <div className="pointer-events-none absolute inset-x-0 top-0 h-1/3 rounded-t-3xl bg-gradient-to-b from-white/[0.18] to-transparent" aria-hidden="true" />
-            <div className="rounded-3xl px-4 py-8 md:px-14 md:py-14 h-full w-full">
+            <div className="rounded-3xl px-4 py-5 md:px-14 md:py-14 h-full w-full">
                 {!available &&
-                    <Message>Available soon!</Message>
+                    <Message>available soon!</Message>
                 }
                 {appImageSrc &&
-                    <div className="mx-auto mb-10 w-[128px] h-[128px] md:w-[256px] md:h-[256px] rounded-3xl bg-gradient-to-tr from-teal-500 via-indigo-500 to-rose-500 p-2 drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]">
+                    <div className="mx-auto mb-10 w-[180px] h-[180px] md:w-[256px] md:h-[256px] rounded-3xl bg-gradient-to-tr from-teal-500 via-indigo-500 to-rose-500 p-2 drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]">
                         <Image
                             src={appImageSrc}
                             width={264}

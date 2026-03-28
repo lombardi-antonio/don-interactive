@@ -37,6 +37,10 @@ uniform float u_time;
 uniform vec4 u_mouse;
 uniform sampler2D u_textures[16];
 
+float hash(vec2 p) {
+  return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);
+}
+
 void main(){
   float u_speed_x    = 1.0;
   float u_amplitude_x = 0.01;
@@ -56,7 +60,10 @@ void main(){
   vec2 newCoords   = vec2(uv.x + offsetX, uv.y + offsetY) + scroll;
   vec2 tiledCoords = newCoords * (u_resolution / float(${TILE_SIZE}));
 
-  out_color = texture(u_textures[0], tiledCoords);
+  vec4 col = texture(u_textures[0], tiledCoords);
+  float grain = hash(uv * u_resolution + floor(u_time * 20.0));
+  col.rgb += (grain - 0.5) * 0.03;
+  out_color = col;
 }
 `;
 
@@ -106,16 +113,16 @@ async function buildTileCanvas(darkMode) {
   offscreen.height = TILE_SIZE;
   const ctx = offscreen.getContext('2d');
 
-  ctx.fillStyle = darkMode ? '#000' : '#fff';
+  ctx.fillStyle = darkMode ? '#000' : '#d0fffc';
   ctx.fillRect(0, 0, TILE_SIZE, TILE_SIZE);
 
   const rng = () => Math.random();
 
   for (let i = 0; i < ELEMENT_COUNT; i++) {
     const img = images[Math.floor(rng() * images.length)];
-    const s   = ELEMENT_MIN_PX + rng() * (ELEMENT_MAX_PX - ELEMENT_MIN_PX);
-    const x   = rng() * TILE_SIZE;
-    const y   = rng() * TILE_SIZE;
+    const s = ELEMENT_MIN_PX + rng() * (ELEMENT_MAX_PX - ELEMENT_MIN_PX);
+    const x = rng() * TILE_SIZE;
+    const y = rng() * TILE_SIZE;
     const rot = rng() * Math.PI * 2;
 
     // Draw at primary position and at wrapped offsets so edges tile cleanly
@@ -127,13 +134,13 @@ async function buildTileCanvas(darkMode) {
     // Draw element onto temp canvas and mask its edges with a radial gradient
     const pad = s * 0.3;
     const tmp = document.createElement('canvas');
-    tmp.width  = s + pad * 2;
+    tmp.width = s + pad * 2;
     tmp.height = s + pad * 2;
-    const tc  = tmp.getContext('2d');
+    const tc = tmp.getContext('2d');
     tc.drawImage(img, pad, pad, s, s);
 
-    const cx   = tmp.width / 2;
-    const cy   = tmp.height / 2;
+    const cx = tmp.width / 2;
+    const cy = tmp.height / 2;
     const grad = tc.createRadialGradient(cx, cy, s * 0.2, cx, cy, s * 0.65);
     grad.addColorStop(0, 'rgba(0,0,0,1)');
     grad.addColorStop(1, 'rgba(0,0,0,0)');
@@ -191,8 +198,8 @@ export default function TerrazzoShader() {
     gl.vertexAttribPointer(posLoc, 2, gl.FLOAT, false, 0, 0);
 
     const uResolution = gl.getUniformLocation(program, 'u_resolution');
-    const uTime       = gl.getUniformLocation(program, 'u_time');
-    const uMouse      = gl.getUniformLocation(program, 'u_mouse');
+    const uTime = gl.getUniformLocation(program, 'u_time');
+    const uMouse = gl.getUniformLocation(program, 'u_mouse');
 
     for (let i = 0; i < 16; i++) {
       gl.uniform1i(gl.getUniformLocation(program, `u_textures[${i}]`), i);
@@ -220,13 +227,13 @@ export default function TerrazzoShader() {
     const mouse = [0, 0, 0, 0];
     const onMouseMove = (e) => { mouse[0] = e.clientX; mouse[1] = e.clientY; };
     const onMouseDown = () => { mouse[2] = 1; };
-    const onMouseUp   = () => { mouse[2] = 0; };
+    const onMouseUp = () => { mouse[2] = 0; };
     window.addEventListener('mousemove', onMouseMove);
     window.addEventListener('mousedown', onMouseDown);
     window.addEventListener('mouseup', onMouseUp);
 
     const resize = () => {
-      canvas.width  = window.innerWidth;
+      canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
       gl.viewport(0, 0, canvas.width, canvas.height);
     };
