@@ -27,6 +27,9 @@ function Telaio({ src, alt = "", width = 320, height = 650 }) {
                     />
                 </div>
 
+                {/* Dynamic Island */}
+                <div className="absolute top-3 left-1/2 -translate-x-1/2 w-[35%] h-[28px] bg-black rounded-full z-10" />
+
                 {/* Screen glare */}
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent rounded-[2.6rem] z-20" />
             </div>

@@ -22,10 +22,13 @@ export default function Home() {
       <section className="main-card relative grid auto-cols-fr auto-rows-fr grid-cols-7 grid-rows-3 gap-6 py-16 h-full mx-auto max-w-full lg:max-w-[920px] xl:max-w-[2160px]" aria-labelledby="main-content">
         <article className="col-start-1 col-end-8 xl:col-start-2 xl:col-end-7 row-start-1 row-span-1">
           <Card header="DO∩ アントニオ" subheader="interactive" textPosition="left">
-            <div className="absolute top-0 -right-20 -rotate-6 pointer-events-none">
-              <Telaio src="/loadingScreenImage.png" />
+            <div className="absolute top-0 -right-20 -rotate-6 pointer-events-none -z-10">
+              <div className="dark:hidden opacity-50 xs:opacity-100"><Telaio src="/LoadingScreenLight.png" /></div>
+              <div className="hidden dark:block opacity-50 xs:opacity-100">
+                <Telaio src="/LoadingScreenDark.png" />
+              </div>
             </div>
-            <div className="pr-64">
+            <div className="xs:pr-64">
               <p>
                 This is a mock business created by me to showcase my skills and passion
                 for all things interactive. Here you&#39;ll find examples of my work in
