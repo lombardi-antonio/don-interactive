@@ -28,7 +28,7 @@ export default function Home() {
           mx-4 my-16 xl:m-6
           "
         >
-          <Card appImageSrc="/fusionimpossible.png" header="Fusion Impossible">
+          <Card appImageSrc="/fusionimpossible.png" header="Fusion Impossible" backLink>
             <div className="flex flex-row justify-center items-center">
               <a target="_blank" rel="noopener noreferrer">
                 <button
@@ -88,9 +88,9 @@ export default function Home() {
               Will you become the hero who solves the energy crisis, or will your ambitions go up in smoke? The challenge awaits in <b>Fusion Impossible</b>.
             </p>
             <Button type="link" linkButtonUrl="https://github.com/lombardi-antonio/fusion-impossible">
-              <div className="flex items-center justify-center">
+              <div className="flex items-center justify-center text-black dark:text-white">
                 <svg
-                  className="w-4 h-4 mr-2"
+                  className="w-5 h-5 mr-2 text-black dark:text-white"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -102,7 +102,7 @@ export default function Home() {
                     clipRule="evenodd"
                   />
                 </svg>
-                View in Github
+                view on github
               </div>
             </Button>
           </Card>

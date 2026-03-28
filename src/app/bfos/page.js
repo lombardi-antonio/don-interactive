@@ -27,7 +27,7 @@ export default function Home() {
           mt-4 mx-4 my-16 xl:m-6
           "
         >
-          <Card appImageSrc="/beatsFromOuterSpace.png" header="Beats form Outer Space">
+          <Card appImageSrc="/beatsFromOuterSpace.png" header="Beats form Outer Space" backLink>
             <div className="flex flex-row justify-center">
               <a href="https://apps.apple.com/us/app/beats-from-outer-space/id6467766328" target="_blank" rel="noopener noreferrer">
                 <button
@@ -42,6 +42,7 @@ export default function Home() {
                     height={80}
                     width={256}
                     alt="Apple App Store Button"
+                    style={{ maxWidth: "240px", height: "auto" }}
                   />
                 </button>
               </a>

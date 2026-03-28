@@ -2,29 +2,31 @@
 
 import { useState } from "react";
 
-function useSpotlight() {
+function useSpotlight(darkInLight = false) {
     const [spot, setSpot] = useState({ x: 0, y: 0, visible: false });
     const onMouseMove = (e) => {
         const r = e.currentTarget.getBoundingClientRect();
         setSpot({ x: e.clientX - r.left, y: e.clientY - r.top, visible: true });
     };
     const onMouseLeave = () => setSpot(s => ({ ...s, visible: false }));
-    const overlay = (
-        <div
-            className="pointer-events-none absolute inset-0"
-            style={{
-                background: `radial-gradient(circle 200px at ${spot.x}px ${spot.y}px, rgba(255,255,255,0.18), transparent 70%)`,
-                opacity: spot.visible ? 1 : 0,
-                transition: 'opacity 400ms ease',
-            }}
-            aria-hidden="true"
-        />
+    const overlayStyle = (color) => ({
+        background: `radial-gradient(circle 200px at ${spot.x}px ${spot.y}px, ${color}, transparent 70%)`,
+        opacity: spot.visible ? 1 : 0,
+        transition: 'opacity 400ms ease',
+    });
+    const overlay = darkInLight ? (
+        <>
+            <div className="dark:hidden pointer-events-none absolute inset-0" style={overlayStyle('rgba(0,0,0,0.12)')} aria-hidden="true" />
+            <div className="hidden dark:block pointer-events-none absolute inset-0" style={overlayStyle('rgba(255,255,255,0.18)')} aria-hidden="true" />
+        </>
+    ) : (
+        <div className="pointer-events-none absolute inset-0" style={overlayStyle('rgba(255,255,255,0.18)')} aria-hidden="true" />
     );
     return { onMouseMove, onMouseLeave, overlay };
 }
 
 function Button({ children, type = "default", linkButtonUrl }) {
-    const { onMouseMove, onMouseLeave, overlay } = useSpotlight();
+    const { onMouseMove, onMouseLeave, overlay } = useSpotlight(type === 'info');
 
     return (
         <>
@@ -63,6 +65,33 @@ function Button({ children, type = "default", linkButtonUrl }) {
                     </button>
                 </a>
             )}
+            {type === "info" && (
+                <a href={linkButtonUrl}>
+                    <button
+                        className="
+                    relative overflow-hidden
+                    vetro-glass-button
+                    h-fit animate-fade-in transition ease-in-out duration-100
+                    text-white text-center rounded-full
+                    z-50 text-sm"
+                        type="submit"
+                        onMouseMove={onMouseMove}
+                        onMouseLeave={onMouseLeave}
+                    >
+                        {/* Stained glass gradient */}
+                        <div
+                            className="pointer-events-none absolute inset-0 white/10 dark:black/10"
+                            aria-hidden="true"
+                        />
+                        {/* Specular highlight */}
+                        <div className="pointer-events-none absolute inset-x-0 top-0 h-1/3 rounded-t-3xl bg-gradient-to-b from-white/20 to-transparent" aria-hidden="true" />
+                        {overlay}
+                        <div className="relative px-3 py-1 h-fit rounded-full">
+                            {children}
+                        </div>
+                    </button>
+                </a>
+            )}
             {type === "link" && (
                 <a href={linkButtonUrl} className="flex items-center justify-center">
                     <button
@@ -78,13 +107,13 @@ function Button({ children, type = "default", linkButtonUrl }) {
                     >
                         {/* Stained glass gradient */}
                         <div
-                            className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-teal-500/50 via-indigo-500/50 to-rose-500/80"
+                            className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-teal-500/40 via-indigo-500/30 to-rose-500/50"
                             aria-hidden="true"
                         />
                         {/* Specular highlight */}
                         <div className="pointer-events-none absolute inset-x-0 top-0 h-1/3 rounded-t-3xl bg-gradient-to-b from-white/[0.22] to-transparent" aria-hidden="true" />
                         {overlay}
-                        <div className="relative py-3 px-8 h-fit rounded-full">
+                        <div className="relative py-2 px-8 h-fit rounded-full text-black dark:text-white">
                             {children}
                         </div>
                     </button>
