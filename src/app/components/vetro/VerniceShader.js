@@ -23,24 +23,26 @@ uniform vec2  u_resolution;
 uniform float u_time;
 uniform vec4  u_mouse;
 uniform float u_dark_mode;
+uniform vec3  u_base_color;
+uniform vec3  u_target_color;
 
 float hash(vec2 p) {
   return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);
 }
 
-// Light mode: medium mint → near-white mint
+// Light mode: oscillates from base toward target (cos=1 reaches target exactly)
 vec3 palette_light(float t) {
-  vec3 a = vec3(0.60, 0.87, 0.74);
-  vec3 b = vec3(0.38, 0.13, 0.26);
+  vec3 a = u_base_color;
+  vec3 b = u_target_color - u_base_color;
   vec3 c = vec3(1.00, 1.00, 1.00);
   vec3 d = vec3(0.00, 0.00, 0.05);
   return a + b * cos(6.28318 * (c * t + d));
 }
 
-// Dark mode: very dark mint → medium mint
+// Dark mode: darkened base, oscillates toward a very dark shade of target
 vec3 palette_dark(float t) {
-  vec3 a = vec3(0.15, 0.35, 0.25);
-  vec3 b = vec3(0.13, 0.25, 0.18);
+  vec3 a = u_base_color * 0.4;
+  vec3 b = u_target_color * 0.15 - a;
   vec3 c = vec3(1.00, 1.00, 1.00);
   vec3 d = vec3(0.00, 0.00, 0.05);
   return a + b * cos(6.28318 * (c * t + d));
@@ -97,6 +99,11 @@ void main() {
 }
 `;
 
+function hexToRgb(hex) {
+  const n = parseInt(hex.replace('#', ''), 16);
+  return [((n >> 16) & 255) / 255, ((n >> 8) & 255) / 255, (n & 255) / 255];
+}
+
 function compileShader(gl, type, src) {
   const shader = gl.createShader(type);
   gl.shaderSource(shader, src);
@@ -121,7 +128,8 @@ function createProgram(gl, vs, fs) {
   return program;
 }
 
-export default function VerniceShader({ className = '' }) {
+// Default #99debd ≈ vec3(0.60, 0.87, 0.74) — the original mint
+export default function VerniceShader({ className = '', color = '#99debd', targetColor = '#ffffff' }) {
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -151,6 +159,13 @@ export default function VerniceShader({ className = '' }) {
     const uTime       = gl.getUniformLocation(program, 'u_time');
     const uMouse      = gl.getUniformLocation(program, 'u_mouse');
     const uDarkMode   = gl.getUniformLocation(program, 'u_dark_mode');
+    const uBaseColor   = gl.getUniformLocation(program, 'u_base_color');
+    const uTargetColor = gl.getUniformLocation(program, 'u_target_color');
+
+    const [r, g, b] = hexToRgb(color);
+    gl.uniform3f(uBaseColor, r, g, b);
+    const [tr, tg, tb] = hexToRgb(targetColor);
+    gl.uniform3f(uTargetColor, tr, tg, tb);
 
     const darkMQ = window.matchMedia('(prefers-color-scheme: dark)');
     const onSchemeChange = () => {
@@ -211,7 +226,7 @@ export default function VerniceShader({ className = '' }) {
       gl.deleteBuffer(vbo);
       gl.deleteVertexArray(vao);
     };
-  }, []);
+  }, [color, targetColor]);
 
   return (
     <div className={className}>

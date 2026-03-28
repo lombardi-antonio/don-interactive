@@ -5,6 +5,7 @@ import Card from "@/app/components/vetro/Card";
 import Button from "@/app/components/vetro/Button";
 import Message from "@/app/components/vetro/Message";
 import VerniceShader from "../components/vetro/VerniceShader";
+import Telaio from "../components/vetro/Telaio";
 
 const monomaniac = localFont({
   src: "../fonts/MonomaniacOne-Regular.ttf",
@@ -29,7 +30,7 @@ export default function Home() {
           "
         >
           <Card appImageSrc="/fusionimpossible.png" header="Fusion Impossible" backLink>
-            <div className="flex flex-row justify-center items-center">
+            <div className="flex flex-row justify-center">
               <a target="_blank" rel="noopener noreferrer">
                 <button
                   className="
@@ -46,7 +47,7 @@ export default function Home() {
                     height={264}
                     width={800}
                     alt="Google Play Store Button"
-                    style={{ maxWidth: "240px", height: "auto" }}
+                    className="max-w-[200px] xs:max-w-[240px] h-auto"
                   />
                 </button>
               </a>
@@ -66,26 +67,18 @@ export default function Home() {
                     height={264}
                     width={724}
                     alt="Apple App Store Button"
-                    style={{ maxWidth: "240px", height: "auto" }}
+                    className="max-w-[200px] xs:max-w-[240px] h-auto"
                   />
                 </button>
               </a>
               <Message>
-                Available soon!
+                available soon!
               </Message>
             </div>
-            <p className="text-md text-left pt-2 pb-4">
+            <p className="text-2xl text-left px-4 2xl:px-28 pt-8 pb-12">
               Step into the shoes of a brilliant scientist, racing against time to solve humanity’s greatest challenge: the global energy crisis.
               In <b>Fusion Impossible</b>, you are tasked with mastering the secrets of nuclear fusion inside a volatile reactor.
               Combine basic elements to create larger, more powerful ones, and trigger spectacular chain reactions to maximize your energy output.
-              <br />
-              <br />
-              Every move is a delicate balance—fuse elements carefully to avoid overloading the reactor.
-              Chain reactions will reward your ingenuity with bonus points, but push your luck too far and risk a catastrophic meltdown that ends your experiment. Can you harness the power of fusion and light the way to a brighter future, or will your reactor spiral out of control?
-              <br />
-              <br />
-              The fate of the world’s energy supply rests in your hands.
-              Will you become the hero who solves the energy crisis, or will your ambitions go up in smoke? The challenge awaits in <b>Fusion Impossible</b>.
             </p>
             <Button type="link" linkButtonUrl="https://github.com/lombardi-antonio/fusion-impossible">
               <div className="flex items-center justify-center text-black dark:text-white">
@@ -105,6 +98,25 @@ export default function Home() {
                 view on github
               </div>
             </Button>
+            <div className="relative flex items-center pointer-events-none">
+              <div className="w-full px-4 py-10 2xl:pl-28 md:w-1/2 absolute md:relative z-10 flex items-center text-left text-2xl">
+                Every move is a delicate balance. Fuse elements carefully to avoid overloading the reactor.
+                Can you harness the power of fusion and light the way to a brighter future, or will your reactor spiral out of control?
+              </div>
+              <div className="opacity-30 md:opacity-100 m-auto md:m-0 scale-75 md:mx-auto">
+                <Telaio src="/fusionImpossbleScreenShot1.png" />
+              </div>
+            </div>
+            <div className="relative flex items-center pointer-events-none">
+              <div className="opacity-30 md:opacity-100 m-auto md:m-0 scale-75 md:mx-auto">
+                <Telaio src="/fusionImpossbleScreenShot0.png" />
+              </div>
+              <div className="w-full px-4 pr-10 2xl:pr-28 md:w-1/2 absolute md:relative z-10 flex items-center text-left text-2xl">
+                The fate of the world’s energy supply rests in your hands.
+                Chain reactions will reward your ingenuity with bonus points, but push your luck too far and risk a catastrophic meltdown that ends your experiment.
+                Will you become the hero who solves the energy crisis, or will your ambitions go up in smoke? The challenge awaits in Fusion Impossible.
+              </div>
+            </div>
           </Card>
         </div>
       </div>

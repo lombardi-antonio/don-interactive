@@ -81,14 +81,14 @@ vec3 milkyWay(vec2 p, float t) {
   float blend = clamp(colorShift * 1.4 - 0.2, 0.0, 1.0);
 
   // Dark mode: muted green → teal-blue. Light mode: muted red → muted yellow.
-  vec3 greenTint = mix(vec3(0.10, 0.28, 0.16), vec3(0.26, 0.10, 0.06), u_light_mode);
-  vec3 blueTint  = mix(vec3(0.08, 0.18, 0.38), vec3(0.30, 0.20, 0.04), u_light_mode);
+  vec3 greenTint = mix(vec3(0.10, 0.28, 0.16), vec3(0.15, 0.40, 0.65), u_light_mode);
+  vec3 blueTint  = mix(vec3(0.08, 0.18, 0.38), vec3(0.20, 0.52, 0.82), u_light_mode);
   vec3 cloudColor = mix(greenTint, blueTint, blend);
 
   vec3 col = mix(vec3(0.0), cloudColor, cloud * 0.75);
 
   // Spine: cyan in dark mode, warm amber in light mode
-  vec3 spineColor = mix(vec3(0.04, 0.14, 0.22), vec3(0.28, 0.14, 0.03), u_light_mode);
+  vec3 spineColor = mix(vec3(0.04, 0.14, 0.22), vec3(0.12, 0.38, 0.70), u_light_mode);
   float core = exp(-band * band * 35.0);
   col += spineColor * core * cloud * 0.6;
 
@@ -155,12 +155,12 @@ vec3 fgStars(vec2 p, float t) {
 
 void main() {
   // ── Tunnel / warp distortion ──────────────────────────────────────────────
-  // Cylindrical bend: pulls horizontal lines inward toward the centre y-axis,
-  // so they arc like the inside of a tunnel.  The more you are left/right of
-  // centre, the harder the lines are pulled toward the horizontal mid-line.
+  // Cylindrical bend: pulls vertical lines inward toward the centre x-axis,
+  // so they arc like the inside of a tunnel rotated 90°.  The more you are
+  // above/below centre, the harder the lines are pulled toward the vertical mid-line.
   vec2 c = uv - 0.5;
   float bendCurve = 3.5;
-  c.y -= bendCurve * c.x * c.x * c.y;
+  c.x -= bendCurve * c.y * c.y * c.x;
 
   // Depth pincushion on top for the compressed-centre / rushing-edge feel.
   // A slow breath on strength gives a subtle sense of acceleration.
@@ -172,16 +172,16 @@ void main() {
   vec2 p = vec2(warpedUV.x * aspect, warpedUV.y);
 
   // Background UV scrolls slowly downward (flying through tunnel)
-  float bgSpeed = 0.015;
-  float bgDrift = 0.005;
+  float bgSpeed = 0.003;
+  float bgDrift = 0.001;
   vec2 bgUV = vec2(p.x + u_time * bgDrift, p.y + u_time * bgSpeed);
 
   // Foreground UV scrolls ~4× faster for parallax depth
-  float fgSpeed = 0.06;
-  float fgDrift = 0.02;
+  float fgSpeed = 0.012;
+  float fgDrift = 0.004;
   vec2 fgUV = vec2(p.x + u_time * fgDrift, p.y + u_time * fgSpeed);
 
-  vec3 col  = mix(vec3(0.0), vec3(0.03, 0.06, 0.14), u_light_mode);
+  vec3 col  = mix(vec3(0.0), vec3(0.18, 0.08, 0.28), u_light_mode);
   col      += milkyWay(bgUV, u_time);
   col      += bgStars(bgUV);
   col      += fgStars(fgUV, u_time);
