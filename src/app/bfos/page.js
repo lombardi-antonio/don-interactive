@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import Card from "@/app/components/vetro/Card";
 import Button from "@/app/components/vetro/Button";
 import StellatoShader from "../components/vetro/StellatoShader";
+import Telaio from "../components/vetro/Telaio";
 
 const monomaniac = localFont({
   src: "../fonts/MonomaniacOne-Regular.ttf",
@@ -19,12 +20,12 @@ export default function Home() {
   return (
     <main className={`${rubik.className}`}>
       <StellatoShader className="fixed inset-0 pointer-events-none z-0" />
-      <div className="main-card relative grid auto-cols-fr auto-rows-fr grid-cols-7 grid-rows-3 gap-6 py-12 h-full mx-auto max-w-full lg:max-w-[920px] xl:max-w-[2160px]">
+      <div className="main-card relative grid auto-cols-fr auto-rows-fr grid-cols-7 grid-rows-3 gap-6 py-10 h-full mx-auto max-w-full lg:max-w-[920px] xl:max-w-[2160px]">
         <div
           className="
           col-start-1 col-span-full xl:col-start-2 xl:col-span-5
           row-start-1 md:row-start-1 xl:row-start-1 row-span-2 md:row-span-3
-          mt-4 mx-4 my-16 xl:m-6
+          mx-4 my-16 xl:m-6
           "
         >
           <Card appImageSrc="/beatsFromOuterSpace.png" header="Beats form Outer Space" backLink>
@@ -47,34 +48,11 @@ export default function Home() {
                 </button>
               </a>
             </div>
-            <p className="text-md text-left pt-2 pb-4">
+            <p className="text-2xl text-left px-4 2xl:px-28 pt-8 pb-12">
               Hello there, Terrarians! I am your mysterious radio host,
               Midnight, and I have a story to share with you. It is the tale of
               a brave space hero, who pilots the magnificent Vapor Falcon in a
               battle against the body snatching aliens from outer space.
-              <br />
-              <br />
-              As you may know, the aliens have set their sights on Terra, our
-              beloved home planet. They want to take over our bodies and use us
-              as their own personal puppets. But our hero, with the help of the
-              Vapor Falcon, is determined to stop them at all costs.
-              <br />
-              <br />
-              Our hero will face many challenges and obstacles. They must
-              navigate through treacherous asteroid fields, dodge laser blasts
-              from enemy ships, and outsmart the cunning alien invaders. But
-              with their quick reflexes and sharp shooting skills, our hero is
-              more than capable of taking on whatever comes their way.
-              <br />
-              <br />
-              In the end, it all comes down to a final showdown between the
-              Vapor Falcon and the Mother Ship of the alien invaders. Will our
-              hero be able to save Terra and protect the human race from being
-              enslaved? Tune in to find out! Until then, stay safe out there and
-              keep your eyes peeled for any signs of the menacing aliens.
-              <br />
-              <br />
-              This is Midnight signing off.
             </p>
             <Button type="link" linkButtonUrl="https://github.com/lombardi-antonio/beats-from-outer-space">
               <div className="flex items-center justify-center">
@@ -94,6 +72,40 @@ export default function Home() {
                 View in Github
               </div>
             </Button>
+            <div className="relative flex items-center pointer-events-none">
+              <div className="w-full px-4 py-10 2xl:pl-28 md:w-1/2 absolute md:relative z-10 flex items-center text-left text-2xl">
+                As you may know, the aliens have set their sights on Terra, our
+                beloved home planet. They want to take over our bodies and use us
+                as their own personal puppets. But our hero, with the help of the
+                Vapor Falcon, is determined to stop them at all costs.
+              </div>
+              <div className="opacity-30 md:opacity-100 m-auto md:m-0 scale-75 md:mx-auto">
+                <Telaio objectFit="cover" src="/bfosScreenshot01.png" />
+              </div>
+            </div>
+            <div className="relative flex items-center pointer-events-none">
+              <div className="opacity-30 md:opacity-100 m-auto md:m-0 scale-75 md:mx-auto">
+                <Telaio objectFit="cover" src="/bfosScreenshot02.png" />
+              </div>
+              <div className="w-full px-4 pr-10 2xl:pr-28 md:w-1/2 absolute md:relative z-10 flex items-center text-left text-2xl">
+                Our hero will face many challenges and obstacles. They must
+                navigate through treacherous asteroid fields, dodge laser blasts
+                from enemy ships, and outsmart the cunning alien invaders. But
+                with their quick reflexes and sharp shooting skills, our hero is
+                more than capable of taking on whatever comes their way.
+              </div>
+            </div>
+            <div className="relative flex items-center pointer-events-none">
+              <div className="w-full px-4 py-10 2xl:pl-28 md:w-1/2 absolute md:relative z-10 flex items-center text-left text-2xl">
+                In the end, it all comes down to a final showdown between the
+                Vapor Falcon and the Mother Ship of the alien invaders. Will our
+                hero be able to save Terra and protect the human race from being
+                enslaved? Tune in to find out!
+              </div>
+              <div className="opacity-30 md:opacity-100 m-auto md:m-0 scale-75 md:mx-auto">
+                <Telaio objectFit="cover" src="/bfosScreenshot05.png" />
+              </div>
+            </div>
           </Card>
         </div>
       </div>

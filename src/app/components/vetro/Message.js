@@ -47,7 +47,7 @@ function Message({ type = "info", children, onDismiss, relative = false }) {
                 aria-hidden="true"
             />
             {/* Specular highlight */}
-            <div className="pointer-events-none absolute inset-x-0 top-0 h-1/6 rounded-t-3xl bg-gradient-to-b from-white/20 to-transparent" aria-hidden="true" />
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-1 rounded-t-3xl bg-gradient-to-b from-white/20 to-transparent" aria-hidden="true" />
 
             {/* Info circle — left cap: left arc is the pill edge, right arc is carved into the glass */}
             <div
@@ -74,10 +74,10 @@ function Message({ type = "info", children, onDismiss, relative = false }) {
 
             {/* Groove divider — carved into the glass */}
             <div
-                className="self-stretch w-px flex-shrink-0"
-                style={{
-                    background: 'linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.12) 20%, rgba(255, 255, 255, 0.05) 20%, transparent)',
-                }}
+                className="self-stretch w-px flex-shrink-0 bg-gradient-to-b from-white dark:from-white/10 to-transparent"
+                //style={{
+                //background: 'linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.12) 20%, rgba(255, 255, 255, 0.05) 20%, transparent)',
+                //}}
                 aria-hidden="true"
             />
 

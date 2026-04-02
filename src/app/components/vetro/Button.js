@@ -73,7 +73,7 @@ function Button({ children, type = "default", linkButtonUrl }) {
                     vetro-glass-button
                     h-fit animate-fade-in transition ease-in-out duration-100
                     text-white text-center rounded-full
-                    z-50 text-sm"
+                    z-50 text-lg"
                         type="submit"
                         onMouseMove={onMouseMove}
                         onMouseLeave={onMouseLeave}
@@ -84,7 +84,7 @@ function Button({ children, type = "default", linkButtonUrl }) {
                             aria-hidden="true"
                         />
                         {/* Specular highlight */}
-                        <div className="pointer-events-none absolute inset-x-0 top-0 h-1/3 rounded-t-3xl bg-gradient-to-b from-white/20 to-transparent" aria-hidden="true" />
+                        <div className="pointer-events-none absolute inset-x-0 top-0 h-2 rounded-t-3xl bg-gradient-to-b from-white/20 to-transparent" aria-hidden="true" />
                         {overlay}
                         <div className="relative px-3 py-1 h-fit rounded-full">
                             {children}
@@ -93,12 +93,12 @@ function Button({ children, type = "default", linkButtonUrl }) {
                 </a>
             )}
             {type === "link" && (
-                <a href={linkButtonUrl} className="flex items-center justify-center">
+                <a href={linkButtonUrl}>
                     <button
                         className="
                         relative overflow-hidden
                         vetro-glass
-                        text-lg m-4 min-w-[25%]
+                        text-2xl m-4 min-w-[25%]
                         animate-fade-in transition ease-in-out duration-100
                         text-white text-center rounded-full"
                         type="submit"
@@ -111,7 +111,7 @@ function Button({ children, type = "default", linkButtonUrl }) {
                             aria-hidden="true"
                         />
                         {/* Specular highlight */}
-                        <div className="pointer-events-none absolute inset-x-0 top-0 h-1/3 rounded-t-3xl bg-gradient-to-b from-white/[0.22] to-transparent" aria-hidden="true" />
+                        <div className="pointer-events-none absolute inset-x-0 top-0 h-2 rounded-t-3xl bg-gradient-to-b from-white/[0.22] to-transparent" aria-hidden="true" />
                         {overlay}
                         <div className="relative py-2 px-8 h-fit rounded-full text-black dark:text-white">
                             {children}
@@ -138,7 +138,7 @@ function Button({ children, type = "default", linkButtonUrl }) {
                             aria-hidden="true"
                         />
                         {/* Specular highlight */}
-                        <div className="pointer-events-none absolute inset-x-0 top-0 h-1/3 rounded-t-3xl bg-gradient-to-b from-white/[0.22] to-transparent" aria-hidden="true" />
+                        <div className="pointer-events-none absolute inset-x-0 top-0 h-2 rounded-t-3xl bg-gradient-to-b from-white/[0.22] to-transparent" aria-hidden="true" />
                         {overlay}
                         <div className="relative py-2 px-4 h-fit rounded-full">
                             {children}

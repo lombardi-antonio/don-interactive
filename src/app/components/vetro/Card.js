@@ -3,6 +3,7 @@
 import Image from "next/image";
 import localFont from "next/font/local";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import Button from "@/app/components/vetro/Button";
 import Message from "@/app/components/vetro/Message";
 
@@ -11,7 +12,7 @@ const monomaniac = localFont({
     fontFamily: "Monomaniac",
 });
 
-function Card({ appImageSrc, header, subheader, children, textPosition = "center", available = true, linkButtonUrl, backLink }) {
+function Card({ appImageSrc, header, subheader, children, textPosition = "center", available = true, linkButtonUrl, backLink, buttonInline = false }) {
     const router = useRouter();
     /**
      * Vetro Card Component - A card component that can display a image, header, subheader, and text.
@@ -31,7 +32,7 @@ function Card({ appImageSrc, header, subheader, children, textPosition = "center
             id="main-card"
             className="
             relative overflow-hidden
-            max-w-full max-h-full h-full
+            max-w-full h-full
             animate-fade-in transition ease-in-out duration-500
             text-gray-800 dark:text-white text-center
             rounded-3xl vetro-glass"
@@ -59,36 +60,62 @@ function Card({ appImageSrc, header, subheader, children, textPosition = "center
                 aria-hidden="true"
             />
             {/* Specular highlight — simulates light refracting at the glass surface */}
-            <div className="pointer-events-none absolute inset-x-0 top-0 h-1/3 rounded-t-3xl bg-gradient-to-b from-white/[0.18] to-transparent" aria-hidden="true" />
-            <div className="rounded-3xl px-4 py-5 md:px-14 md:py-14 h-full w-full">
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-1 rounded-t-3xl bg-gradient-to-b from-white/[0.18] to-transparent" aria-hidden="true" />
+            <div className="rounded-3xl px-4 pt-20 pb-10 md:px-14 w-full h-full flex flex-col">
                 {!available &&
                     <Message>available soon!</Message>
                 }
                 {appImageSrc &&
-                    <div className="mx-auto mb-10 w-[180px] h-[180px] md:w-[256px] md:h-[256px] rounded-3xl bg-gradient-to-tr from-teal-500 via-indigo-500 to-rose-500 p-2 drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]">
-                        <Image
-                            src={appImageSrc}
-                            width={264}
-                            height={264}
-                            alt="Beats from Outer Space Game Icon"
-                            className="rounded-2xl"
-                        />
+                    <div className="vetro-glass mx-auto mb-10 w-[180px] h-[180px] md:w-[256px] md:h-[256px] rounded-3xl">
+                        <div className="mx-auto mb-10 w-[180px] h-[180px] md:w-[256px] md:h-[256px] rounded-3xl bg-gradient-to-tr from-teal-500/40 via-indigo-500/30 to-rose-500/50 p-2 drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)] ">
+
+                            {linkButtonUrl ? (
+                                <Link href={linkButtonUrl}>
+                                    <Image
+                                        src={appImageSrc}
+                                        width={264}
+                                        height={264}
+                                        alt={header}
+                                        className="rounded-2xl"
+                                    />
+                                </Link>
+                            ) : (
+                                <Image
+                                    src={appImageSrc}
+                                    width={264}
+                                    height={264}
+                                    alt={header}
+                                    className="rounded-2xl"
+                                />
+                            )}
+                        </div>
                     </div>
                 }
-                <h1 className={`${monomaniac.className} text-${textPosition} text-5xl font-bold drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,0.8)] dark:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]`}>
+                <h1 className={`${monomaniac.className} text-${textPosition} text-5xl md:text-8xl font-bold drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,0.8)] dark:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]`}>
                     {header}
                 </h1>
                 {subheader &&
-                    <h2 className={`${monomaniac.className} text-${textPosition} text-3xl drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,0.8)] dark:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]`}>
+                    <h2 className={`${monomaniac.className} text-${textPosition} text-3xl md:text-5xl drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,0.8)] dark:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]`}>
                         {subheader}
                     </h2>
                 }
-                <div className={`text-${textPosition} text-gray-900 dark:text-white text-md pt-6`}>
-                    {children}
-                </div>
-                {linkButtonUrl &&
-                    <Button type="link" linkButtonUrl={linkButtonUrl}>more...</Button>
-                }
+                {buttonInline && linkButtonUrl ? (
+                    <div className={`flex flex-row items-center gap-6 text-${textPosition} text-gray-900 dark:text-white text-lg md:text-2xl py-6`}>
+                        <div className="flex-1">{children}</div>
+                        <Button type="link" linkButtonUrl={linkButtonUrl}>more</Button>
+                    </div>
+                ) : (
+                    <>
+                        <div className={`text-${textPosition} text-gray-900 dark:text-white text-lg md:text-2xl py-10`}>
+                            {children}
+                        </div>
+                        {linkButtonUrl &&
+                            <div className="mt-auto">
+                                <Button type="link" linkButtonUrl={linkButtonUrl}>more</Button>
+                            </div>
+                        }
+                    </>
+                )}
             </div>
         </div>
     )
