@@ -1,8 +1,8 @@
-import Image from "next/image";
 import localFont from "next/font/local";
 
 import Card from "@/app/components/vetro/Card";
 import Button from "@/app/components/vetro/Button";
+import DropdownButton from "@/app/components/vetro/DropdownButton";
 import StellatoShader from "../components/vetro/StellatoShader";
 import Telaio from "../components/vetro/Telaio";
 
@@ -30,23 +30,29 @@ export default function Home() {
         >
           <Card appImageSrc="/beatsFromOuterSpace.png" header="Beats form Outer Space" backLink>
             <div className="flex flex-row justify-center">
-              <a href="https://apps.apple.com/us/app/beats-from-outer-space/id6467766328" target="_blank" rel="noopener noreferrer">
-                <button
-                  className="
-                  px-10 min-width-[256px]
-                  scale-100 hover:scale-105 transform
-                  transition duration-300"
-                  type="submit"
-                >
-                  <Image
-                    src="/Download_on_the_App_Store_Badge_blk.svg"
-                    height={80}
-                    width={256}
-                    alt="Apple App Store Button"
-                    style={{ maxWidth: "240px", height: "auto" }}
-                  />
-                </button>
-              </a>
+              <DropdownButton
+                icon={
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2Zm1 13.586V7a1 1 0 1 0-2 0v8.586l-2.293-2.293a1 1 0 0 0-1.414 1.414l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L13 15.586Z" />
+                  </svg>
+                }
+                items={[
+                  {
+                    icon: (
+                      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.14-2.22 1.3-2.2 3.88.03 3.02 2.65 4.03 2.68 4.04l-.03.1Zm-7.2-15.5C12.38 2.66 14 1.5 15.5 1.5c.08 1.46-.42 2.93-1.37 3.97-.93 1.03-2.35 1.75-3.75 1.65-.1-1.44.56-2.99 1.13-3.62Z" />
+                      </svg>
+                    ),
+                    name: "App Store",
+                    href: "https://apps.apple.com/us/app/beats-from-outer-space/id6467766328",
+                  },
+                  {
+                    name: "Play Store",
+                  }
+                ]}
+              >
+                Download
+              </DropdownButton>
             </div>
             <p className="text-2xl text-left px-4 2xl:px-28 pt-8 pb-12">
               Hello there, Terrarians! I am your mysterious radio host,

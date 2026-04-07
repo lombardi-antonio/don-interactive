@@ -22,9 +22,14 @@ module.exports = {
       },
       animation: {
         'fade-in': 'fade-in 0.4s ease-out',
-        'fade-in-model': 'fade-in-model 0.4s ease-out'
+        'fade-in-model': 'fade-in-model 0.4s ease-out',
+        'dropdown-in': 'dropdown-in 0.18s ease-out',
       },
       keyframes: {
+        'dropdown-in': {
+          '0%': { opacity: '0', transform: 'scale(0.95) translateY(-6px)' },
+          '100%': { opacity: '1', transform: 'scale(1) translateY(0)' },
+        },
         'fade-in': {
           '0%': {
             opacity: '0',
