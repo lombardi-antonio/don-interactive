@@ -36,10 +36,10 @@ function Message({ type = "info", children, onDismiss, relative = false }) {
 
     return (
         <div className={`
-        ${relative ? 'relative inline-flex' : 'absolute flex'} overflow-hidden w-auto my-1 md:my-6 items-center
+        ${relative ? 'relative inline-flex' : 'absolute left-1/2 -translate-x-1/2 flex'} overflow-hidden w-auto items-center
         animate-fade-in transition ease-in-out duration-500
         text-gray-800 dark:text-white rounded-3xl
-        vetro-glass-button z-50
+        vetro-glass-button !bg-white dark:!bg-zinc-900 z-50
         `}>
             {/* Stained glass gradient */}
             <div
@@ -68,7 +68,7 @@ function Message({ type = "info", children, onDismiss, relative = false }) {
             </div>
 
             {/* Message text */}
-            <p className="text-center text-blue-500 dark:text-blue-400 px-4 py-3 whitespace-nowrap">
+            <p className="text-center text-blue-500 dark:text-blue-400 text-xl px-4 py-2 whitespace-nowrap">
                 {children}
             </p>
 
