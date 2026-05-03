@@ -72,13 +72,20 @@ function DownloadDropdownButton({ items = [] }) {
             }
         };
 
+        const handleScroll = (e) => {
+            const inWrapper = wrapperRef.current?.contains(e.target);
+            const inPanel = panelRef.current?.contains(e.target);
+            if (!inWrapper && !inPanel) setOpen(false);
+            else updatePos();
+        };
+
         updatePos();
         document.addEventListener('mousedown', handleOutsideClick);
-        window.addEventListener('scroll', updatePos, true);
+        window.addEventListener('scroll', handleScroll, true);
         window.addEventListener('resize', updatePos);
         return () => {
             document.removeEventListener('mousedown', handleOutsideClick);
-            window.removeEventListener('scroll', updatePos, true);
+            window.removeEventListener('scroll', handleScroll, true);
             window.removeEventListener('resize', updatePos);
         };
     }, [open]);
